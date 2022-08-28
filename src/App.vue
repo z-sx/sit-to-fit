@@ -21,12 +21,26 @@ import { RouterLink, RouterView } from 'vue-router'
     </RouterLink>
   </header>
   
-  <RouterView />
+  <router-view v-slot="{ Component, route }">
+    <transition name="view">
+      <component :is="Component" :key="route.path" />
+    </transition>
+  </router-view>
 
   <footer></footer>
 </template>
 
 <style lang="postcss" scoped>
+.view-enter-active,
+.view-leave-active {
+  transition: opacity 0.3s ease-out;
+}
+
+.view-enter-from,
+.view-leave-to {
+  opacity: 0;
+}
+
 header{
   display: flex;
   height: 80px;
