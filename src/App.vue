@@ -11,9 +11,9 @@ import { RouterLink, RouterView } from 'vue-router'
     <nav>
       <RouterLink to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
       <RouterLink to="/physical-ergonomics">Physical Ergonomics</RouterLink>
-      <RouterLink to="/sedentary-lifestyle">Physical Activities</RouterLink>
-      <RouterLink to="/physical-ergonomics">Dietary Plan</RouterLink>
-      <RouterLink to="/sedentary-lifestyle">Alert Reminder</RouterLink>
+      <RouterLink to="/physical-activities">Physical Activities</RouterLink>
+      <RouterLink to="/dietary-plan">Dietary Plan</RouterLink>
+      <RouterLink to="/alert-reminder">Alert Reminder</RouterLink>
     </nav>
 
     <RouterLink class="new-user" to="/become-new-user">
