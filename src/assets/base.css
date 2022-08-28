@@ -38,6 +38,13 @@
 
   --color-background-hover: rgb(0 133 242 / 19%);
   --color-outline-focus: 2px black solid;
+
+  --color-press: rgb(199, 199, 199);
+  --color-hover: rgb(227, 227, 227);
+
+  --color-active: rgb(194, 231, 255);
+  --color-active-hover: rgb(127, 207, 255);
+  --color-active-press: rgb(90, 179, 240);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -29,7 +29,10 @@ button{
     background-color: white;
     height:48px;
     &:hover{
-      background-color: var(--color-background-hover);
+        background-color: var(--color-hover);
+    }
+    &:active{
+        background-color: var(--color-press);
     }
     &:focus{
       outline: var(--color-outline-focus);

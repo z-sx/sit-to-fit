@@ -9,14 +9,36 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/sedentary-lifestyle',
+      name: 'sedentary-lifestyle',
+      component: () => import('../views/SedentaryLifestyleView.vue'),
+    },
+    {
+      path: '/physical-ergonomics',
+      name: 'physical-ergonomics',
+      component: () => import('../views/PhysicalErgonomicsView.vue'),
+    },
+    {
+      path: '/physical-activities',
+      name: 'physical-activities',
+      component: () => import('../views/PhysicalActivitiesView.vue'),
+    },
+    {
+      path: '/dietary-plan',
+      name: 'dietary-plan',
+      component: () => import('../views/DietaryPlanView.vue'),
+    },
+    {
+      path: '/alert-reminder',
+      name: 'alert-reminder',
+      component: () => import('../views/AlertReminderView.vue'),
+    },
+    {
+      path: '/become-new-user',
+      name: 'become-new-user',
+      component: () => import('../views/BecomeNewUserView.vue'),
+    },
   ]
 })
 

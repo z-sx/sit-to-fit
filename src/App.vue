@@ -50,10 +50,23 @@ header{
     padding:16px;
     border-radius: 8px;
     &:hover{
-      background-color: var(--color-background-hover);
+      background-color: var(--color-hover);
+    }
+    &:active{
+      background-color: var(--color-press);
     }
     &:focus{
       outline: var(--color-outline-focus);
+      z-index: 1;
+    }
+    &.router-link-active{
+      background-color: var(--color-active);
+      &:hover{
+        background-color: var(--color-active-hover);
+      }
+      &:active{
+        background-color: var(--color-active-press);
+      }
     }
   }
   & nav{
