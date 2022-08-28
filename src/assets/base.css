@@ -34,6 +34,10 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+  
+
+  --color-background-hover: rgb(0 133 242 / 19%);
+  --color-outline-focus: 2px black solid;
 }
 
 @media (prefers-color-scheme: dark) {

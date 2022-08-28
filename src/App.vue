@@ -48,6 +48,13 @@ header{
     font-weight: 600;
     display: inline-block;
     padding:16px;
+    border-radius: 8px;
+    &:hover{
+      background-color: var(--color-background-hover);
+    }
+    &:focus{
+      outline: var(--color-outline-focus);
+    }
   }
   & nav{
     flex: 1 0 auto;

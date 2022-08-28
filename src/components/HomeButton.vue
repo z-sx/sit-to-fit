@@ -1,8 +1,12 @@
 <script setup lang="ts">
+import router from '@/router';
+const {to} = defineProps<{
+    to: string
+}>()
 </script>
 
 <template>
-    <button>
+    <button @click="router.push(to)">
         <slot></slot>
         <img src="@/assets/images/IconButtonRight.png" alt="icon">
     </button>
@@ -23,11 +27,18 @@ button{
     text-align: middle;
     gap: 8px;
     background-color: white;
+    height:48px;
+    &:hover{
+      background-color: var(--color-background-hover);
+    }
+    &:focus{
+      outline: var(--color-outline-focus);
+    }
 }
 img{
     display: block;
     pointer-events: none;
-    width: 24px;
+    max-height: 80%;
     margin:auto 0;
 }
 </style>
