@@ -1,85 +1,63 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <RouterLink class="home" to="/">
+      <img class="logo" alt="logo" src="@/assets/logo.svg"/>
+    </RouterLink>
+    
+    <nav>
+      <RouterLink to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
+      <RouterLink to="/physical-ergonomics">Physical Ergonomics</RouterLink>
+      <RouterLink to="/sedentary-lifestyle">Physical Activities</RouterLink>
+      <RouterLink to="/physical-ergonomics">Dietary Plan</RouterLink>
+      <RouterLink to="/sedentary-lifestyle">Alert Reminder</RouterLink>
+    </nav>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <RouterLink class="new-user" to="/become-new-user">
+      Become new user
+    </RouterLink>
   </header>
-
+  
   <RouterView />
+
+  <footer></footer>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+<style lang="postcss" scoped>
+header{
+  display: flex;
+  height: 80px;
+  align-items: center;
+  & .logo{
+    height: 80px;
+    max-height: 100px;
+    min-height: 80px;
+    margin-left: 20px;
+  }
+  a.home{
+    display:block;
+    line-height: 0;
+  }
+  & nav>a, & a.new-user{
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-block;
+    padding:16px;
+  }
+  & nav{
+    flex: 1 0 auto;
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    justify-content: center;
+    /* bp: ? - 1024 */
+    
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  & .new-user{
+    margin-right:20px;
   }
 }
 </style>
