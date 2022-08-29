@@ -35,7 +35,7 @@ button{
         background-color: var(--color-press);
     }
     &:focus{
-      outline: var(--color-outline-focus);
+      box-shadow: var(--color-focus);
     }
 }
 img{

@@ -37,7 +37,7 @@
   
 
   --color-background-hover: rgb(0 133 242 / 19%);
-  --color-outline-focus: 2px black solid;
+  --color-focus: 0px 0px 0px 3px rgba(120, 120, 120, 0.4);
 
   --color-press: rgb(199, 199, 199);
   --color-hover: rgb(227, 227, 227);

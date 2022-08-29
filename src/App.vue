@@ -21,11 +21,11 @@ import { RouterLink, RouterView } from 'vue-router'
     </RouterLink>
   </header>
   
-  <router-view v-slot="{ Component, route }">
-    <transition name="view">
+  <RouterView v-slot="{ Component, route }">
+    <Transition name="view">
       <component :is="Component" :key="route.path" />
-    </transition>
-  </router-view>
+    </Transition>
+  </RouterView>
 
   <footer></footer>
 </template>
@@ -70,7 +70,7 @@ header{
       background-color: var(--color-press);
     }
     &:focus{
-      outline: var(--color-outline-focus);
+      box-shadow: var(--color-focus);
       z-index: 1;
     }
     &.router-link-active{
