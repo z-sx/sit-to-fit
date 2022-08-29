@@ -6,11 +6,14 @@ import Header from './components/Header.vue'
 <template>
   <Header></Header>
   
-  <RouterView v-slot="{ Component, route }">
-    <Transition name="view">
-      <component class="container" :is="Component" :key="route.path" />
-    </Transition>
-  </RouterView>
+  <div class="container">
+    <RouterView v-slot="{ Component, route }">
+      <Transition name="view">
+        <component :is="Component" :key="route.path" />
+      </Transition>
+    </RouterView>
+  </div>
+
 
   <footer></footer>
 </template>
@@ -26,6 +29,6 @@ import Header from './components/Header.vue'
   opacity: 0;
 }
 .container{
-  margin-top: 40px;
+  padding-top: 40px;
 }
 </style>

@@ -8,6 +8,9 @@ import './assets/main.css'
 import '@fontsource/roboto-flex'
 import '@fontsource/average'
 import '@fontsource/kaisei-decol'
+import '@fontsource/cagliostro'
+import '@fontsource/inika'
+import '@fontsource/inter'
 
 
 const app = createApp(App)
