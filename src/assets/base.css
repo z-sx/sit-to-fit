@@ -45,6 +45,13 @@
   --color-active: rgb(194, 231, 255);
   --color-active-hover: rgb(127, 207, 255);
   --color-active-press: rgb(90, 179, 240);
+
+  --bp-laptop-large: 1440px;
+  --bp-laptop: 1024px;
+  --bp-tablet: 768px;
+  --bp-mobile-large: 425px;
+  --bp-mobile: 320px;
+  --bp-mobile-tiny: 280px;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -72,6 +79,8 @@
 
 body {
   min-height: 100vh;
+  max-width: var(--bp-laptop-large);
+  margin: 0 auto;
   color: var(--color-text);
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;

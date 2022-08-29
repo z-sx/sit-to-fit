@@ -2,15 +2,12 @@
 import JouneyHeading from "@/components/JourneyHeading.vue";
 import JourneySectionHeading from "@/components/JourneySectionHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
-import JourneyLayout from "../components/JourneyLayout.vue"
-import JourneyStat from "../components/JourneyStat.vue"
+import JourneyLayout from "@/components/JourneyLayout.vue"
+import JourneyStat from "@/components/JourneyStat.vue"
 </script>
     
 <template>
     <JourneyLayout>
-        <template slot="sidebar">
-            aaa
-        </template>
         <JouneyHeading />
         <JourneySectionHeading>
             Let us learn some facts about sedentary lifestyle
