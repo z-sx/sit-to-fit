@@ -23,7 +23,7 @@ button{
     border-radius: 40px;
     border: 1px black solid;
     box-sizing: border-box;
-    font-family: 'Average';
+    font-family: 'Average', serif;
     text-align: middle;
     gap: 8px;
     background-color: white;

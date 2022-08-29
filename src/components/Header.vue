@@ -30,6 +30,7 @@ header {
   height: 80px;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Roboto Flex', sans-serif;
   @media(width <1024px) {
     height:64px;
   }
