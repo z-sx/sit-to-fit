@@ -20,7 +20,6 @@ import HomeButton from '../components/HomeButton.vue';
 <style lang="postcss" scoped>
 .home-container{
     height: 70vw;
-    padding-top:40px;
     overflow: hidden;
 }
 .sed{

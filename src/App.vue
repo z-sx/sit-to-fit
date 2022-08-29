@@ -8,7 +8,7 @@ import Header from './components/Header.vue'
   
   <RouterView v-slot="{ Component, route }">
     <Transition name="view">
-      <component :is="Component" :key="route.path" />
+      <component class="container" :is="Component" :key="route.path" />
     </Transition>
   </RouterView>
 
@@ -24,5 +24,8 @@ import Header from './components/Header.vue'
 .view-enter-from,
 .view-leave-to {
   opacity: 0;
+}
+.container{
+  margin-top: 40px;
 }
 </style>
