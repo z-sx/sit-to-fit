@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import router from '@/router';
+import { computed } from '@vue/reactivity';
 import { ref } from 'vue';
+import { useRoute } from 'vue-router';
 
 const pages = ref([
     {
@@ -23,6 +26,29 @@ const pages = ref([
         to: '/alert-reminder',
     },
 ])
+const route = useRoute()
+const currentIndex = computed(() => {
+    const index = pages.value.findIndex(item => item.to === route.path)
+    if (index === -1) {
+        return null
+    } else {
+        return index
+    }
+})
+const previousPage = computed(() => {
+    if (currentIndex.value !== null && currentIndex.value > 0) {
+        return pages.value[currentIndex.value - 1]
+    } else {
+        return null
+    }
+})
+const nextPage = computed(() => {
+    if (currentIndex.value !== null && currentIndex.value < pages.value.length - 1) {
+        return pages.value[currentIndex.value + 1]
+    } else {
+        return null
+    }
+})
 </script>
     
 <template>
@@ -47,19 +73,19 @@ const pages = ref([
                         </button>
                     </div>
                     <div class="list">
-                        <RouterLink v-for="page in pages" :to="page.to">{{page.name}}</RouterLink>
+                        <RouterLink v-for="page in pages" :to="page.to">{{ page.name }}</RouterLink>
                     </div>
                 </div>
             </div>
             <div class="skip">
                 <span>Skip the journey?</span>
                 <span>Jump directly on our tool</span>
-                <button>Use Tool</button>
+                <button @click="router.push('/tool')">Use Tool</button>
             </div>
         </aside>
     </div>
 </template>
-    
+   
 <style lang="postcss" scoped>
 .journey-layout {
     display: flex;
@@ -114,15 +140,18 @@ const pages = ref([
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+
                     & a {
                         width: 31px;
                         height: 22px;
                         background: #DCF0FF;
                         border-radius: 11px;
-                        &.router-link-active{
+
+                        &.router-link-active {
                             background: #0981F0;
                         }
                     }
+
                     & button {
                         padding: 0;
                         border: 0;
@@ -132,6 +161,7 @@ const pages = ref([
 
                         & img {
                             height: 48px;
+                            width: 48px
                         }
                     }
                 }
