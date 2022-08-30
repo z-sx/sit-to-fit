@@ -88,6 +88,7 @@ header {
   & nav {
     /* >=1024px */
     display: flex;
+    gap: 2px;
     @media(width < 1024px) {
       display: none;
     }
