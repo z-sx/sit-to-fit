@@ -5,6 +5,7 @@ import JourneySection from "@/components/JourneySection.vue"
 import JourneyLayout from "@/components/JourneyLayout.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
 import TableauViz from "../components/TableauViz.vue"
+import PowerbiViz from "../components/PowerbiViz.vue"
 </script>
     
 <template>
@@ -24,7 +25,9 @@ import TableauViz from "../components/TableauViz.vue"
             <JourneyStat></JourneyStat>
         </JourneySection>
         <JourneySection>
+            
             <TableauViz></TableauViz>
+            <PowerbiViz></PowerbiViz>
         </JourneySection>
     </JourneyLayout>
 
