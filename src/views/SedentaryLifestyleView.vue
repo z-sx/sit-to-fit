@@ -4,6 +4,7 @@ import JourneySectionHeading from "@/components/JourneySectionHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import JourneyLayout from "@/components/JourneyLayout.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
+import TableauViz from "../components/TableauViz.vue"
 </script>
     
 <template>
@@ -21,6 +22,9 @@ import JourneyStat from "@/components/JourneyStat.vue"
                 <strong>You are living a sedentary lifestyle if you fall in one of the category below:</strong>
             </p>
             <JourneyStat></JourneyStat>
+        </JourneySection>
+        <JourneySection>
+            <TableauViz></TableauViz>
         </JourneySection>
     </JourneyLayout>
 
