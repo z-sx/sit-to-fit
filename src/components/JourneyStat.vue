@@ -32,6 +32,7 @@
     display:flex;
     gap: 16px;
     width: calc(220px * 4 + 3 * 16px);
+    @media ()
     & >div{
         width:220px;
         height: 200px;
