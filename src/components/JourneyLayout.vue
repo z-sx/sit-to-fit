@@ -64,11 +64,11 @@ const nextPage = computed(() => {
                 </div>
                 <div class="right-part">
                     <div class="indicator">
-                        <button class="left">
+                        <button class="left" @click="previousPage && router.push(previousPage?.to)">
                             <img src="@/assets/images/IconLeft.svg" alt="Previous page">
                         </button>
                         <RouterLink v-for="page in pages" :to="page.to"></RouterLink>
-                        <button class="right">
+                        <button class="right" @click="nextPage && router.push(nextPage?.to)">
                             <img src="@/assets/images/IconRight.svg" alt="Next page">
                         </button>
                     </div>
