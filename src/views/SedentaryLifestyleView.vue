@@ -4,6 +4,7 @@ import JourneySectionHeading from "@/components/JourneySectionHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import JourneyLayout from "@/components/JourneyLayout.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
+import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
 </script>
     
 <template>
@@ -26,10 +27,11 @@ import JourneyStat from "@/components/JourneyStat.vue"
             Let us see about your sedentary behaviour
         </JourneySectionHeading>
         <JourneySection>
-            <p class="paragraph">Here should be a visualization to analyse risk of viewer's lifestyle</p>
+            <h3 class="blue-heading">We will require some of your statistics to determine your sedentary index in comparison to Melbourne CBD index</h3>
+            <SedentaryRiskViz class="viz"></SedentaryRiskViz>
         </JourneySection>
-    </JourneyLayout>
 
+    </JourneyLayout>
 </template>
     
 <style lang="postcss" scoped>
@@ -46,5 +48,10 @@ import JourneyStat from "@/components/JourneyStat.vue"
     & strong{
         font-weight: bold;
     }
+}
+
+.viz{
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
 }
 </style>
