@@ -64,13 +64,13 @@ const nextPage = computed(() => {
         </div>
         <div class="right-part">
           <div class="indicator">
-            <button class="left" @click="previousPage && router.push(previousPage?.to)">
+            <RouterLink class="previous" :to="previousPage?.to ?? ''">
               <img src="@/assets/images/IconLeft.svg" alt="Previous page">
-            </button>
-            <RouterLink v-for="page in pages" :to="page.to"></RouterLink>
-            <button class="right" @click="nextPage && router.push(nextPage?.to)">
+            </RouterLink>
+            <RouterLink class="page" v-for="page in pages" :to="page.to"></RouterLink>
+            <RouterLink class="next" :to="nextPage?.to ?? ''">
               <img src="@/assets/images/IconRight.svg" alt="Next page">
-            </button>
+            </RouterLink>
           </div>
           <div class="list">
             <RouterLink v-for="page in pages" :to="page.to">{{  page.name  }}</RouterLink>
@@ -80,7 +80,7 @@ const nextPage = computed(() => {
       <div class="skip">
         <span>Skip the journey?</span>
         <span>Jump directly on our tool</span>
-        <button @click="router.push('/tool')">Use Tool</button>
+        <RouterLink to="/tool">Use Tool</RouterLink>
       </div>
     </aside>
   </div>
@@ -141,7 +141,7 @@ const nextPage = computed(() => {
           align-items: center;
           justify-content: space-between;
 
-          & a {
+          & .page {
             width: 31px;
             height: 22px;
             background: #DCF0FF;
@@ -152,7 +152,7 @@ const nextPage = computed(() => {
             }
           }
 
-          & button {
+          & .previous, & .next {
             padding: 0;
             border: 0;
             border-radius: 24px;
@@ -197,9 +197,10 @@ const nextPage = computed(() => {
       display: flex;
       flex-direction: column;
 
-      & button {
+      & a {
         background: #0085FF;
         box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+        text-decoration: none;
         border-radius: 10px;
         font-size: 25px;
         padding: 6px 36px;

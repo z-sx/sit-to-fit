@@ -25,3 +25,6 @@ button{
   border: 0;
   background-color: transparent;
 }
+button, a{
+  transition: box-shadow 0.2s;
+}
