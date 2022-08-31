@@ -3,23 +3,23 @@
 
 <template>
   <header>
-    <RouterLink class="home" to="/">
-      <img class="logo" alt="logo" src="@/assets/logo.svg" />
+    <RouterLink class="home contents" to="/">
+      <img class="logo" alt="Logo" src="@/assets/logo.svg" />
     </RouterLink>
 
     <nav>
-      <RouterLink to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
-      <RouterLink to="/physical-ergonomics">Physical Ergonomics</RouterLink>
-      <RouterLink to="/physical-activities">Physical Activities</RouterLink>
-      <RouterLink to="/dietary-plan">Dietary Plan</RouterLink>
-      <RouterLink to="/alert-reminder">Alert Reminder</RouterLink>
+      <RouterLink class="button" to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
+      <RouterLink class="button" to="/physical-ergonomics">Physical Ergonomics</RouterLink>
+      <RouterLink class="button" to="/physical-activities">Physical Activities</RouterLink>
+      <RouterLink class="button" to="/dietary-plan">Dietary Plan</RouterLink>
+      <RouterLink class="button" to="/alert-reminder">Alert Reminder</RouterLink>
     </nav>
 
-    <RouterLink class="new-user" to="/become-new-user">
+    <RouterLink class="new-user button" to="/become-new-user">
       Become new user
     </RouterLink>
-    <button class="menu-button">
-      <img src="@/assets/images/IconMenu.svg" alt="">
+    <button class="menu button">
+      <img src="@/assets/images/IconMenu.svg" alt="Menu Icon">
     </button>
   </header>
 </template>
@@ -27,104 +27,99 @@
 <style lang="postcss" scoped>
 header {
   display: flex;
-  height: 80px;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
   font-family: 'Roboto Flex', sans-serif;
-  @media(width <1024px) {
-    height:64px;
+  height: var(--header-height);
+  gap: var(--gutter);
+  justify-content: space-between;
+
+  & .logo {
+    height: 100%;
   }
 
-  & .home {
-    line-height: 0;
-
-    & .logo {
-      height: 80px;
-      margin-left: 20px;
-      @media(width <1024px) {
-        height:64px;
-      }
-    }
-
-  }
-
-  & nav>a,
-  & a.new-user {
-    /** button-like links */
-    color: var(--color-text);
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 16px;
-    border-radius: 8px;
-    height: 56px;
-
-    &:hover {
-      background-color: var(--color-hover);
-    }
-
-    &:active {
-      background-color: var(--color-press);
-    }
-
-    &:focus {
-      box-shadow: var(--color-focus);
-    }
-
-    &.router-link-active {
-      /* active state of link */
-      background-color: var(--color-active);
-
-      &:hover {
-        background-color: var(--color-active-hover);
-      }
-
-      &:active {
-        background-color: var(--color-active-press);
-      }
-    }
-  }
-
-  & nav {
-    /* >=1024px */
-    display: flex;
-    gap: 2px;
-    @media(width < 1024px) {
-      display: none;
-    }
-  }
-
-  & .new-user {
-    margin-right: 20px;
-
-    @media(width < 1024px) {
-      display: none;
-    }
-  }
-
-  & .menu-button {
-    display: none;
+  & .menu.button{
+    display: block;
     border: 0;
     padding: 0;
     line-height: 0;
+    background-color: transparent;
+    height: 100%;
+    width: var(--header-height);
+    height: var(--header-height);
+    & img{
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 0px) {
+    --header-height: 48px;
+    padding-left: var(--margin);
+    & nav, & .new-user{
+      display: none;
+    }
+  }
+
+  @media (min-width: 600px) {
+    --header-height: 56px;
+    
+  }
+
+  @media (min-width: 840px) {
+    --header-height: 64px;
+    padding: 0 var(--gutter);
+  }
+
+  @media (min-width: 1240px) {
+    --header-height: 80px;
+    & .new-user{
+      display: block;
+    }
+    & nav {
+      display: flex;
+      gap: calc(var(--gutter) / 4);
+    }
+    & .menu.button{
+      display: none;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0;
+  }
+}
+
+.button {
+  /** button-like links */
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 15px; /** 15*lineheight */
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: var(--color-hover);
+  }
+
+  &:active {
+    background-color: var(--color-press);
+  }
+
+  &:focus {
+    box-shadow: var(--color-focus);
+  }
+
+  &.router-link-active {
+    /* active state of link */
+    background-color: var(--color-active);
 
     &:hover {
-      background-color: var(--color-hover);
+      background-color: var(--color-active-hover);
     }
 
     &:active {
-      background-color: var(--color-press);
-    }
-
-    &:focus {
-      box-shadow: var(--color-focus);
-    }
-
-    @media(width <1024px) {
-      display: block;
-      width: 64px;
-      height: 64px;
-      background-color: white;
+      background-color: var(--color-active-press);
     }
   }
 }
