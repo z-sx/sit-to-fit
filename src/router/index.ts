@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import JourneyLayout from '../components/JourneyLayout.vue'
 const SedentaryLifestyleView = () => import('../views/SedentaryLifestyleView.vue')
 const PhysicalErgonomicsView = () => import('../views/PhysicalErgonomicsView.vue')
 const PhysicalActivitiesView = () => import('../views/PhysicalActivitiesView.vue')

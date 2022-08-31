@@ -1,0 +1,57 @@
+@import "./base.css";
+ 
+:root{
+  /* for buttons in nav bar */
+  --color-background-hover: rgb(0 133 242 / 19%);
+  --color-focus: 0px 0px 0px 3px rgba(120, 120, 120, 0.4);
+
+  --color-press: rgb(199, 199, 199);
+  --color-hover: rgb(227, 227, 227);
+
+  --color-active: rgb(194, 231, 255);
+  --color-active-hover: rgb(127, 207, 255);
+  --color-active-press: rgb(90, 179, 240);
+
+  /** breakpoints of screens */
+  --bp-mobile: 600px;
+  --bp-tablet: 840px;
+  --bp-laptop: 1240px;
+  --bp-desktop: 1440px;
+  @media (min-width: 0px) {
+    --column: 4;
+    --margin: 16px;
+    --gutter: 16px;
+  }
+  
+  @media (min-width: 600px) {
+    --column: 12;
+    --margin: 24px;
+    --gutter: 24px;
+  }
+  
+  @media (min-width: 840px) {
+    --column: 12;
+    --margin: 32px;
+    --gutter: 32px;
+  }
+  
+  @media (min-width: 1240px) {
+    --column: 12;
+    --margin: 56px;
+    --gutter: 56px;
+  }
+  
+  @media (min-width: 1440px) {
+    --column: 12;
+    --margin: 60px;
+    --gutter: 60px;
+  }
+}
+
+body{
+  max-width: var(--bp-desktop);
+}
+
+.contents{
+  display: contents
+}

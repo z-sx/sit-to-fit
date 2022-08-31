@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import './assets/main.css'
+import './assets/main.postcss'
 import '@fontsource/roboto-flex'
 import '@fontsource/average'
 import '@fontsource/kaisei-decol'
