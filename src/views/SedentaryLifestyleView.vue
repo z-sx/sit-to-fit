@@ -4,8 +4,6 @@ import JourneySectionHeading from "@/components/JourneySectionHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import JourneyLayout from "@/components/JourneyLayout.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
-import TableauViz from "../components/TableauViz.vue"
-import PowerbiViz from "../components/PowerbiViz.vue"
 </script>
     
 <template>
@@ -16,7 +14,7 @@ import PowerbiViz from "../components/PowerbiViz.vue"
         </JourneySectionHeading>
         <JourneySection>
             <h3 class="blue-heading">Firstly, let us learn some facts about sedentary lifestyle</h3>
-            <p class="sentence">Sedentary lifestyle is the abundance of sitted behaviour that involves very little
+            <p class="paragraph">Sedentary lifestyle is the abundance of sitted behaviour that involves very little
                 physical activity. Desk jobs require the person to sit on a chair for elongated hours.
                 <br>
                 <br>
@@ -24,10 +22,11 @@ import PowerbiViz from "../components/PowerbiViz.vue"
             </p>
             <JourneyStat></JourneyStat>
         </JourneySection>
+        <JourneySectionHeading>
+            Let us see about your sedentary behaviour
+        </JourneySectionHeading>
         <JourneySection>
-            
-            <TableauViz></TableauViz>
-            <PowerbiViz></PowerbiViz>
+            <p class="paragraph">Here should be a visualization to analyse risk of viewer's lifestyle</p>
         </JourneySection>
     </JourneyLayout>
 
@@ -41,7 +40,7 @@ import PowerbiViz from "../components/PowerbiViz.vue"
     margin-bottom: 20px;
 }
 
-.sentence {
+.paragraph {
     font-family: 'Kaisei Decol', serif;
     margin-bottom: 20px;
     & strong{
