@@ -50,6 +50,22 @@
 
 body{
   max-width: var(--bp-desktop);
+
+}
+
+button{
+  cursor: pointer;
+  &:hover {
+    background-color: var(--color-hover);
+  }
+
+  &:active {
+    background-color: var(--color-press);
+  }
+
+  &:focus {
+    box-shadow: var(--color-focus);
+  }
 }
 
 .contents{

@@ -19,3 +19,9 @@ body {
   font-weight: normal;
   box-sizing: border-box;
 }
+
+button{
+  display: block;
+  border: 0;
+  background-color: transparent;
+}

@@ -54,7 +54,7 @@ header {
 
   @media (min-width: 0px) {
     --header-height: 48px;
-    padding-left: var(--margin);
+    padding-left: calc(var(--margin) / 2);
     & nav, & .new-user{
       display: none;
     }
@@ -97,7 +97,7 @@ header {
   font-weight: 600;
   padding: 16px;
   border-radius: 4px;
-
+  cursor: pointer;
   &:hover {
     background-color: var(--color-hover);
   }
