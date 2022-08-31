@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import SedentaryViz from './SedentaryViz.vue'
+import SedentaryAdultViz from './SedentaryAdultViz.vue'
 const isOpen = ref(false)
 </script>
     
@@ -33,7 +33,7 @@ const isOpen = ref(false)
           <img src="@/assets/images/IconClose.svg" alt="Close Icon">
         </button>
         <h3>In 2020, 47.3% of adults residing in Melbourne engaged in the recommended amount of physical activity</h3>
-        <SedentaryViz></SedentaryViz>
+        <SedentaryAdultViz></SedentaryAdultViz>
       </div>
     </dialog>
   </Teleport>

@@ -18,7 +18,7 @@ onBeforeUnmount(() => {
     
 <template>
   <iframe ref="el"
-    src="http://124.221.192.243/cs/cs.html"
+    src="https://sit-to-fit.s3.ap-southeast-2.amazonaws.com/sedentary-adult-activity/index.html"
     frameborder="0"></iframe>
 </template>
     
