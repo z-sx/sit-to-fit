@@ -28,3 +28,8 @@ button{
 button, a{
   transition: box-shadow 0.2s;
 }
+[disabled]{
+  filter: grayscale(100%) blur(1px);
+  pointer-events: none;
+  user-select: none;
+}

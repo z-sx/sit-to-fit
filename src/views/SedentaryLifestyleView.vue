@@ -32,7 +32,7 @@ import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
         </JourneySection>
         <section class="nav">
             <RouterLink class="left button" to="/">Exit Journey</RouterLink>
-            <RouterLink class="right button" to="/physical-ergonomics">Continue</RouterLink>
+            <RouterLink class="right button" to="/physical-ergonomics" disabled>Continue</RouterLink>
         </section>
     </JourneyLayout>
 </template>

@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import router from '@/router';
 const {to} = defineProps<{
     to: string
 }>()
 </script>
 
 <template>
-    <button @click="router.push(to)">
+    <RouterLink :to="to">
         <slot></slot>
         <img src="@/assets/images/IconButtonRight.png" alt="icon">
-    </button>
+    </RouterLink>
 </template>
 
 <style lang="postcss" scoped>
-button{
+a{
+    text-decoration: none;
+    color: black;
     display: flex;
     user-select: none;
     font-size: 20px;

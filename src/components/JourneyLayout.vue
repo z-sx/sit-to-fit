@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import router from '@/router';
 import { computed } from '@vue/reactivity';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
@@ -56,7 +55,7 @@ const nextPage = computed(() => {
     <main>
       <slot></slot>
     </main>
-    <aside>
+    <aside disabled>
       <div class="progress">
         <div class="left-part">
           <span>Progress</span>
@@ -158,6 +157,7 @@ const nextPage = computed(() => {
             border-radius: 24px;
             transform: scale(0.7);
             background-color: transparent;
+            line-height: 0;
 
             & img {
               height: 48px;

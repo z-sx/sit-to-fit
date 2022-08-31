@@ -9,7 +9,7 @@ import HomeButton from '../components/HomeButton.vue';
             <img class="image-1" alt="Sitting at work" src="@/assets/images/HomeImage1.svg" />
             <HomeButton class="button" to="/sedentary-lifestyle">Learn More</HomeButton>
         </section>
-        <section class="tool">
+        <section class="tool" disabled>
             <img class="text-2" alt="Improve Life Standards" src="@/assets/images/HomeText2.svg" />
             <img class="image-2" alt="Stand up" src="@/assets/images/HomeImage2.svg" />
             <HomeButton class="button" to="/tool">Explore Tool</HomeButton>

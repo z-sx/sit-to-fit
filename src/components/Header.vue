@@ -9,13 +9,13 @@
 
     <nav>
       <RouterLink class="button" to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
-      <RouterLink class="button" to="/physical-ergonomics">Physical Ergonomics</RouterLink>
-      <RouterLink class="button" to="/physical-activities">Physical Activities</RouterLink>
-      <RouterLink class="button" to="/dietary-plan">Dietary Plan</RouterLink>
-      <RouterLink class="button" to="/alert-reminder">Alert Reminder</RouterLink>
+      <RouterLink class="button" to="/physical-ergonomics" disabled>Physical Ergonomics</RouterLink>
+      <RouterLink class="button" to="/physical-activities" disabled>Physical Activities</RouterLink>
+      <RouterLink class="button" to="/dietary-plan" disabled>Dietary Plan</RouterLink>
+      <RouterLink class="button" to="/alert-reminder" disabled>Alert Reminder</RouterLink>
     </nav>
 
-    <RouterLink class="new-user button" to="/become-new-user">
+    <RouterLink class="new-user button" to="/become-new-user" disabled>
       Become new user
     </RouterLink>
     <button class="menu button">
