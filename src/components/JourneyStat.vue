@@ -27,12 +27,14 @@ const isOpen = ref(false)
     </div>
   </div>
   <Teleport to="body">
-    <dialog class="modal" :open="isOpen">
-      <button class="close" @click="isOpen = false">
-        <img src="@/assets/images/IconClose.svg" alt="Close Icon">
-      </button>
-      <h3>In 2020, 47.3% of adults residing in Melbourne engaged in the recommended amount of physical activity</h3>
-      <SedentaryViz></SedentaryViz>
+    <dialog :open="isOpen">
+      <div class="modal">
+        <button class="close" @click="isOpen = false">
+          <img src="@/assets/images/IconClose.svg" alt="Close Icon">
+        </button>
+        <h3>In 2020, 47.3% of adults residing in Melbourne engaged in the recommended amount of physical activity</h3>
+        <SedentaryViz></SedentaryViz>
+      </div>
     </dialog>
   </Teleport>
 </template>
@@ -42,35 +44,48 @@ const isOpen = ref(false)
   color: #F94D4D;
 }
 
-dialog.modal[open] {
+dialog[open] {
   position: fixed;
-  margin: 0 auto;
-  top: 50%;
-  transform: translateY(-50%);
-  box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: transparent;
+  backdrop-filter: blur(4px);
   border: 0;
-  padding: calc(var(--gutter));
-  border-radius: 10px;
-  width: 80vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  & h3{
-    font-weight: bold;
-  }
-  & .close {
-    position: absolute;
-    line-height: 0;
-    top: calc((var(--gutter) - 32px) / 2 + 2px);
-    right: calc((var(--gutter) - 32px) / 2 + 2px);
-    border-radius: 100%;
-    width: 32px;
-    height: 32px;
+  justify-content: center;
+  & .modal{
+    position: relative;
+    background-color: white;
+    padding: calc(var(--gutter));
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+    border-radius: 10px;
+    width: 1000px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h3{
+      font-weight: bold;
+    }
+    & .close {
+      position: absolute;
+      line-height: 0;
+      top: calc((var(--gutter) - 32px) / 2 + 2px);
+      right: calc((var(--gutter) - 32px) / 2 + 2px);
+      border-radius: 100%;
+      width: 32px;
+      height: 32px;
 
-    &>img {
-      width: 80%;
+      &>img {
+        width: 80%;
+      }
     }
   }
+
 }
 
 .journey-stat {
