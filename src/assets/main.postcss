@@ -3,7 +3,7 @@
 :root{
   /* for buttons in nav bar */
   --color-background-hover: rgb(0 133 242 / 19%);
-  --color-focus: 0px 0px 0px 3px rgba(120, 120, 120, 0.4);
+  --color-focus: 0px 0px 0px 3px rgba(120, 120, 120, 0.6);
 
   --color-press: rgb(199, 199, 199);
   --color-hover: rgb(227, 227, 227);
@@ -18,30 +18,35 @@
   --bp-laptop: 1240px;
   --bp-desktop: 1440px;
   @media (min-width: 0px) {
+    /* mobile */
     --column: 4;
     --margin: 16px;
     --gutter: 16px;
   }
   
   @media (min-width: 600px) {
+    /* tablet */
     --column: 12;
     --margin: 24px;
     --gutter: 24px;
   }
   
   @media (min-width: 840px) {
+    /* laptop */
     --column: 12;
     --margin: 32px;
     --gutter: 32px;
   }
   
   @media (min-width: 1240px) {
+    /* desktop */
     --column: 12;
     --margin: 56px;
     --gutter: 56px;
   }
   
   @media (min-width: 1440px) {
+    /* large screen */
     --column: 12;
     --margin: 60px;
     --gutter: 60px;
@@ -53,8 +58,9 @@ body{
 
 }
 
-button{
+button, .button{
   cursor: pointer;
+  background-color: white;
   &:hover {
     background-color: var(--color-hover);
   }
@@ -65,6 +71,18 @@ button{
 
   &:focus {
     box-shadow: var(--color-focus);
+  }
+  &.router-link-active {
+    /* active state of link */
+    background-color: var(--color-active);
+
+    &:hover {
+      background-color: var(--color-active-hover);
+    }
+
+    &:active {
+      background-color: var(--color-active-press);
+    }
   }
 }
 

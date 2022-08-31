@@ -31,7 +31,6 @@ header {
   align-items: center;
   font-family: 'Roboto Flex', sans-serif;
   height: var(--header-height);
-  gap: var(--gutter);
   justify-content: space-between;
 
   & .logo {
@@ -62,7 +61,6 @@ header {
 
   @media (min-width: 600px) {
     --header-height: 56px;
-    
   }
 
   @media (min-width: 840px) {
@@ -86,6 +84,9 @@ header {
 
   @media (min-width: 1440px) {
     padding: 0;
+    & nav {
+      gap: calc(var(--gutter) / 2);
+    }
   }
 }
 
@@ -98,29 +99,5 @@ header {
   padding: 16px;
   border-radius: 4px;
   cursor: pointer;
-  &:hover {
-    background-color: var(--color-hover);
-  }
-
-  &:active {
-    background-color: var(--color-press);
-  }
-
-  &:focus {
-    box-shadow: var(--color-focus);
-  }
-
-  &.router-link-active {
-    /* active state of link */
-    background-color: var(--color-active);
-
-    &:hover {
-      background-color: var(--color-active-hover);
-    }
-
-    &:active {
-      background-color: var(--color-active-press);
-    }
-  }
 }
 </style>
