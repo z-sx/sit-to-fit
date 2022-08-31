@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-import PowerbiViz from './PowerbiViz.vue'
-  const isOpen = ref(false)
+import { ref } from 'vue'
+import SedentaryViz from './SedentaryViz.vue'
+const isOpen = ref(false)
 </script>
     
 <template>
@@ -15,7 +15,7 @@ import PowerbiViz from './PowerbiViz.vue'
       <span class="description">are engaged in desk job</span>
     </div>
     <div>
-      <span class="small number">63%</span>
+      <span class="small number">47%</span>
       <button class="modal-button" @click="isOpen = true">
         <img src="@/assets/images/IconGraph.svg" alt="Graph Icon">
       </button>
@@ -31,7 +31,8 @@ import PowerbiViz from './PowerbiViz.vue'
       <button class="close" @click="isOpen = false">
         <img src="@/assets/images/IconClose.svg" alt="Close Icon">
       </button>
-      <PowerbiViz></PowerbiViz>
+      <h3>In 2020, 47.3% of adults residing in Melbourne engaged in the recommended amount of physical activity</h3>
+      <SedentaryViz></SedentaryViz>
     </dialog>
   </Teleport>
 </template>
@@ -40,7 +41,8 @@ import PowerbiViz from './PowerbiViz.vue'
 .red {
   color: #F94D4D;
 }
-.modal{
+
+dialog.modal[open] {
   position: fixed;
   margin: 0 auto;
   top: 50%;
@@ -50,7 +52,13 @@ import PowerbiViz from './PowerbiViz.vue'
   padding: calc(var(--gutter));
   border-radius: 10px;
   width: 80vw;
-  & .close{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & h3{
+    font-weight: bold;
+  }
+  & .close {
     position: absolute;
     line-height: 0;
     top: calc((var(--gutter) - 32px) / 2 + 2px);
@@ -58,7 +66,8 @@ import PowerbiViz from './PowerbiViz.vue'
     border-radius: 100%;
     width: 32px;
     height: 32px;
-    & >img{
+
+    &>img {
       width: 80%;
     }
   }
@@ -109,9 +118,11 @@ import PowerbiViz from './PowerbiViz.vue'
       width: 32px;
       height: 32px;
       cursor: pointer;
-      & img{
+
+      & img {
         height: 100%;
       }
+
       &:hover {
         background-color: var(--color-hover);
       }
