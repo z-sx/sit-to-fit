@@ -30,7 +30,10 @@ import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
             <h3 class="blue-heading">We will require some of your statistics to determine your sedentary index in comparison to Melbourne CBD index</h3>
             <SedentaryRiskViz class="viz"></SedentaryRiskViz>
         </JourneySection>
-
+        <section class="nav">
+            <RouterLink class="left button" to="/">Exit Journey</RouterLink>
+            <RouterLink class="right button" to="/physical-ergonomics">Continue</RouterLink>
+        </section>
     </JourneyLayout>
 </template>
     
@@ -53,5 +56,27 @@ import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
 .viz{
     box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
     border-radius: 10px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    padding-bottom: 50px;
+    & a{
+        padding: 6px 32px;
+        font-size: 25px;
+        border-radius: 60px;
+        font-family: 'Average', serif;
+        text-decoration: none;
+        &.left{
+          color: white;
+          background-color: rgba(134, 127, 127, 0.5);
+        }
+        &.right{
+          color: white;
+          background-color: #2C99E3;
+        }
+    }
 }
 </style>
