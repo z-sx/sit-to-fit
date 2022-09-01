@@ -187,7 +187,7 @@
 
 @media (min-width: 1240px) {
   .home-container {
-    height: 900px;
+    height: 1100px;
   }
   .button{
     font-size: 32px;
@@ -195,7 +195,7 @@
     padding: 12px 20px;
   }
   .sed, .tool{
-    height: 432px;
+    height: 460px;
   }
   .sed {
     & .image-1 {
