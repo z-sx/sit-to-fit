@@ -93,7 +93,7 @@ import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
     margin: auto 0;
     position: relative;
     width: 100vw;
-    left: -40px;
+    left: -60px;
     overflow-x: scroll;
     overflow-y: hidden;
   }
@@ -111,6 +111,7 @@ import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
   /* desktop */
   .journey-stat-wrapper{
     width:min-content;
+    overflow-x: unset;
     &:deep(.journey-stat){
       transform: scale(0.8) translate(-60px);
     }
