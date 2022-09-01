@@ -44,7 +44,54 @@
   }
 }
 @media (min-width: 0px) {
+  
+  .home-container {
+    height: 140vw;
+  }
+  .sed, .tool{
+    height: 70vw;
+    overflow-x: hidden;
+  }
+  .button{
+    font-size: 4vw;
+    height: 9vw;
+    padding: 1vw 2.5vw;
+  }
+  .sed {
+    & .text-1 {
+      right: -2vw;
+      width: 100vw;
+    }
 
+    & .image-1 {
+      width: 28vw;
+      left: 5vw;
+      bottom: 10px;
+    }
+
+    & .button {
+      bottom: 8vw;
+      right: 8vw;
+    }
+  }
+
+  .tool {
+    & .text-2 {
+      left: -2vw;
+      width: 100vw;
+    }
+
+    & .image-2 {
+      width: 40vw;
+      right: -10px;
+      bottom: 30px;
+    }
+
+    & .button {
+      bottom: 8vw;
+      left: 8vw;
+    }
+  }
 }
 
 @media (min-width: 600px) {
