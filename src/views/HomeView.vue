@@ -147,10 +147,11 @@
   .home-container {
     height: 1100px;
   }
-  .sed, .tool{
+  /* .sed, .tool{
     height: 480px;
-  }
+  } */
   .sed {
+    height: 480px;
     & .text-1 {
       width: 720px;
     }
@@ -158,16 +159,17 @@
     & .image-1 {
       width: 28vw;
       left: 5vw;
-      bottom: -10px;
+      bottom: 0px;
     }
 
     & .button {
-      bottom: 40px;
+      top: 380px;
       right: 216px;
     }
   }
 
   .tool {
+    height: 560px;
     & .text-2 {
       width: 720px;
     }
@@ -175,12 +177,12 @@
     & .image-2 {
       width: 50vw;
       right: -10px;
-      bottom: -140px;
+      bottom: 0px;
     }
 
     & .button {
       left: 216px;
-      bottom: 40px;
+      top: 380px;
     }
   }
 }
