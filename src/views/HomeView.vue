@@ -205,7 +205,7 @@
     }
 
     & .button {
-      bottom: -20px;
+      bottom: 10px;
       right: 216px;
     }
   }
@@ -219,7 +219,7 @@
 
     & .button {
       left: 216px;
-      bottom: -20px;
+      bottom: 10px;
     }
   }
 }
