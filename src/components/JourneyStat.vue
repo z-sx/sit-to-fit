@@ -22,8 +22,8 @@ const isOpen = ref(false)
       <span class="description">are below the recommended physical activity</span>
     </div>
     <div>
-      <span class="small number">70%</span>
-      <span class="description">are below the recommended physical activity</span>
+      <span class="small number">49%</span>
+      <span class="description">mostly spend their work hours sitting</span>
     </div>
   </div>
   <Teleport to="body">
