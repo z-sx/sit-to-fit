@@ -89,7 +89,6 @@ dialog[open] {
 }
 
 .journey-stat {
-  transform: scale(0.8) translate(-10%);
   display: flex;
   gap: 16px;
   width: calc(220px * 4 + 3 * 16px);

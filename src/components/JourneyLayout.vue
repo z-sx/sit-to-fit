@@ -86,23 +86,76 @@ const nextPage = computed(() => {
 </template>
    
 <style lang="postcss" scoped>
+@media (min-width: 0px) {
+  /* mobile */
+  .journey-layout{
+    flex-direction: column-reverse;
+    & main{
+      width: 100%;
+    }
+  }
+  .skip{
+    display:none
+  }
+  aside{
+    width:100%;
+    height: 48px;
+    overflow-y: hidden;
+    & .progress{
+      margin:0;
+    }
+  }
+  .right-part{
+    width:100%;
+  }
+}
+
+@media (min-width: 600px) {
+  /* tablet */
+}
+
+@media (min-width: 840px) {
+  /* laptop */
+
+}
+
+@media (min-width: 1240px) {
+  /* desktop */
+  aside{
+    width: 40%;
+    height: auto;
+    overflow: visible;
+    & .progress{
+      margin-right: 60px;
+      margin-left: auto;
+    }
+  }
+  .journey-layout{
+    flex-direction: row;
+    & main{
+      width: 60%;
+    }
+  }
+  .skip{
+    display:flex;
+  }
+  .right-part{
+    width: 320px;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* large screen */
+}
 .journey-layout {
   display: flex;
 
-  & main {
-    width: 60%;
-  }
-
   & aside {
-    width: 40%;
-    margin-right: 60px;
-
     display: flex;
     flex-direction: column;
     gap: 40px;
 
     & .progress {
-      margin-left: auto;
       display: flex;
 
       & .left-part>span,
@@ -131,7 +184,7 @@ const nextPage = computed(() => {
       }
 
       & .right-part {
-        width: 320px;
+
         background: #F4FAFF;
         border-radius: 0 16px 16px;
 
@@ -194,7 +247,6 @@ const nextPage = computed(() => {
       padding: 20px;
       box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
       border-radius: 10px;
-      display: flex;
       flex-direction: column;
 
       & a {

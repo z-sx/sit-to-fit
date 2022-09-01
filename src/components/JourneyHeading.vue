@@ -2,17 +2,40 @@
 </script>
     
 <template>
-<h1>Jouney to learn about Sedentary Lifestyle</h1>
+  <h1>Jouney to learn about Sedentary Lifestyle</h1>
 </template>
     
 <style lang="postcss" scoped>
-h1{
-    display: inline-block;
-    font-family: 'kaisei decol';
-    width: 100%;
+h1 {
+  display: inline-block;
+  font-family: 'kaisei decol';
+  width: 100%;
+  font-size: 32px;
+  padding: 20px 40px 20px 60px;
+  background-color: rgba(134, 127, 127, 0.35);
+  border-radius: 0 48px 48px 0;
+
+  @media (min-width: 0px) {
+    /* mobile */
+  }
+
+  @media (min-width: 600px) {
+    /* tablet */
+  }
+
+  @media (min-width: 840px) {
+    /* laptop */
+    
+  }
+
+  @media (min-width: 1240px) {
+    /* desktop */
+    font-size: 28px;
+  }
+
+  @media (min-width: 1440px) {
+    /* large screen */
     font-size: 32px;
-    padding: 20px 40px 20px 60px;
-    background-color: rgba(134, 127, 127, 0.35);
-    border-radius: 0 48px 48px 0;
+  }
 }
 </style>
