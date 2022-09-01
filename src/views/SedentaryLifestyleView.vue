@@ -110,6 +110,7 @@ import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
 @media (min-width: 1240px) {
   /* desktop */
   .journey-stat-wrapper{
+    width:min-content;
     &:deep(.journey-stat){
       transform: scale(0.8) translate(-60px);
     }
