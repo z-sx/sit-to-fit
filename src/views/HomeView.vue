@@ -65,8 +65,8 @@
 
     & .image-1 {
       width: 28vw;
-      left: 5vw;
-      bottom: 10px;
+      left: 3vw;
+      bottom: -10px;
     }
 
     & .button {
