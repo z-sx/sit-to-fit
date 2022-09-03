@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, getCurrentInstance } from 'vue';
 // resize the viz when its width is changed
 const el = ref<HTMLIFrameElement | null>(null);
 const resizeObserver = new ResizeObserver(() => {
@@ -19,12 +19,11 @@ onBeforeUnmount(() => {
 <template>
   <iframe ref="el"
     src="https://sit-to-fit.s3.ap-southeast-2.amazonaws.com/sedentary-adult-activity/index.html"
-    frameborder="0"></iframe>
+    frameborder="0" lazy></iframe>
 </template>
     
 <style>
 iframe {
   width: 100%;
-  height: 500px;
 }
 </style>

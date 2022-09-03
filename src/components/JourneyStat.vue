@@ -27,7 +27,7 @@ const isOpen = ref(false)
     </div>
   </div>
   <Teleport to="body">
-    <dialog :open="isOpen">
+    <div class="modal-overlay" v-if="isOpen">
       <div class="modal">
         <button class="close" @click="isOpen = false">
           <img src="@/assets/images/IconClose.svg" alt="Close Icon">
@@ -35,7 +35,7 @@ const isOpen = ref(false)
         <h3>In 2020, 47.3% of adults residing in Melbourne engaged in the recommended amount of physical activity</h3>
         <SedentaryAdultViz></SedentaryAdultViz>
       </div>
-    </dialog>
+    </div>
   </Teleport>
 </template>
     
@@ -44,7 +44,7 @@ const isOpen = ref(false)
   color: #F94D4D;
 }
 
-dialog[open] {
+.modal-overlay{
   position: fixed;
   width: 100vw;
   height: 100vh;

@@ -4,7 +4,7 @@ import JourneySectionHeading from "@/components/JourneySectionHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import JourneyLayout from "@/components/JourneyLayout.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
-import SedentaryRiskViz from "../components/SedentaryRiskViz.vue"
+import SedentaryRiskViz from "@/components/SedentaryRiskViz.vue"
 import SedentaryRiskPowerbiViz from "../components/SedentaryRiskPowerbiViz.vue"
 </script>
     
@@ -33,7 +33,6 @@ import SedentaryRiskPowerbiViz from "../components/SedentaryRiskPowerbiViz.vue"
       <h3 class="blue-heading">We will require some of your statistics to determine your sedentary index in comparison
         to Melbourne CBD index</h3>
       <SedentaryRiskViz class="viz"></SedentaryRiskViz>
-      <!-- <SedentaryRiskPowerbiViz class="viz"></SedentaryRiskPowerbiViz> -->
     </JourneySection>
     <section class="nav">
       <RouterLink class="left button" to="/">Exit Journey</RouterLink>
