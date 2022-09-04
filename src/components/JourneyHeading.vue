@@ -10,7 +10,7 @@
 <style lang="postcss" scoped>
 h1 {
   display: inline-block;
-  font-family: 'open sans';
+  font-family: 'open sans', sans-serif;
   width: 100%;
   font-size: 20px;
   font-weight: 600;

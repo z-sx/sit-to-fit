@@ -98,13 +98,13 @@ const mcqResult2 = ref<MCQResult|null>(null)
     </fieldset>
   </JourneySection>
   <section class="nav">
-    <RouterLink class="left button" to="/">Exit Journey</RouterLink>
-    <RouterLink class="right button" to="/risk-meter">Continue</RouterLink>
+    <RouterLink class="left button" :to="{name: 'home'}">Exit Journey</RouterLink>
+    <RouterLink class="right button" :to="{name: 'risk-meter'}">Continue</RouterLink>
   </section>
 </template>
 <style lang="postcss" scoped>
   .heading {
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     margin-bottom: 20px;
     font-style: italic;
@@ -114,14 +114,14 @@ const mcqResult2 = ref<MCQResult|null>(null)
   }
   
   .paragraph {
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 20px;
     & strong {
       font-weight: bold;
     }
   }
   .question{
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     margin-bottom: 20px;
     font-weight: 400;
@@ -158,14 +158,12 @@ const mcqResult2 = ref<MCQResult|null>(null)
   .nav {
     display: flex;
     justify-content: space-between;
-    margin: 0 var(--margin);
-    padding-bottom: 50px;
-  
+    margin: var(--margin);
     & a {
       padding: 6px 32px;
       font-size: 25px;
       border-radius: 60px;
-      font-family: 'Average', serif;
+      font-family: 'open sans', sans-serif;
       text-decoration: none;
   
       &.left {
@@ -183,12 +181,9 @@ const mcqResult2 = ref<MCQResult|null>(null)
   @media (min-width: 0px) {
     /* mobile */
     .journey-stat-wrapper{
-      margin: auto 0;
       position: relative;
-      width: 100vw;
-      left: -60px;
+      left: calc(-1 * var(--margin));
       overflow-x: scroll;
-      overflow-y: hidden;
     }
   }
   

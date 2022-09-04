@@ -9,7 +9,7 @@
     
 <style lang="postcss" scoped>
 div{
-    --radius: 60px;
+    --radius: calc(var(--gutter) * 3);
     padding: 0.5em calc(var(--radius) / 2) 0.5em var(--margin);
     background: rgba(220, 240, 255, 0.4);
     border-radius: 0px var(--radius) var(--radius) 0px;
