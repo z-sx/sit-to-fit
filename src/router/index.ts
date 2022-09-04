@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 const JourneyView = () => import('../views/JourneyView.vue')
 const SedentaryInfoView = () => import('../views/journey/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
-const MeasureInfoView = () => import('../views/journey/SedentaryInfoView.vue')
+const MeasureInfoView = () => import('../views/journey/MeasureInfoView.vue')
 const PhysicalErgonomicsView = () => import('../views/PhysicalErgonomicsView.vue')
 const PhysicalActivitiesView = () => import('../views/PhysicalActivitiesView.vue')
 const DietaryPlanView = () => import('../views/DietaryPlanView.vue')
