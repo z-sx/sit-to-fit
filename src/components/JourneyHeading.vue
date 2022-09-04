@@ -8,34 +8,13 @@
 <style lang="postcss" scoped>
 h1 {
   display: inline-block;
-  font-family: 'kaisei decol';
+  font-family: 'open sans';
   width: 100%;
-  font-size: 32px;
-  padding: 20px 40px 20px 60px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 1em var(--margin);
   background-color: rgba(134, 127, 127, 0.35);
   border-radius: 0 48px 48px 0;
-
-  @media (min-width: 0px) {
-    /* mobile */
-  }
-
-  @media (min-width: 600px) {
-    /* tablet */
-  }
-
-  @media (min-width: 840px) {
-    /* laptop */
-    
-  }
-
-  @media (min-width: 1240px) {
-    /* desktop */
-    font-size: 28px;
-  }
-
-  @media (min-width: 1440px) {
-    /* large screen */
-    font-size: 32px;
-  }
+  letter-spacing: 0.04em;
 }
 </style>

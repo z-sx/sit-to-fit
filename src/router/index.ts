@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-const SedentaryLifestyleView = () => import('../views/SedentaryLifestyleView.vue')
+const JourneyView = () => import('../views/JourneyView.vue')
+const SedentaryInfoView = () => import('../views/journey/SedentaryInfoView.vue')
+const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
+const MeasureInfoView = () => import('../views/journey/SedentaryInfoView.vue')
 const PhysicalErgonomicsView = () => import('../views/PhysicalErgonomicsView.vue')
 const PhysicalActivitiesView = () => import('../views/PhysicalActivitiesView.vue')
 const DietaryPlanView = () => import('../views/DietaryPlanView.vue')
@@ -16,9 +19,27 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/sedentary-lifestyle',
-      name: 'sedentary-lifestyle',
-      component: SedentaryLifestyleView,
+      path: '/journey',
+      name: 'journey',
+      component: JourneyView,
+      children: [
+        {
+          path: 'sedentary-info',
+          name: 'sedentary-info',
+          component: SedentaryInfoView,
+          alias: ['']
+        },
+        {
+          path: 'risk-meter',
+          name: 'risk-meter',
+          component: RiskMeterView,
+        },
+        {
+          path: 'measure-info',
+          name: 'measure-info',
+          component: MeasureInfoView,
+        }
+      ],
     },
     {
       path: '/physical-ergonomics',

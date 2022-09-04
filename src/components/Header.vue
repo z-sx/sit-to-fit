@@ -11,7 +11,7 @@ const isOpen = ref<boolean>(false)
     </RouterLink>
 
     <nav>
-      <RouterLink class="button" to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
+      <RouterLink class="button" to="/journey">Journey</RouterLink>
       <RouterLink class="button" to="/physical-ergonomics" disabled>Physical Ergonomics</RouterLink>
       <RouterLink class="button" to="/physical-activities" disabled>Physical Activities</RouterLink>
       <RouterLink class="button" to="/dietary-plan" disabled>Dietary Plan</RouterLink>
@@ -33,7 +33,7 @@ const isOpen = ref<boolean>(false)
           <RouterLink class="button" to="/become-new-user">Become new user</RouterLink>
         </section>
         <nav>
-          <RouterLink class="button" to="/sedentary-lifestyle">Sedentary Lifestyle</RouterLink>
+          <RouterLink class="button" to="/journey">Journey</RouterLink>
           <RouterLink class="button" to="/physical-ergonomics" disabled>Physical Ergonomics</RouterLink>
           <RouterLink class="button" to="/physical-activities" disabled>Physical Activities</RouterLink>
           <RouterLink class="button" to="/dietary-plan" disabled>Dietary Plan</RouterLink>

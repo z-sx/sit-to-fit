@@ -6,7 +6,7 @@
     <section class="sed">
       <img class="text-1" alt="Sedentary Lifestyle" src="@/assets/images/HomeText1.svg" />
       <img class="image-1" alt="Sitting at work" src="@/assets/images/HomeImage1.svg" />
-      <RouterLink class="button" to="/sedentary-lifestyle">
+      <RouterLink class="button" to="/journey">
         Learn More
         <img src="@/assets/images/IconButtonRight.png" alt="icon">
       </RouterLink>
