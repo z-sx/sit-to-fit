@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import JouneyHeading from "@/components/JourneyHeading.vue";
+import JourneyHeading from "@/components/JourneyHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
-import JourneyLayout from "@/components/JourneyLayout.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
 import { ref, computed } from "vue";
 
@@ -49,7 +48,9 @@ const mcqResult2 = ref<MCQResult|null>(null)
 
 </script>
 <template>
-  <JouneyHeading />
+  <JourneyHeading>
+    Journey to learn about Sedentary lifestyle
+  </JourneyHeading>
   <JourneySection>
     <h3 class="heading">Firstly, let us learn about Sedentary lifestyle</h3>
     <p class="paragraph">
@@ -76,9 +77,10 @@ const mcqResult2 = ref<MCQResult|null>(null)
         <label :for="`mcq1_${index}`">{{choice}}</label>
       </div>
       <button class="button result" @click="mcqResult1 = checkMcq1()">See result</button>
-      <p v-if="mcqResult1" :class="{success: mcqResult1.ok, failure: !mcqResult1.ok}">
+      <p class="result" v-if="mcqResult1" :class="{success: mcqResult1.ok, failure: !mcqResult1.ok}">
         {{mcqResult1.message}}
       </p>
+      <p class="result" v-else></p>
     </fieldset>
     <p class="question">
       Which disease is <strong>not</strong> casued by sedentary lifestyle?
@@ -89,9 +91,10 @@ const mcqResult2 = ref<MCQResult|null>(null)
         <label :for="`mcq2_${index}`">{{choice}}</label>
       </div>
       <button class="button result" @click="mcqResult2 = checkMcq2()">See result</button>
-      <p v-if="mcqResult2" :class="{success: mcqResult2.ok, failure: !mcqResult2.ok}">
+      <p class="result" v-if="mcqResult2" :class="{success: mcqResult2.ok, failure: !mcqResult2.ok}">
         {{mcqResult2.message}}
       </p>
+      <p class="result" v-else></p>
     </fieldset>
   </JourneySection>
   <section class="nav">
@@ -142,16 +145,20 @@ const mcqResult2 = ref<MCQResult|null>(null)
     & .failure{
       color: red;
     }
+    & button.result{
+      padding: 10px;
+    }
+    & p.result{
+      display: block;
+      height: 1em;
+    }
   }
-  button.result{
-    padding: 10px;
 
-  }
   
   .nav {
     display: flex;
     justify-content: space-between;
-    margin-left: 60px;
+    margin: 0 var(--margin);
     padding-bottom: 50px;
   
     & a {

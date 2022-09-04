@@ -2,7 +2,9 @@
 </script>
     
 <template>
-  <h1>Jouney to learn about Sedentary Lifestyle</h1>
+  <h1>
+    <slot></slot>
+  </h1>
 </template>
     
 <style lang="postcss" scoped>
@@ -13,6 +15,7 @@ h1 {
   font-size: 20px;
   font-weight: 600;
   padding: 1em var(--margin);
+  margin-bottom: var(--gutter);
   background-color: rgba(134, 127, 127, 0.35);
   border-radius: 0 48px 48px 0;
   letter-spacing: 0.04em;

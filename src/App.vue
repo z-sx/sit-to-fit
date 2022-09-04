@@ -10,13 +10,11 @@ import Header from './components/Header.vue'
     <RouterView>
     </RouterView>
   </div>
-
-
   <footer></footer>
 </template>
 
 <style lang="postcss" scoped>
 .container{
-  padding-top: 40px;
+  padding-top: var(--gutter);
 }
 </style>
