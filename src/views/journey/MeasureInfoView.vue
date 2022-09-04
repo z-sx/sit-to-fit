@@ -1,7 +1,39 @@
 <script setup lang="ts">
 import JourneyHeading from "@/components/JourneyHeading.vue";
-import JourneySection from "@/components/JourneySection.vue"
-import JourneyMeasure from "../../components/JourneyMeasure.vue"
+import JourneyMeasure from "@/components/JourneyMeasure.vue";
+import AlertReminder from '@/assets/images/AlertReminder.svg';
+import DietaryPlans from '@/assets/images/DietaryPlans.svg'
+import PhysicalActivities from '@/assets/images/PhysicalActivities.svg'
+import PhysicalErgonomics from '@/assets/images/PhysicalErgonomics.svg'
+
+interface TryOut{
+  to: string
+  text: string
+  image: string
+}
+
+const tryOuts: TryOut[] = [
+  {
+    to: "alert-reminder",
+    text: "Get periodic reminders to fix your posture!",
+    image: AlertReminder
+  },
+  {
+    to: 'dietary-plan',
+    text: "Check out various dietary plans for every occasion!",
+    image: DietaryPlans
+  },
+  {
+    to: 'physical-activities',
+    text: "Decide what to play from a range of activities nearby!",
+    image: PhysicalActivities
+  },
+  {
+    to: 'physical-ergonomics',
+    text: "Get the best-suited ergonomic chair for yourself!",
+    image: PhysicalErgonomics
+  }
+]
 </script>
         
 <template>
@@ -9,26 +41,74 @@ import JourneyMeasure from "../../components/JourneyMeasure.vue"
     Preventive measures
   </JourneyHeading>
   <p class="description">
-    Now you have a risk analysis score and know what it means. The next step is to learn about preventive measures that may help you improve your health. Here are  5 preventive measures listed bellow.
+    Now you have a risk analysis score and know what it means. The next step is to learn about preventive measures that
+    may help you improve your health. Here are 5 preventive measures listed bellow.
   </p>
   <JourneyMeasure>
-
   </JourneyMeasure>
+  <section class="try-out">
+    <p>
+      Try out our other features
+    </p>
+    <div v-for="tryOut in tryOuts">
+      <RouterLink :to="{name: tryOut.to}" disabled>
+        <img :src="tryOut.image" alt="TryOut">
+      </RouterLink>
+      <span>{{tryOut.text}}</span>
+    </div>
+  </section>
   <section class="nav">
-    <RouterLink class="left button" to="/">Exit Journey</RouterLink>
-    <RouterLink class="right button" :to="{name:'measure-info'}">Continue</RouterLink>
+    <RouterLink class="left button" to="/journey">Retake Journey</RouterLink>
+    <RouterLink class="right button" :to="{name:'alert-reminder'}" disabled>Jump to Alert Reminder</RouterLink>
   </section>
 </template>
         
 <style lang="postcss" scoped>
-  .description{
+.description {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+  margin: 0 var(--margin);
   margin-bottom: 20px;
   letter-spacing: 0.04em;
   font-weight: 400;
+}
+.try-out{
+  margin: 0 var(--margin);
+  & p, & div{
+    margin-bottom: calc(2 * var(--gutter));
   }
-  .nav {
+  & p{
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  & div{
+    display: flex;
+    gap: var(--gutter);
+    & img{
+      width: 250px;
+    }
+    & span{
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      width: 200px;
+    }
+  }
+  & div:nth-of-type(2){
+    margin-left: 10%;
+  }
+  & div:nth-of-type(3){
+    margin-left: 20%;
+  }
+  & div:nth-of-type(4){
+    margin-left: 30%;
+  }
+}
+
+.nav {
   display: flex;
   justify-content: space-between;
   margin: var(--margin);

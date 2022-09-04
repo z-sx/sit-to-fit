@@ -27,7 +27,7 @@ const router = createRouter({
           path: 'sedentary-info',
           name: 'sedentary-info',
           component: SedentaryInfoView,
-          alias: ['']
+          alias: [''],
         },
         {
           path: 'risk-meter',

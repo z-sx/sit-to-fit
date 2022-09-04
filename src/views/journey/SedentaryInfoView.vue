@@ -183,6 +183,7 @@ const mcqResult2 = ref<MCQResult|null>(null)
     .journey-stat-wrapper{
       position: relative;
       left: calc(-1 * var(--margin));
+      padding-left: var(--margin);
       overflow-x: scroll;
     }
   }
