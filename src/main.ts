@@ -11,6 +11,7 @@ import '@fontsource/kaisei-decol'
 import '@fontsource/cagliostro'
 import '@fontsource/inika'
 import '@fontsource/inter'
+import '@fontsource/open-sans'
 
 
 const app = createApp(App)
