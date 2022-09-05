@@ -55,7 +55,10 @@ const modal = ref("")
       <h3>{{measure.title}}</h3>
       <p>{{measure.description}}</p>
       <div>
-        <button @click="isOpen = true; modal = measure.modal">Learn More</button>
+        <button @click="isOpen = true; modal = measure.modal">
+          Learn More
+          <img src="@/assets/images/IconFocus.svg" alt="Focus Icon">
+        </button>
       </div>
     </div>
   </section>
@@ -107,11 +110,16 @@ section {
       display: flex;
       justify-content: center;
       & button {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 8px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        border-radius: 2em;
+        border-radius: 3em;
         height: 4em;
         padding: 8px 24px;
+        & img{
+          width: 40px;
+        }
       }
     }
 

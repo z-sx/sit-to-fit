@@ -13,7 +13,7 @@ import JourneyLayoutV2 from "../../components/JourneyLayoutV2.vue";
     <JourneySection>
       <h3 class="heading">We will require some of your statistics to determine your sedentary index in comparison to the
         Melbourne CBD index.</h3>
-      <SedentaryRiskViz></SedentaryRiskViz>
+      <SedentaryRiskViz class="viz"></SedentaryRiskViz>
     </JourneySection>
     <section class="nav">
       <RouterLink class="left button" to="/">Exit Journey</RouterLink>
@@ -30,6 +30,9 @@ import JourneyLayoutV2 from "../../components/JourneyLayoutV2.vue";
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #356EAD;
+}
+.viz{
+  border-radius: 2em;
 }
 
 .nav {

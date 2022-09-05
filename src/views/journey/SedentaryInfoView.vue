@@ -3,8 +3,8 @@ import JourneyHeading from "@/components/JourneyHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
 import { ref, computed } from "vue";
-import JourneyProgress from "../../components/JourneyProgress.vue";
-import JourneyLayoutV2 from "../../components/JourneyLayoutV2.vue";
+import JourneyProgress from "@/components/JourneyProgress.vue";
+import JourneyLayoutV2 from "@/components/JourneyLayoutV2.vue";
 
 interface MCQResult{
   ok: boolean,
@@ -86,7 +86,7 @@ const mcqResult2 = ref<MCQResult|null>(null)
         <p class="result" v-else></p>
       </fieldset>
       <p class="question">
-        Which disease is <strong>not</strong> casued by sedentary lifestyle?
+        Which disease is <strong>not</strong> caused by sedentary lifestyle?
       </p>
       <fieldset class="card">
         <div v-for="choice, index in mcqChoices2" :key="index">
@@ -107,6 +107,9 @@ const mcqResult2 = ref<MCQResult|null>(null)
   </JourneyLayoutV2>
 </template>
 <style lang="postcss" scoped>
+strong{
+  font-weight: bold;
+}
 .root {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
