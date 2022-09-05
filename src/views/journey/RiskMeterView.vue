@@ -6,7 +6,7 @@ import JourneyLayoutV2 from "../../components/JourneyLayoutV2.vue";
 
 </script>
 <template>
-  <JourneyLayoutV2>
+  <JourneyLayoutV2 :has-skip="true">
     <JourneyHeading>
       Risk Meter Analysis
     </JourneyHeading>

@@ -50,7 +50,7 @@ const mcqResult2 = ref<MCQResult|null>(null)
 
 </script>
 <template>
-  <JourneyLayoutV2>
+  <JourneyLayoutV2 :has-skip="true">
     <JourneyHeading>
       Journey to learn about Sedentary lifestyle
     </JourneyHeading>
@@ -85,6 +85,7 @@ const mcqResult2 = ref<MCQResult|null>(null)
         </p>
         <p class="result" v-else></p>
       </fieldset>
+      <br>
       <p class="question">
         Which disease is <strong>not</strong> caused by sedentary lifestyle?
       </p>
