@@ -26,12 +26,12 @@ const router = createRouter({
       path: '/journey',
       name: 'journey',
       component: JourneyView,
+      redirect: () => ({ name: 'sedentary-info' }),
       children: [
         {
           path: 'sedentary-info',
           name: 'sedentary-info',
           component: SedentaryInfoView,
-          alias: [''],
         },
         {
           path: 'risk-meter',

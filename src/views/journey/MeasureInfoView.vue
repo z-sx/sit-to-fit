@@ -61,7 +61,7 @@ const tryOuts: TryOut[] = [
     </div>
   </section>
   <section class="nav">
-    <RouterLink class="left button" to="/journey">Retake Journey</RouterLink>
+    <RouterLink class="left button" :to="{name:'journey'}">Retake Journey</RouterLink>
     <RouterLink class="right button" :to="{name:'alert-reminder'}" disabled>Jump to Alert Reminder</RouterLink>
   </section>
 </template>
