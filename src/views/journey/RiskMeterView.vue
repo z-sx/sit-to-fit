@@ -2,21 +2,24 @@
 import JourneyHeading from "@/components/JourneyHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import SedentaryRiskViz from "@/components/SedentaryRiskViz.vue";
+import JourneyLayoutV2 from "../../components/JourneyLayoutV2.vue";
 
 </script>
 <template>
-  <JourneyHeading>
-    Risk Meter Analysis
-  </JourneyHeading>
-  <JourneySection>
-    <h3 class="heading">We will require some of your statistics to determine your sedentary index in comparison to the
-      Melbourne CBD index.</h3>
-    <SedentaryRiskViz></SedentaryRiskViz>
-  </JourneySection>
-  <section class="nav">
-    <RouterLink class="left button" to="/">Exit Journey</RouterLink>
-    <RouterLink class="right button" :to="{name:'measure-info'}">Continue</RouterLink>
-  </section>
+  <JourneyLayoutV2>
+    <JourneyHeading>
+      Risk Meter Analysis
+    </JourneyHeading>
+    <JourneySection>
+      <h3 class="heading">We will require some of your statistics to determine your sedentary index in comparison to the
+        Melbourne CBD index.</h3>
+      <SedentaryRiskViz></SedentaryRiskViz>
+    </JourneySection>
+    <section class="nav">
+      <RouterLink class="left button" to="/">Exit Journey</RouterLink>
+      <RouterLink class="right button" :to="{name:'measure-info'}">Continue</RouterLink>
+    </section>
+  </JourneyLayoutV2>
 </template>
 
 <style lang="postcss" scoped>

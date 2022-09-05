@@ -5,6 +5,7 @@ import AlertReminder from '@/assets/images/AlertReminder.svg';
 import DietaryPlans from '@/assets/images/DietaryPlans.svg'
 import PhysicalActivities from '@/assets/images/PhysicalActivities.svg'
 import PhysicalErgonomics from '@/assets/images/PhysicalErgonomics.svg'
+import JourneyLayoutV2 from '../../components/JourneyLayoutV2.vue'
 
 interface TryOut{
   to: string
@@ -37,13 +38,15 @@ const tryOuts: TryOut[] = [
 </script>
         
 <template>
-  <JourneyHeading>
-    Preventive measures
-  </JourneyHeading>
-  <p class="description">
-    Now you have a risk analysis score and know what it means. The next step is to learn about preventive measures that
-    may help you improve your health. Here are 5 preventive measures listed bellow.
-  </p>
+  <JourneyLayoutV2 class="layout">
+    <JourneyHeading>
+      Preventive measures
+    </JourneyHeading>
+    <p class="description">
+      Now you have a risk analysis score and know what it means. The next step is to learn about preventive measures that
+      may help you improve your health. Here are 5 preventive measures listed bellow.
+    </p>
+  </JourneyLayoutV2>
   <JourneyMeasure>
   </JourneyMeasure>
   <section class="try-out">
@@ -64,6 +67,9 @@ const tryOuts: TryOut[] = [
 </template>
         
 <style lang="postcss" scoped>
+.layout{
+  margin-bottom: var(--gutter);
+}
 .description {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
