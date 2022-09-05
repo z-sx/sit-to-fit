@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<{
     </main>
     <aside>
       <JourneyProgress></JourneyProgress>
-      <div class="skip" v-if="props.hasSkip">
+      <div class="skip" v-if="props.hasSkip" disabled>
         Skip the Journey?
         <br>
         Jump directly on our tool!

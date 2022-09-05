@@ -49,7 +49,7 @@ const tryOuts: TryOut[] = [
   </JourneyLayoutV2>
   <JourneyMeasure>
   </JourneyMeasure>
-  <section class="try-out" v-show="false">
+  <section class="try-out" disabled>
     <p>
       Try out our other features
     </p>

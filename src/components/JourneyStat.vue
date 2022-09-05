@@ -14,11 +14,9 @@ const isOpen = ref(false)
       <span class="small number">22%</span>
       <span class="description">are engaged in desk job</span>
     </div>
-    <div>
+    <div class="clickable" @click="isOpen = true">
       <span class="small number">47%</span>
-      <button class="modal-button" @click="isOpen = true">
-        <img src="@/assets/images/IconGraph.svg" alt="Graph Icon">
-      </button>
+      <img src="@/assets/images/IconGraph.svg" alt="Graph Icon">
       <span class="description">are below the recommended physical activity</span>
     </div>
     <div>
@@ -105,7 +103,20 @@ const isOpen = ref(false)
     flex-direction: column;
     padding: 20px;
     position: relative;
-
+    &.clickable{
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover{
+        box-shadow: 0px 8px 12px 6px rgb(16 112 177 / 25%);
+        transform: scale(0.995);
+      }
+      &:active{
+        background-color: var(--color-press);
+      }
+      &:active{
+        box-shadow: var(--color-focus);
+      }
+    }
     & .number {
       font-size: 55px;
       font-family: Inter, sans-serif;
@@ -126,28 +137,11 @@ const isOpen = ref(false)
       font-family: Inika, serif;
     }
 
-    & button {
+    & img {
       position: absolute;
       right: 20px;
       width: 32px;
       height: 32px;
-      cursor: pointer;
-
-      & img {
-        height: 100%;
-      }
-
-      &:hover {
-        background-color: var(--color-hover);
-      }
-
-      &:active {
-        background-color: var(--color-press);
-      }
-
-      &:focus {
-        box-shadow: var(--color-focus);
-      }
     }
   }
 }

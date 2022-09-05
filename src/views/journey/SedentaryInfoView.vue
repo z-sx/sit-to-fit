@@ -2,8 +2,7 @@
 import JourneyHeading from "@/components/JourneyHeading.vue";
 import JourneySection from "@/components/JourneySection.vue"
 import JourneyStat from "@/components/JourneyStat.vue"
-import { ref, computed } from "vue";
-import JourneyProgress from "@/components/JourneyProgress.vue";
+import { ref } from "vue";
 import JourneyLayoutV2 from "@/components/JourneyLayoutV2.vue";
 
 interface MCQResult{
