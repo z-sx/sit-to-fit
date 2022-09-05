@@ -107,6 +107,7 @@ const mcqResult2 = ref<MCQResult|null>(null)
   </JourneyLayoutV2>
 </template>
 <style lang="postcss" scoped>
+
 strong{
   font-weight: bold;
 }
@@ -162,9 +163,23 @@ fieldset {
   border: none;
   padding: 25px;
   font-size: large;
+  & div{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding-left: 8px;
+    border-radius: 8px;
+    &:hover{
+      background-color: var(--color-hover);
+    }
+  }
 
   & input {
-    margin-right: 1em;
+    margin: 0;
+    transform: scale(1.6);
+  }
+  & label{
+    padding-left: 0.5em;
   }
 
   & .success {
