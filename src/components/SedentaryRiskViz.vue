@@ -4,7 +4,7 @@
     const el = ref<HTMLIFrameElement | null>(null);
     const resizeObserver = new ResizeObserver(() => {
       const width = el.value!.getBoundingClientRect().width;
-      const height = width * 1.1;
+      const height = width * 1.6;
       el.value!.style.height = `${height}px`;
     })
     onMounted(() => {
