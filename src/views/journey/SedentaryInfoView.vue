@@ -13,7 +13,7 @@ interface MCQResult{
 const mcqChoices1 = [
   'Sedentary lifestyles lowers your metabolism.',
   'You may have poor blood circulation.',
-  'Sedentarty lifestyles raises all casues of mortality.',
+  'Sedentary lifestyles raises all causes of mortality.',
   'Impact on the immune system, which may not work well.',
   'Your bone gets weaker due to sedentary lifestyle.',
 ]
