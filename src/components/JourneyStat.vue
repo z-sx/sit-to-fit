@@ -17,6 +17,7 @@ const isOpen = ref(false)
     <div class="clickable" @click="isOpen = true">
       <span class="small number">47%</span>
       <img src="@/assets/images/IconGraph.svg" alt="Graph Icon">
+      <div>view graph</div>
       <span class="description">are below the recommended physical activity</span>
     </div>
     <div>
@@ -142,6 +143,12 @@ const isOpen = ref(false)
       right: 20px;
       width: 32px;
       height: 32px;
+    }
+    & div{
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      font-size: x-small;
     }
   }
 }
