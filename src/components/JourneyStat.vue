@@ -106,10 +106,10 @@ const isOpen = ref(false)
     position: relative;
     &.clickable{
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s ease;
       &:hover{
-        box-shadow: 0px 8px 12px 6px rgb(16 112 177 / 25%);
-        transform: scale(0.995);
+        transform: scale(1.2);
+        z-index: 1;
       }
       &:active{
         background-color: var(--color-press);

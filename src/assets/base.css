@@ -29,7 +29,7 @@ button, a{
   transition: box-shadow 0.2s;
 }
 [disabled]{
-  opacity: 0;
+  filter: grayscale(100%);
   pointer-events: none;
   user-select: none;
 }
