@@ -11,6 +11,8 @@ import Header from './components/Header.vue'
     </RouterView>
   </div>
   <footer></footer>
+  <!-- <RouterView>
+    </RouterView> -->
 </template>
 
 <style lang="postcss" scoped>
