@@ -5,12 +5,6 @@ import App from './App.vue'
 import router from './router'
 
 import './assets/main.postcss'
-import '@fontsource/roboto-flex'
-import '@fontsource/average'
-import '@fontsource/kaisei-decol'
-import '@fontsource/cagliostro'
-import '@fontsource/inika'
-import '@fontsource/inter'
 import '@fontsource/open-sans'
 
 

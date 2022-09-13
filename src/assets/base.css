@@ -1,10 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* basic  */
 body {
     min-height: 100vh;
     margin: 0 auto;
     transition: color 0.5s, background-color 0.5s;
     line-height: 1.6;
-    font-family: 'Roboto Flex', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
       Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
