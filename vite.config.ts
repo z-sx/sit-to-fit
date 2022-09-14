@@ -10,16 +10,10 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      mode: 'development',
       base: "/", 
-      manifest: {
-        name: 'PWA Router',
-        short_name: 'PWA Router',
-        theme_color: '#ffffff',
-      },
       strategies: 'injectManifest',
       srcDir: 'src',
-      filename: 'sw.js',
+      filename: 'sw.ts',
       devOptions: {
         enabled: true
       },
