@@ -26,7 +26,7 @@ const links = ref([
 </script>
   
 <template>
-  <header class="flex flex-row justify-between align-center px-8 py-2 gap-12 h-20">
+  <header class="z-10 absolute max-w-screen-lg mx-auto top-0 left-0 right-0 flex flex-row justify-between align-center px-8 py-2 gap-12 h-20">
     <RouterLink class="no-underline" to="/">
       <img alt="Logo" src="@/assets/Logo.svg" />
     </RouterLink>
@@ -47,6 +47,6 @@ const links = ref([
 <style lang="postcss" scoped>
 
 .button{
-  @apply p-4 gap-2 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline;
+  @apply p-4 gap-2 leading-8 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline;
 }
 </style>

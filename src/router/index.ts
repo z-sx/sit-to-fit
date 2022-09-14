@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/Test.vue'
+import HomeView from '../views/HomeViewV2.vue'
 const JourneyView = () => import('../views/JourneyView.vue')
 const SedentaryInfoView = () => import('../views/journey/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
@@ -70,6 +70,11 @@ const router = createRouter({
       name: 'become-new-user',
       component: BecomeNewUserView,
     },
+    {
+      path: '/tool',
+      name: 'tool',
+      component: null,
+    }
   ]
 })
 

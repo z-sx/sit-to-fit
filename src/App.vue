@@ -1,22 +1,17 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import Header from './components/Header.vue'
+import HeaderV2 from './components/HeaderV2.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <!-- <Header></Header> -->
-  
-  <!-- <div class="container">
-    <RouterView>
-    </RouterView>
-  </div>
-  <footer></footer> -->
+  <HeaderV2></HeaderV2>
+
   <RouterView>
-    </RouterView>
+  </RouterView>
+  <Footer></Footer>
 </template>
 
 <style lang="postcss" scoped>
-.container{
-  padding-top: var(--gutter);
-}
+
 </style>
