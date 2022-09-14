@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/Test.vue'
 const JourneyView = () => import('../views/JourneyView.vue')
 const SedentaryInfoView = () => import('../views/journey/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')

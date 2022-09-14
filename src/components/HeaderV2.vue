@@ -26,18 +26,18 @@ const links = ref([
 </script>
   
 <template>
-  <header>
-    <RouterLink to="/">
+  <header class="flex flex-row justify-between align-center px-8 py-2 gap-12 h-20">
+    <RouterLink class="no-underline" to="/">
       <img alt="Logo" src="@/assets/Logo.svg" />
     </RouterLink>
-    <nav class="navigation">
+    <nav class="navigation flex flex-row justify-center items-center h-16 grow-0 gap-1">
       <template v-for="link in links">
-        <RouterLink class="button" :to="link.to" disabled>
+        <RouterLink class="button" :to="link.to">
           {{link.name}}
         </RouterLink>
       </template>
     </nav>
-    <RouterLink class="button-with-icon new-user" to="/become-new-user">
+    <RouterLink class="button " to="/become-new-user">
       <img src="@/assets/icons/IconSmile.svg" alt="Smile Icon">
       Become new user
     </RouterLink>
@@ -45,91 +45,8 @@ const links = ref([
 </template>
     
 <style lang="postcss" scoped>
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 32px;
-  gap: 50px;
-  height: 80px;
-}
 
-a{
-  text-decoration: none;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-
-  width: 758px;
-  height: 64px;
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-.button, .button-with-icon{
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  color: #000000;
-}
-.new-user {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 16px;
-  gap: 8px;
-
-  width: 213.7px;
-  height: 64px;
-
-  border-radius: 16px;
-
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-}
-
-.button {
-  padding: 14px 16px;
-  gap: 10px;
-
-  height: 64px;
-
-  border-radius: 16px;
-
-  flex: none;
-  flex-grow: 0;
-}
-
-.button-with-icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 16px;
-  gap: 8px;
-
-  width: 213.7px;
-  height: 64px;
-
-  border-radius: 16px;
-
-  flex: none;
-  order: 2;
-  flex-grow: 0;
+.button{
+  @apply p-4 gap-2 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline;
 }
 </style>

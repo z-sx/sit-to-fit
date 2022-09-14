@@ -4,15 +4,15 @@ import Header from './components/Header.vue'
 </script>
 
 <template>
-  <Header></Header>
+  <!-- <Header></Header> -->
   
-  <div class="container">
+  <!-- <div class="container">
     <RouterView>
     </RouterView>
   </div>
-  <footer></footer>
-  <!-- <RouterView>
-    </RouterView> -->
+  <footer></footer> -->
+  <RouterView>
+    </RouterView>
 </template>
 
 <style lang="postcss" scoped>
