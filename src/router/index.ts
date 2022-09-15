@@ -50,19 +50,16 @@ const router = createRouter({
       path: '/healthy-lifestyle',
       name: 'healthy-lifestyle',
       component: HealthyLifestyleView,
-      redirect: () => ({ name: 'physical-activities' }),
-      children: [
-        {
-          path: 'physical-activities',
-          name: 'physical-activities',
-          component: PhysicalActivitiesView,
-        },
-        {
-          path: 'dietary-plan',
-          name: 'dietary-plan',
-          component: DietaryPlanView,
-        },
-      ]
+    },
+    {
+      path: '/healthy-lifestyle/physical-activities',
+      name: 'physical-activities',
+      component: PhysicalActivitiesView,
+    },
+    {
+      path: '/healthy-lifestyle/dietary-plans',
+      name: 'dietary-plan',
+      component: DietaryPlanView,
     },
     {
       path: '/recommendations',
