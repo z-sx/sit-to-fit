@@ -4,9 +4,10 @@ const JourneyView = () => import('../views/JourneyView.vue')
 const SedentaryInfoView = () => import('../views/journey/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
 const MeasureInfoView = () => import('../views/journey/MeasureInfoView.vue')
-const PhysicalErgonomicsView = () => import('../views/PhysicalErgonomicsView.vue')
-const PhysicalActivitiesView = () => import('../views/PhysicalActivitiesView.vue')
-const DietaryPlanView = () => import('../views/DietaryPlanView.vue')
+const HealthyLifestyleView = () => import('../views/HealthyLifestyleView.vue')
+const PhysicalActivitiesView = () => import('../views/healthy-lifestyle/PhysicalActivitiesView.vue')
+const DietaryPlanView = () => import('../views/healthy-lifestyle/DietaryPlanView.vue')
+const RecommendationView = () => import('../views/RecommendationView.vue')
 const AlertReminderView = () => import('../views/AlertReminderView.vue')
 const BecomeNewUserView = () => import('../views/BecomeNewUserView.vue')
 
@@ -46,19 +47,27 @@ const router = createRouter({
       ],
     },
     {
-      path: '/physical-ergonomics',
-      name: 'physical-ergonomics',
-      component: PhysicalErgonomicsView,
+      path: '/healthy-lifestyle',
+      name: 'healthy-lifestyle',
+      component: HealthyLifestyleView,
+      redirect: () => ({ name: 'physical-activities' }),
+      children: [
+        {
+          path: 'physical-activities',
+          name: 'physical-activities',
+          component: PhysicalActivitiesView,
+        },
+        {
+          path: 'dietary-plan',
+          name: 'dietary-plan',
+          component: DietaryPlanView,
+        },
+      ]
     },
     {
-      path: '/physical-activities',
-      name: 'physical-activities',
-      component: PhysicalActivitiesView,
-    },
-    {
-      path: '/dietary-plan',
-      name: 'dietary-plan',
-      component: DietaryPlanView,
+      path: '/recommendations',
+      name: 'recommendation',
+      component: RecommendationView,
     },
     {
       path: '/alert-reminder',
@@ -70,11 +79,6 @@ const router = createRouter({
       name: 'become-new-user',
       component: BecomeNewUserView,
     },
-    {
-      path: '/tool',
-      name: 'tool',
-      component: null,
-    }
   ]
 })
 

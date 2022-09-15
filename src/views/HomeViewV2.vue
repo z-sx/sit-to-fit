@@ -3,15 +3,15 @@
 </script>
 
 <template>
-  <div class="flex flex-col justify-center gap-16 mb-16">
+  <div class="flex flex-col justify-center gap-16 mb-16 -mt-20">
     <section class="relative z-0 max-w-screen-lg mx-auto">
-      <div class="h-[45rem] relative z-10 grid grid-cols-12 grid-rows-2 px-14 gap-11 pt-36">
-        <div class="col-span-6">
+      <div class="h-[45rem] relative z-10 flex flex-col px-14 pt-36 justify-between">
+        <div class="w-[50%]">
           <div class="text-4xl font-bold font-sans">Sedentary Lifestyle</div>
           <div class="text-3xl font-normal font-sans">The fitness and health of today's workforce in Melbourne are
             declining at an alarming rate. </div>
         </div>
-        <div class="col-span-7 col-end-13 self-end px-9 py-3 gap-6 bg-white flex flex-row justify-between">
+        <div class="w-fit self-end px-9 py-3 gap-6 bg-white flex flex-row justify-between">
           <div>
             <span class="font-sans italic">Take your Journey to Learn more!</span>
             <br>
@@ -30,7 +30,7 @@
       <img class="absolute top-0 w-full" src="@/assets/HomeViewV2/Background.svg" alt="Sitting">
     </section>
     <section class="flex flex-row gap-11 max-w-screen-lg lg:mx-14 xl:mx-auto">
-      <div class="flex flex-col gap-13 justify-between">
+      <div class="flex flex-col gap-12">
         <div>
           <span class="font-sans text-4xl font-bold">Improve Life Standards</span>
           <br>
@@ -49,14 +49,12 @@
             <li>Browse through our catalogue of activities</li>
           </ul>
         </div>
-        <RouterLink class="home-button" :to="{name: 'tool'}">
+        <RouterLink class="home-button" :to="{name: 'recommendation'}">
           Use Tool
           <img src="@/assets/icons/IconArrowRight.svg" alt="Right Icon">
         </RouterLink>
       </div>
-      <div>
-        <img src="@/assets/HomeViewV2/pexels-fauxels.png" alt="Improve life standards">
-      </div>
+      <img class="object-cover" src="@/assets/HomeViewV2/pexels-fauxels.png" alt="Improve life standards">
     </section>
     <section class="flex flex-col gap-9 max-w-screen-lg lg:mx-14 xl:mx-auto">
       <span class="italic text-4xl">Try out our other features: </span>
@@ -83,7 +81,7 @@
           <span class="font-sans text-3xl">Decide what to play from a range of activities nearby!</span>
         </div>
         <div class="feature col-span-9 col-start-4">
-          <RouterLink class="feature-button" :to="{name: 'physical-ergonomics'}">
+          <RouterLink class="feature-button" to="/">
             <img class="w-10 h-10" src="@/assets/HomeViewV2/IconSit.svg" alt="Sit Icon">
             Physical Ergonomics
           </RouterLink>
