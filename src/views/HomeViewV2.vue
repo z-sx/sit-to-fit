@@ -94,7 +94,7 @@
     
 <style lang="postcss" scoped>
 .home-button {
-  @apply self-center flex py-1 px-4 gap-2 bg-indigo-200 border-2 border-white;
+  @apply self-center flex flex-row items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white;
 }
 
 .feature {
