@@ -5,8 +5,14 @@ import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import { readFileSync } from 'node:fs'
 
+
+const https = {
+  key: readFileSync('./keys/key.pem'),
+  cert: readFileSync('./keys/cert.pem'),
+}
+
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({mode}) => ({
   plugins: [
     vue(),
     VitePWA({
@@ -25,9 +31,6 @@ export default defineConfig({
     }
   },
   server: {
-    https: {
-      key: readFileSync('./keys/key.pem'),
-      cert: readFileSync('./keys/cert.pem'),
-    }
+    https: mode === 'production'? https : {}
   }
-})
+}))
