@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
   const https = mode === 'development' ? {
     key: readFileSync('./keys/key.pem'),
     cert: readFileSync('./keys/cert.pem'),
-  }: {}
+  } : {}
   return {
     plugins: [
       vue(),
@@ -35,4 +35,5 @@ export default defineConfig(({ mode }) => {
     server: {
       https
     }
-  }})
+  }
+})
