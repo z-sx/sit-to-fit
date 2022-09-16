@@ -39,7 +39,7 @@ const activities = [
           <img :src="activity.image" :alt="activity.name">
         </div>
         <div>
-          <h2 class="font-sans text-3xl leading-normal">
+          <h2 class="font-sans text-3xl leading-relaxed">
             {{activity.name}}
           </h2>
           <p class="font-sans">
