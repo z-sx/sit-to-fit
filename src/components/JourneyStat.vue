@@ -44,6 +44,7 @@ const isOpen = ref(false)
 }
 
 .modal-overlay{
+  z-index: 10;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -119,23 +120,21 @@ const isOpen = ref(false)
       }
     }
     & .number {
-      font-size: 55px;
-      font-family: Inter, sans-serif;
+      @apply font-sans text-5xl font-bold italic;
       font-weight: bold;
       font-style: italic;
       line-height: 1;
       flex: 1 1 auto;
 
       &.small {
-        font-size: 40px;
-        line-height: 55px;
+        @apply text-4xl text-blue-900 font-normal;
       }
     }
 
     & .description {
       height: 96px;
       font-size: 20px;
-      font-family: Inika, serif;
+      @apply font-sans
     }
 
     & img {

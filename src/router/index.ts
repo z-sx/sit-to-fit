@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeViewV2.vue'
-const JourneyView = () => import('../views/JourneyView.vue')
-const SedentaryInfoView = () => import('../views/journey/SedentaryInfoView.vue')
+const SedentaryInfoView = () => import('../views/journey-v2/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
 const MeasureInfoView = () => import('../views/journey/MeasureInfoView.vue')
 const HealthyLifestyleView = () => import('../views/HealthyLifestyleView.vue')
@@ -26,25 +25,22 @@ const router = createRouter({
     {
       path: '/journey',
       name: 'journey',
-      component: JourneyView,
-      redirect: () => ({ name: 'sedentary-info' }),
-      children: [
-        {
-          path: 'sedentary-info',
-          name: 'sedentary-info',
-          component: SedentaryInfoView,
-        },
-        {
-          path: 'risk-meter',
-          name: 'risk-meter',
-          component: RiskMeterView,
-        },
-        {
-          path: 'measure-info',
-          name: 'measure-info',
-          component: MeasureInfoView,
-        }
-      ],
+      redirect: 'sedentary-info'
+    },
+    {
+      path: '/sedentary-info',
+      name: 'sedentary-info',
+      component: SedentaryInfoView,
+    },
+    {
+      path: '/risk-meter',
+      name: 'risk-meter',
+      component: RiskMeterView,
+    },
+    {
+      path: '/measure-info',
+      name: 'measure-info',
+      component: MeasureInfoView,
     },
     {
       path: '/healthy-lifestyle',
@@ -52,12 +48,12 @@ const router = createRouter({
       component: HealthyLifestyleView,
     },
     {
-      path: '/healthy-lifestyle/physical-activities',
+      path: '/physical-activities',
       name: 'physical-activities',
       component: PhysicalActivitiesView,
     },
     {
-      path: '/healthy-lifestyle/dietary-plans',
+      path: '/dietary-plans',
       name: 'dietary-plan',
       component: DietaryPlanView,
     },
