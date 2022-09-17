@@ -26,7 +26,7 @@ const links = ref([
 </script>
   
 <template>
-  <header class="z-10 relative max-w-screen-lg mx-auto top-0 left-0 right-0 flex flex-row justify-between align-center px-8 py-2 gap-12 h-20">
+  <header class="z-10 relative  mx-auto top-0 left-0 right-0 flex flex-row justify-between align-center px-8 py-2 gap-12 h-20">
     <RouterLink class="no-underline" to="/">
       <img alt="Logo" src="@/assets/Logo.svg" />
     </RouterLink>

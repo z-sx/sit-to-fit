@@ -107,8 +107,8 @@ const answer = new Set([0, 1, 2, 3, 4])
               <span class="font-sans font-semibold">
                 {{choice}}
               </span>
-              <img class="h-8 fill-cyan-700" v-if="mcqInput.has(index)" src="@/assets/SedentaryInfoView/IconCheckbox.svg" alt="Checkbox Checked">
-              <img class="h-8 fill-cyan-700" v-else src="@/assets/SedentaryInfoView/IconCheckboxBlank.svg" alt="Checkbox Blank">
+              <img class="h-8 fill-cyan-700" v-if="mcqInput.has(index)" src="@/assets/icons/IconCheckbox.svg" alt="Checkbox Checked">
+              <img class="h-8 fill-cyan-700" v-else src="@/assets/icons/IconCheckboxBlank.svg" alt="Checkbox Blank">
             </div>
           </template>
           <button @click="showResult = true" class="self-end home-button" :disabled="showResult">See Result</button>
