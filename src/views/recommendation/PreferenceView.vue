@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { $ref, $computed } from 'vue/macros';
 import CardioImg from '@/assets/Recommendation/IconCardio.svg'
 import CyclingImg from '@/assets/Recommendation/IconCycling.svg'
 import SightseeingImg from '@/assets/Recommendation/IconSightseeing.svg'
@@ -29,7 +29,7 @@ const preferences: Preference[] = [{
   description: "Walking with the beautiful views of Melbourne Art!"
 }]
 
-const selected = reactive(new Set())
+const selected = $ref(new Set())
 
 function check(item: Preference){
   if(selected.has(item)){
@@ -42,7 +42,7 @@ function check(item: Preference){
     
 <template>
   <div class="flex flex-col gap-16">
-    <section class="mx-auto max-w-screen-lg w-full h-60 bg-gray-200 flex justify-center">
+    <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
       <div class="font-sans text-4xl pt-20">
         Select your preferences
       </div>
@@ -74,7 +74,7 @@ function check(item: Preference){
       </template>
     </section>
     <section class="flex justify-center mb-12">
-      <RouterLink class="home-button block" :to="{name: 'cards'}">See My Recommendations</RouterLink>
+      <RouterLink class="home-button block" :to="{name: 'cards'}" :disabled="selected.size>0?null:true">See My Recommendations</RouterLink>
     </section>
   </div>
 </template>

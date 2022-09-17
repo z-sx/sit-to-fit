@@ -16,7 +16,9 @@ export default defineConfig(({ mode }) => {
   } : {}
   return {
     plugins: [
-      vue(),
+      vue({
+        reactivityTransform: true
+      }),
       VitePWA({
         base: "/",
         strategies: 'injectManifest',
