@@ -4,8 +4,8 @@
 
 <template>
   <div class="flex flex-col justify-center gap-16 mb-16 -mt-20">
-    <section class="relative z-0 max-w-screen-lg mx-auto">
-      <div class="h-[45rem] relative z-10 flex flex-col px-14 pt-36 justify-between">
+    <section class="relative z-0">
+      <div class="h-[45rem] xl:h-[50rem] xl:max-w-screen-xl xl:mx-auto relative z-10 flex flex-col px-14 pt-36 justify-between">
         <div class="w-[50%]">
           <div class="text-4xl font-bold font-sans">Sedentary Lifestyle</div>
           <div class="text-3xl font-normal font-sans">The fitness and health of today's workforce in Melbourne are
@@ -27,7 +27,9 @@
           </RouterLink>
         </div>
       </div>
-      <img class="absolute top-0 w-full" src="@/assets/HomeViewV2/Background.svg" alt="Sitting">
+      <div class="absolute top-0 w-full h-[42rem] xl:h-[47rem]">
+        <img class="w-full h-full object-cover object-top max-w-screen-xl mx-auto" src="@/assets/HomeViewV2/Background.svg" alt="Background">
+      </div>
     </section>
     <section class="flex flex-row gap-11 max-w-screen-lg lg:mx-14 xl:mx-auto">
       <div class="flex flex-col gap-12">
@@ -92,7 +94,7 @@
   </div>
 </template>
     
-<style lang="postcss" scoped>
+<style lang="postcss" scoped> 
 .home-button {
   @apply self-center flex flex-row items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white;
 }
