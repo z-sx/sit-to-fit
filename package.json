@@ -21,6 +21,7 @@
     "@fontsource/open-sans": "^4.5.11",
     "@fontsource/roboto-flex": "^4.5.1",
     "@vueform/toggle": "^2.1.1",
+    "axios": "^0.27.2",
     "pinia": "^2.0.17",
     "vue": "^3.2.37",
     "vue-router": "^4.1.3",

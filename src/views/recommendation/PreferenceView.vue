@@ -81,7 +81,7 @@ function check(item: Preference){
     
 <style lang="postcss" scoped>
 .home-button {
-  @apply flex flex-row items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white;
+  @apply flex flex-row w-fit items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white border-solid;
 }
 .pref:nth-child(1){
   @apply bg-gradient-to-r from-cyan-200 to-blue-200  hover:from-cyan-300 hover:to-blue-300;

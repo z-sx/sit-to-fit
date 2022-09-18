@@ -27,12 +27,12 @@ function sendNotification(){
 </script>
     
 <template>
-  <section class="flex flex-col justify-center gap-16 my-16">
-    <h1 class="text-4xl font-sans mx-auto">
+  <section class="flex flex-col items-center gap-16 my-16">
+    <h1 class="text-4xl font-sans">
       Alert Reminder Settings
     </h1>
 
-    <ul class="w-[58.25rem] mx-auto">
+    <ul class="w-[58.25rem]">
       <li class="flex flex-row p-8 bg-white">
         <span>
           Remind you to drink water at every:
