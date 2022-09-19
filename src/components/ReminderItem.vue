@@ -30,10 +30,10 @@ watch([()=>config.value.period, ()=>config.value.toggle], ([period, toggle]) => 
   if (toggle) {
     const ms = period * 60 * 1000
     startTime.value = Date.now()
-    intervalId.value = setInterval(() => {
+    intervalId.value = window.setInterval(() => {
       new Notification(config.value.title, {body: config.value.body(period)})
     }, ms)
-    updateIntervalId.value = setInterval(() => {
+    updateIntervalId.value = window.setInterval(() => {
       progress.value = (Date.now() - startTime.value)%(config.value.period * 60 * 1000)
     }, 300)
     Notification.requestPermission()
