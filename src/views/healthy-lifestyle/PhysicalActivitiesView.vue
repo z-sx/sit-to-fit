@@ -62,7 +62,7 @@ const showIndoor = ref(true)
 <template>
   <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
     <div class="font-sans text-4xl pt-20">
-      Dietary Planning
+      Physical Activities
     </div>
   </section>
   <section class="flex mx-auto max-w-screen-xl px-14 mt-4 mb-8 gap-8">
