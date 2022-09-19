@@ -77,14 +77,6 @@ const router = createRouter({
       path: '/recommendation/preferences',
       name: 'preferences',
       component: PreferenceView,
-      beforeEnter(from, to, next) {
-        const store = useRecommendationStore()
-        if (store.preferences.size === 0) {
-          return next()
-        } else {
-          return next({ name: 'cards' })
-        }
-      }
     },
     {
       path: '/recommendation/cards',
@@ -109,10 +101,6 @@ const router = createRouter({
       name: 'become-new-user',
       component: BecomeNewUserView,
     },
-    {
-      path: '/map',
-      component: () => import("@/components/Map.vue")
-    }
   ]
 })
 

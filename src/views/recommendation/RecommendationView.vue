@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import Map from '@/components/Map.vue'
 import { useRecommendationStore } from '@/stores/recommendation';
-
 const store = useRecommendationStore()
 store.reloadCards()
 
@@ -36,8 +36,12 @@ store.reloadCards()
                 <img class="h-full" src="@/assets/icons/IconClose.svg" alt="Close">
               </button>
             </div>
-            <div class="flex flex-col px-8">
-              <span v-for="value, key in item">{{key}}: {{value}}</span>
+            <div class="flex flex-col grow overflow-hidden">
+              <Map 
+              :center="{lat:item.longitude, lng:item.latitude}"
+              v-if="item.latitude!==null&&item.longitude!==null">
+              </Map>
+              <img v-else class="w-full object-cover object-bottom" src="@/assets/Recommendation/Indoor.png" alt="Indoor Activity">
             </div>
             <div class="grid grid-cols-2 grid-rows-1">
               <button
