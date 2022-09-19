@@ -4,7 +4,7 @@ import walkingImg from '@/assets/PhysicalActivitiesView/walking.png'
 import dogWalkingImg from '@/assets/PhysicalActivitiesView/dog-walking.png'
 import runningImg from '@/assets/PhysicalActivitiesView/running.png'
 
-const activities = [
+const outdoorActivities = [
   {
     name: 'Cycling',
     image: cyclingImg,
@@ -26,14 +26,52 @@ const activities = [
     description: 'Running and jogging is a very popular forms of physical exercise as they require equipment and they can be done almost anywhere and at a time of your choice. It is considered one of the best cardio exercises for your heart health.  Make sure to wear comfortable running shoes while having your run / jog. '
   }
 ]
+
+const indoorActivities = [
+  {
+    name: 'Skipping a rope',
+    description: 'Jump roping is an efficient physical activity you can do in your home and all you need is a little free space and a jump rope! So turn on your favorite tune and start roping!\nBenefits:\n-> Improves cardiovascular fitness and strengths your muscles\n-> Improves your balance and coordination'
+  },
+  {
+    name: 'Yoga',
+    description: 'Doing yoga does more than just tone your muscles and burn calories. Yoga is a full-body-mind physical activity that combines strength, flexibility, meditation, and relaxation. \nBenefits:\n->Improves your strength, balance, and flexibility.\n->Assists in easing pain and improving mobility in people with lower back pain.'
+  },
+  {
+    name: 'House chores',
+    description: 'Doing your house chores not only helps you increase your heart rate and get moving but also works for your major muscle groups. Doing regular face-paced house chores can add to your daily calorie burn.\nBenefit:\n->Burn calories while doing your house chores!\n->You can get a full-body workout and build muscle.'
+  },
+  {
+    name: 'Weightlifting',
+    description: 'Weightlifting is a wonderful physical activity that you can do in the comfort of your home at a time of your choosing as a way to stay healthy and in good shape. \nBenefit:\n-> Weightlighting helps boosts metabolism and fat loss\n-> It improves posture, sleep, mood and energy levels'
+  },
+]
 </script>
     
 <template>
+  <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
+    <div class="font-sans text-4xl pt-20">
+      Dietary Planning
+    </div>
+  </section>
+  <section class="flex mx-auto max-w-screen-xl px-14 mt-4 mb-8 gap-8">
+    <div class="flex flex-col grow bg-slate-100 p-4 gap-4">
+      <div>
+        <h2 class="text-3xl font-sans font-bold">Explore</h2>
+      </div>
+      <div class="flex flex-col gap-4">
+        <RouterLink class="shadow bg-white rounded-xl p-4 font-sans font-bold hover:bg-green-700 hover:text-white" :to="{name:'physical-activities'}">Physical Activities</RouterLink>
+        <RouterLink class="shadow bg-white rounded-xl p-4 font-sans font-bold hover:bg-green-700 hover:text-white" :to="{name:'dietary-plan'}">Dietary Planning</RouterLink>
+      </div>
+    </div>
+    <div class="">
+      <img class="h-[32rem]" src="@/assets/PhysicalActivitiesView/Physical-Activities.jpg" alt="Healthy Diet">
+    </div>
+  </section>
   <section class="flex flex-col justify-center gap-16 my-16">
     <h1 class="text-4xl font-sans mx-auto">
       Choose you activity for a healthy lifestyle!
     </h1>
-    <template v-for="activity in activities" :key="index">
+    <template v-for="activity in outdoorActivities" :key="index">
       <div class="flex flex-row mx-auto w-[59.375rem] gap-20">
         <div class="min-w-[28rem] self-center">
           <img :src="activity.image" :alt="activity.name">
