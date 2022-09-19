@@ -4,6 +4,7 @@ import CardioImg from '@/assets/Recommendation/IconCardio.svg'
 import CyclingImg from '@/assets/Recommendation/IconCycling.svg'
 import SightseeingImg from '@/assets/Recommendation/IconSightseeing.svg'
 import WalkingImg from '@/assets/Recommendation/IconWalking.svg'
+import { useRecommendationStore } from '@/stores/recommendation';
 
 interface Preference{
   name: string
@@ -29,14 +30,17 @@ const preferences: Preference[] = [{
   description: "Walking with the beautiful views of Melbourne Art!"
 }]
 
-const selected = $ref(new Set())
+const store = useRecommendationStore()
 
 function check(item: Preference){
-  if(selected.has(item)){
-    selected.delete(item)
+  if(hasPref(item)){
+    store.deletePref(item.name)
   }else{
-    selected.add(item)
+    store.addPref(item.name)
   }
+}
+function hasPref(item: Preference){
+  return store.preferences.has(item.name)
 }
 </script>
     
@@ -48,12 +52,12 @@ function check(item: Preference){
       </div>
     </section>
     <section class="flex flex-wrap gap-14 justify-center max-w-screen-lg w-full mx-auto">
-      <template v-for="item, index in preferences" :key="index">
+      <template v-for="item in preferences" :key="item.id">
         <div 
         class="pref select-none cursor-pointer border-2 border-solid flex flex-col w-[28rem] h-[16rem] gap-4 p-8 bg-gray-200"
         :class="{
-          'border-white-50': !selected.has(item),
-          'border-black': selected.has(item),
+          'border-white-50': !hasPref(item),
+          'border-black': hasPref(item),
         }"
         @click="check(item)"
         >
@@ -63,8 +67,8 @@ function check(item: Preference){
               {{item.name}}
             </span>
             <div class="ml-auto">
-              <img class="h-8 fill-cyan-700" v-show="selected.has(item)" src="@/assets/icons/IconCheckbox.svg" alt="Checkbox Checked">
-              <img class="h-8 fill-cyan-700" v-show="!selected.has(item)" src="@/assets/icons/IconCheckboxBlank.svg" alt="Checkbox Blank">
+              <img class="h-8 fill-cyan-700" v-show="hasPref(item)" src="@/assets/icons/IconCheckbox.svg" alt="Checkbox Checked">
+              <img class="h-8 fill-cyan-700" v-show="!hasPref(item)" src="@/assets/icons/IconCheckboxBlank.svg" alt="Checkbox Blank">
             </div>
           </div>
           <p class="text-2xl">
@@ -74,7 +78,7 @@ function check(item: Preference){
       </template>
     </section>
     <section class="flex justify-center mb-12">
-      <RouterLink class="home-button block" :to="{name: 'cards'}" :disabled="selected.size>0?null:true">See My Recommendations</RouterLink>
+      <RouterLink class="home-button block" :to="{name: 'cards'}" :disabled="store.preferences.size>0?null:true">See My Recommendations</RouterLink>
     </section>
   </div>
 </template>

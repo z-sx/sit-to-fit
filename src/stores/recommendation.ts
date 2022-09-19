@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { watch, reactive, ref } from 'vue'
+import { watch, reactive, ref, nextTick } from 'vue'
 import { $$, $ref } from 'vue/macros'
 interface Card{
   id: number
@@ -61,7 +61,8 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
   let preferences = $ref(config.preferences)
   let likedCards = $ref(config.likedCards)
   let dislikedCards = $ref(config.dislikedCards)
-  let cards = $ref<Card[]>([])
+  updatePref()
+  let cards = $ref<Card[]>(getSixCards())
   
   function save(){
     saveConfig({
@@ -131,6 +132,7 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
     preferences,
     likedCards,
     dislikedCards,
+    cards,
     like,
     dislike,
     reloadCards,

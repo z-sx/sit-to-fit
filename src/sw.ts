@@ -1,17 +1,17 @@
-// @ts-nocheck
-import { precacheAndRoute } from 'workbox-precaching'
+// // @ts-nocheck
+// import { precacheAndRoute } from 'workbox-precaching'
 
-declare let self: ServiceWorkerGlobalScope
+// declare let self: ServiceWorkerGlobalScope
 
-cleanupOutdatedCaches()
+// cleanupOutdatedCaches()
 
-precacheAndRoute(self.__WB_MANIFEST)
+// precacheAndRoute(self.__WB_MANIFEST)
 
-self.skipWaiting()
-self.addEventListener('push', (event) => {
-  console.log(event)
-  let notification = event.data?.text();
-  self.registration.showNotification(
-    notification!
-  );
-});
+// self.skipWaiting()
+// self.addEventListener('push', (event) => {
+//   console.log(event)
+//   let notification = event.data?.text();
+//   self.registration.showNotification(
+//     notification!
+//   );
+// });
