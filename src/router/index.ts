@@ -87,6 +87,10 @@ const router = createRouter({
       name: 'become-new-user',
       component: BecomeNewUserView,
     },
+    {
+      path: '/map',
+      component: () => import("@/components/Map.vue")
+    }
   ]
 })
 

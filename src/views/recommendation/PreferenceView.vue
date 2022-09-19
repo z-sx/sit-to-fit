@@ -13,7 +13,7 @@ interface Preference{
 }
 
 const preferences: Preference[] = [{
-  name: "Cylcing",
+  name: "Cycling",
   icon: CyclingImg,
   description: "Own a cycle? Move around easily and loose weight",
 }, {

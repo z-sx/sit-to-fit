@@ -1,19 +1,8 @@
 <script setup lang="ts">
 import { useRecommendationStore } from '@/stores/recommendation';
-import axios from 'axios'
 
 const store = useRecommendationStore()
 
-fetch("https://recommendsittofit.herokuapp.com/cards", {
-  method: 'PUT',
-  mode: 'cors',
-  body: JSON.stringify({
-    "web_id": 99223
-  })
-})
-axios.put("https://recommendsittofit.herokuapp.com/cards", {
-  "web_id": 99223
-})
 </script>
     
 <template>
@@ -51,14 +40,19 @@ axios.put("https://recommendsittofit.herokuapp.com/cards", {
             </div>
             <div class="grid grid-cols-2 grid-rows-1">
               <button
-                class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none">
-                <img @click="store.dislike(item)" class="h-full" src="@/assets/icons/IconThumbDown.svg"
-                  alt="Thumb Down">
+              @click="store.dislike(item)"
+              class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none"
+              >
+                <img v-if="store.dislikedCards.find(i=>i.id===item.id)" class="h-full" src="@/assets/icons/IconThumbDownFill.svg" alt="Thumb Down">
+                <img v-else class="h-full" src="@/assets/icons/IconThumbDown.svg" alt="Thumb Down">
                 Dislike
               </button>
               <button
-                class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none">
-                <img @click="store.like(item)" class="h-full" src="@/assets/icons/IconThumbUp.svg" alt="Thumb Up">
+              @click="store.like(item)" 
+              class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none"
+              >
+                <img v-if="store.likedCards.find(i=>i.id===item.id)" class="h-full" src="@/assets/icons/IconThumbUpFill.svg" alt="Thumb Up">
+                <img v-else class="h-full" src="@/assets/icons/IconThumbUp.svg" alt="Thumb Up">
                 Like
               </button>
             </div>
