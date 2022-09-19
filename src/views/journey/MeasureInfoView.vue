@@ -38,7 +38,7 @@ const tryOuts: TryOut[] = [
 </script>
         
 <template>
-  <JourneyLayoutV2 class="layout">
+  <JourneyLayoutV2 :has-skip="false" class="layout">
     <JourneyHeading>
       Preventive measures
     </JourneyHeading>
@@ -49,12 +49,12 @@ const tryOuts: TryOut[] = [
   </JourneyLayoutV2>
   <JourneyMeasure>
   </JourneyMeasure>
-  <section class="try-out" disabled>
+  <section class="try-out">
     <p>
       Try out our other features
     </p>
     <div v-for="tryOut in tryOuts">
-      <RouterLink :to="{name: tryOut.to}" disabled>
+      <RouterLink :to="{name: tryOut.to}">
         <img :src="tryOut.image" alt="TryOut">
       </RouterLink>
       <span>{{tryOut.text}}</span>
@@ -62,7 +62,7 @@ const tryOuts: TryOut[] = [
   </section>
   <section class="nav">
     <RouterLink class="left button" :to="{name:'journey'}">Retake Journey</RouterLink>
-    <RouterLink class="right button" :to="{name:'alert-reminder'}" disabled>Jump to Alert Reminder</RouterLink>
+    <RouterLink class="right button" :to="{name:'alert-reminder'}">Jump to Alert Reminder</RouterLink>
   </section>
 </template>
         

@@ -139,8 +139,5 @@ section:nth-of-type(2n) {
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
   }
 }
-section:last-of-type{
-  background-color: black;
-}
 
 </style>

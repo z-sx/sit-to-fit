@@ -7,6 +7,7 @@ const MeasureInfoView = () => import('../views/journey/MeasureInfoView.vue')
 const HealthyLifestyleView = () => import('../views/HealthyLifestyleView.vue')
 const PhysicalActivitiesView = () => import('../views/healthy-lifestyle/PhysicalActivitiesView.vue')
 const DietaryPlanView = () => import('../views/healthy-lifestyle/DietaryPlanView.vue')
+const PhysicalErgonomicsView = () => import('../views/PhysicalErgonomicsView.vue')
 const AlertReminderView = () => import('../views/AlertReminderView.vue')
 const BecomeNewUserView = () => import('../views/BecomeNewUserView.vue')
 const PreferenceView = () => import('../views/recommendation/PreferenceView.vue')
@@ -60,6 +61,11 @@ const router = createRouter({
       path: '/dietary-plans',
       name: 'dietary-plan',
       component: DietaryPlanView,
+    },
+    {
+      path: '/physical-ergonomics',
+      name: 'physical-ergonomics',
+      component: PhysicalErgonomicsView,
     },
     {
       path: '/recommendations',
