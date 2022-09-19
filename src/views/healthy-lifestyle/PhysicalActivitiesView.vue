@@ -3,6 +3,10 @@ import cyclingImg from '@/assets/PhysicalActivitiesView/cycling.png'
 import walkingImg from '@/assets/PhysicalActivitiesView/walking.png'
 import dogWalkingImg from '@/assets/PhysicalActivitiesView/dog-walking.png'
 import runningImg from '@/assets/PhysicalActivitiesView/running.png'
+import ropeImg from '@/assets/PhysicalActivitiesView/rope.png'
+import yogaImg from '@/assets/PhysicalActivitiesView/yoga.png'
+import houseChoresImg from '@/assets/PhysicalActivitiesView/house-chores.png'
+import weightliftingImg from '@/assets/PhysicalActivitiesView/weightlifting.png'
 
 const outdoorActivities = [
   {
@@ -30,18 +34,22 @@ const outdoorActivities = [
 const indoorActivities = [
   {
     name: 'Skipping a rope',
+    image: ropeImg,
     description: 'Jump roping is an efficient physical activity you can do in your home and all you need is a little free space and a jump rope! So turn on your favorite tune and start roping!\nBenefits:\n-> Improves cardiovascular fitness and strengths your muscles\n-> Improves your balance and coordination'
   },
   {
     name: 'Yoga',
+    image: yogaImg,
     description: 'Doing yoga does more than just tone your muscles and burn calories. Yoga is a full-body-mind physical activity that combines strength, flexibility, meditation, and relaxation. \nBenefits:\n->Improves your strength, balance, and flexibility.\n->Assists in easing pain and improving mobility in people with lower back pain.'
   },
   {
     name: 'House chores',
+    image: houseChoresImg,
     description: 'Doing your house chores not only helps you increase your heart rate and get moving but also works for your major muscle groups. Doing regular face-paced house chores can add to your daily calorie burn.\nBenefit:\n->Burn calories while doing your house chores!\n->You can get a full-body workout and build muscle.'
   },
   {
     name: 'Weightlifting',
+    image: weightliftingImg,
     description: 'Weightlifting is a wonderful physical activity that you can do in the comfort of your home at a time of your choosing as a way to stay healthy and in good shape. \nBenefit:\n-> Weightlighting helps boosts metabolism and fat loss\n-> It improves posture, sleep, mood and energy levels'
   },
 ]
@@ -72,17 +80,20 @@ const indoorActivities = [
       Choose you activity for a healthy lifestyle!
     </h1>
     <template v-for="activity in outdoorActivities" :key="index">
-      <div class="flex flex-row mx-auto w-[59.375rem] gap-20">
-        <div class="min-w-[28rem] self-center">
-          <img :src="activity.image" :alt="activity.name">
+      <div class="item flex flex-row mx-auto max-w-screen-xl px-14 gap-8">
+        <div class="image min-w-[40rem] self-center">
+          <img class="object-cover w-full h-[22rem]" :src="activity.image" :alt="activity.name">
         </div>
-        <div>
-          <h2 class="font-sans text-3xl leading-relaxed">
-            {{activity.name}}
-          </h2>
-          <p class="font-sans">
-            {{activity.description}}
-          </p>
+        <div class="content flex gap-2">
+          <div class="min-w-[3rem]">
+            <img src="@/assets/icons/IconGreenTick.svg" alt="Point">
+          </div>
+          <div class="flex flex-col">
+            <h2 class="font-sans text-3xl leading-relaxed">
+              {{activity.name}}
+            </h2>
+            <pre class="font-sans break-words whitespace-pre-wrap">{{activity.description}}</pre>
+          </div>
         </div>
       </div>
     </template>
@@ -90,5 +101,19 @@ const indoorActivities = [
 </template>
     
 <style lang="postcss" scoped>
+.item:nth-of-type(2n+1) {
+  &>.image {
+    order: 2
+  }
+}
 
+.item:nth-of-type(2n) {
+  &>.image {
+    @apply pl-14;
+
+    & img {
+      @apply object-cover h-[280px];
+    }
+  }
+}
 </style>
