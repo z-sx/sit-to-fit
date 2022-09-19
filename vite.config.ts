@@ -19,15 +19,15 @@ export default defineConfig(({ mode }) => {
       vue({
         reactivityTransform: true
       }),
-      VitePWA({
-        base: "/",
-        strategies: 'injectManifest',
-        srcDir: 'src',
-        filename: 'sw.ts',
-        devOptions: {
-          enabled: true
-        },
-      }),
+      // VitePWA({
+      //   base: "/",
+      //   strategies: 'injectManifest',
+      //   srcDir: 'src',
+      //   filename: 'sw.ts',
+      //   devOptions: {
+      //     enabled: true
+      //   },
+      // }),
     ],
     resolve: {
       alias: {
