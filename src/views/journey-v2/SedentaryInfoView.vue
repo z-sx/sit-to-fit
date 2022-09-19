@@ -25,7 +25,7 @@ const answer = new Set([0, 1, 2, 3, 4])
     
 <template>
   <div class="flex flex-col gap-16">
-    <section class="flex flex-col justify-between items-center h-[40rem] max-w-screen-lg w-full mx-auto bg-cover py-16 px-14">
+    <section class="flex flex-col justify-between items-center h-[40rem] max-w-screen-xl w-full mx-auto bg-cover py-16 px-14">
       <div>
         <h1 class="text-4xl font-sans">
           Journey to learn about Sedentary lifestyle
@@ -42,47 +42,55 @@ const answer = new Set([0, 1, 2, 3, 4])
       </div>
       <JourneyStat></JourneyStat>
     </section>
-    <section class="w-[58.25rem] mx-auto flex flex-col gap-14">
+    <section class="max-w-screen-xl p-14 xl:mx-auto flex flex-col gap-14">
       <h1 class="self-center text-4xl font-sans">
         Facts about Sedentary Lifestyle
       </h1>
       <div class="facts">
-        <h3>
-          Sedentary lifestyles lowers your metabolism
-        </h3>
-        <p>
-          Notably, Sedentary lifestyle mainly involve sitting at work, which can have negative effects on metabolic rate
-          and overall health.
-        </p>
-        <h3>
-          You may have poor blood circulation
-        </h3>
-        <p>
-          Research suggests not moving all day long and just sitting at one place may affect our arteries; it reduces
-          the blood flow and also increases the risk of blood clots.
-        </p>
-        <h3>
-          Sedentary lifestyles raises all causes of mortality
-        </h3>
-        <p>
-          A sedentary lifestyle increases the risk of a variety of medical conditions. Long periods of sitting have been
-          linked to cardiovascular disease.
-        </p>
-        <h3>
-          Impact on the immune system, which may not work well
-        </h3>
-        <p>
-          Physical inactivity accumulated over weeks and months can lead to immune system dysfunction, which could, in
-          principle, increase infection susceptibility.
-        </p>
-        <h3>
-          Your bone gets weaker due to sedentary lifestyle
-        </h3>
-        <p>
-          Without physical activity as a loading stimulus, sedentary adults compound risks of thinning of ageing bones.
-          Furthermore, the loss of muscle mass with age exposes bones to higher impact forces and is accelerated by a
-          sedentary lifestyle.
-        </p>
+        <div>
+          <img src="@/assets/SedentaryInfoView/metabolism.svg" alt="Metabolism">
+          <div>
+            <h3>
+              Sedentary lifestyles lowers your metabolism
+            </h3>
+            <span>
+              Notably, Sedentary lifestyle mainly involve sitting at work, which can have negative effects on metabolic rate and overall health.
+            </span>
+          </div>
+        </div>
+        <div>
+          <img src="@/assets/SedentaryInfoView/blood-circulation.svg" alt="Blood Circulation">
+          <div>
+            <h3>
+              You may have poor blood circulation
+            </h3>
+            <span>
+              Research suggests not moving all day long and just sitting at one place may affect our arteries; it reduces the blood flow and also increases the risk of blood clots.
+            </span>
+          </div>
+        </div>
+        <div>
+          <img src="@/assets/SedentaryInfoView/mortality.svg" alt="Mortality">
+          <div>
+            <h3>
+              Sedentary lifestyles raises all causes of mortality
+            </h3>
+            <span>
+              A sedentary lifestyle increases the risk of a variety of medical conditions. Long periods of sitting have been linked to cardiovascular disease.
+            </span>
+          </div>
+        </div>
+        <div>
+          <img src="@/assets/SedentaryInfoView/bone.svg" alt="Bone">
+          <div>
+            <h3>
+              Your bone gets weaker due to sedentary lifestyle
+            </h3>
+            <span>
+              Without physical activity as a loading stimulus, sedentary adults compound risks of thinning of ageing bones. 
+            </span>
+          </div>
+        </div>
       </div>
       <h1 class="italic font-sans text-4xl self-center text-blue-900">
         Now, let's test your knowledge by this MCQ.
@@ -141,14 +149,16 @@ section:first-child {
 }
 
 .facts {
-  @apply flex flex-col gap-6;
+  @apply grid grid-cols-2 gap-x-11 gap-y-8;
 
-  & h3 {
-    @apply font-bold italic text-base font-sans;
-  }
+  &>div{
+    @apply flex p-6 bg-white gap-4;
+    box-shadow: 5px 20px 50px #1070b133;
+    border-radius: 10px;
+    & h3{
+      @apply italic font-bold mt-2 mb-3;
 
-  & p {
-    @apply text-base font-sans;
+    }
   }
 }
 </style>
