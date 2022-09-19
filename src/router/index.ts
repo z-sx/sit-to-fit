@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useRecommendationStore } from '@/stores/recommendation'
 import HomeView from '../views/HomeViewV2.vue'
 const SedentaryInfoView = () => import('../views/journey-v2/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
@@ -27,7 +28,7 @@ const router = createRouter({
       path: '/journey',
       name: 'journey',
       redirect(to) {
-        return {name: 'sedentary-info'}
+        return { name: 'sedentary-info' }
       },
     },
     {
@@ -64,18 +65,39 @@ const router = createRouter({
       path: '/recommendations',
       name: 'recommendation',
       redirect(to) {
-        return {name: 'preferences'}
+        const store = useRecommendationStore()
+        if (store.preferences.size === 0) {
+          return { name: 'preferences' }
+        } else {
+          return { name: 'cards' }
+        }
       },
     },
     {
       path: '/recommendation/preferences',
       name: 'preferences',
       component: PreferenceView,
+      beforeEnter(from, to, next) {
+        const store = useRecommendationStore()
+        if (store.preferences.size === 0) {
+          return next()
+        } else {
+          return next({ name: 'cards' })
+        }
+      }
     },
     {
       path: '/recommendation/cards',
       name: 'cards',
       component: RecommendationView,
+      beforeEnter(from, to, next) {
+        const store = useRecommendationStore()
+        if (store.preferences.size === 0) {
+          return next({ name: 'preferences' })
+        } else {
+          return next()
+        }
+      }
     },
     {
       path: '/alert-reminder',

@@ -2,6 +2,7 @@
 import { useRecommendationStore } from '@/stores/recommendation';
 
 const store = useRecommendationStore()
+store.reloadCards()
 
 </script>
     
