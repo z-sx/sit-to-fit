@@ -7,6 +7,7 @@ import ropeImg from '@/assets/PhysicalActivitiesView/rope.png'
 import yogaImg from '@/assets/PhysicalActivitiesView/yoga.png'
 import houseChoresImg from '@/assets/PhysicalActivitiesView/house-chores.png'
 import weightliftingImg from '@/assets/PhysicalActivitiesView/weightlifting.png'
+import { ref } from 'vue'
 
 const outdoorActivities = [
   {
@@ -53,6 +54,9 @@ const indoorActivities = [
     description: 'Weightlifting is a wonderful physical activity that you can do in the comfort of your home at a time of your choosing as a way to stay healthy and in good shape. \nBenefit:\n-> Weightlighting helps boosts metabolism and fat loss\n-> It improves posture, sleep, mood and energy levels'
   },
 ]
+
+const activities = ref(indoorActivities)
+const showIndoor = ref(true)
 </script>
     
 <template>
@@ -79,7 +83,19 @@ const indoorActivities = [
     <h1 class="text-4xl font-sans mx-auto">
       Choose you activity for a healthy lifestyle!
     </h1>
-    <template v-for="activity in outdoorActivities" :key="index">
+    <div class="flex gap-4 mx-auto">
+      <button 
+      class="font-sans text-2xl" 
+      :class="{'font-bold':showIndoor}"
+      @click="activities=indoorActivities;showIndoor=!showIndoor"
+      >Indoor</button>
+      <button 
+      class="font-sans text-2xl" 
+      :class="{'font-bold':!showIndoor}"
+      @click="activities=outdoorActivities;showIndoor=!showIndoor"
+      >Outdoor</button>
+    </div>
+    <template v-for="activity in activities" :key="index">
       <div class="item flex flex-row mx-auto max-w-screen-xl px-14 gap-8">
         <div class="image min-w-[40rem] self-center">
           <img class="object-cover w-full h-[22rem]" :src="activity.image" :alt="activity.name">
