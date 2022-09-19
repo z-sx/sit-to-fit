@@ -132,4 +132,7 @@ const showIndoor = ref(true)
     }
   }
 }
+.router-link-active{
+  @apply text-white bg-green-800;
+}
 </style>

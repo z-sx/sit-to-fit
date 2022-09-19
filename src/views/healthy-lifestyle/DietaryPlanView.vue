@@ -94,4 +94,7 @@ const diets = [
     }
   }
 }
+.router-link-active{
+  @apply text-white bg-green-800;
+}
 </style>
