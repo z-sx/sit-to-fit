@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { $ref, $computed } from 'vue/macros';
 import CardioImg from '@/assets/Recommendation/IconCardio.svg'
 import CyclingImg from '@/assets/Recommendation/IconCycling.svg'
 import SightseeingImg from '@/assets/Recommendation/IconSightseeing.svg'
