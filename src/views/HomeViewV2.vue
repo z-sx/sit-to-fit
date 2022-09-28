@@ -12,7 +12,7 @@
             declining at an alarming rate. </div>
         </div>
         <div class="w-fit self-end py-8 gap-3 flex flex-col">
-          <RouterLink class="rounded-2xl self-center flex flex-col pl-8 pr-16 pt-2 pb-5 text-white bg-blue-600 border-2 border-transparent hover:border-white" :to="{name: 'journey'}">
+          <RouterLink class="rounded-2xl self-center flex flex-col pl-8 pr-16 pt-2 pb-5 text-white bg-blue-600 border-2 border-transparent opacity-95 hover:opacity-100 hover:border-white transition" :to="{name: 'journey'}">
             <span class="font-serif text-3xl">
               Start
             </span>
