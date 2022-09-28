@@ -7,10 +7,11 @@ import Footer from './components/Footer.vue'
 <template>
   <HeaderV2></HeaderV2>
 
-  <RouterView class="min-h-screen">
+  <RouterView>
   </RouterView>
   <Footer></Footer>
 </template>
 
 <style lang="postcss" scoped>
+
 </style>
