@@ -3,20 +3,20 @@ import { useRoute } from 'vue-router';
 
 const steps = [
   {
-    text: "Step 1. Start Sedentary Journey",
+    text: "Start Sedentary Journey",
     link: "sedentary-info",
   },
   {
-    text: "Step 2. Risk Meter Analysis",
+    text: "Risk Meter Analysis",
     link: "risk-meter",
   },
   {
-    text: "Step 3. Preventive Measures",
+    text: "Features",
     link: "feature-info"
   }
 ]
 const route = useRoute()
-const curr =  computed(() => {
+const curr = computed(() => {
   return steps.findIndex(step => step.link === route.name)
 })
 const prev = computed(() => {
@@ -28,75 +28,35 @@ const next = computed(() => {
 </script>
     
 <template>
-  <div class="progress">
-    <div>
-      <span>Progress</span>
-      <div>
-        <RouterLink class="prev" :to="{name: steps[prev]?.link ?? ''}">
-          <img src="@/assets/images/IconLeft.svg" alt="Previous page">
-        </RouterLink>
-        <RouterLink v-for="step in steps" :to="{name: step.link ?? ''}" class="page"></RouterLink>
-        <RouterLink class="next" :to="{name: steps[next]?.link ?? ''}">
-          <img src="@/assets/images/IconRight.svg" alt="Next page">
-        </RouterLink>
-      </div>
+  <div class="flex bg-color h-14 items-center gap-4 p-3 rounded-xl w-[48rem]">
+    <span class="font-sans font-semibold">Progress</span>
+    <div class="flex gap-4 items-center justify-between grow">
+      <RouterLink class="prev" :to="{name: steps[prev]?.link ?? ''}">
+        <img class="w-6" src="@/assets/images/IconLeft.svg" alt="Previous page">
+      </RouterLink>
+      <RouterLink 
+      class="flex items-center gap-2"
+      v-for="step in steps" :to="{name: step.link ?? ''}">
+        <div class="w-5 h-4 bg-cyan-100 opacity-80 rounded-full"></div>
+        <span class="font-serif text-base">{{step.text}}</span>
+      </RouterLink>
+      <RouterLink class="next" :to="{name: steps[next]?.link ?? ''}">
+        <img class="w-6" src="@/assets/images/IconRight.svg" alt="Next page">
+      </RouterLink>
     </div>
-    <RouterLink v-for="step in steps" :to="{name: step.link}">
-      {{step.text}}
-    </RouterLink>
   </div>
 </template>
     
 <style lang="postcss" scoped>
-.progress {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  background: #F4FAFF;
-  border-radius: 32px;
-  font-family: 'Open Sans';
-
-  &>div {
-    display: flex;
-
-    &>span {
-      font-weight: 600;
-      margin-right: auto;
-    }
-
-    &>div {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      & .prev, & .next{
-        line-height: 0;
-      }
-      & img{
-        width: 24px;
-      }
-      & .page {
-        width: 20px;
-        height: 16px;
-        background: #DCF0FF;
-        border-radius: 11px;
-        &.router-link-active{
-          background: #0981F0;;
-        }
-      }
-    }
+.bg-color{
+  background-color: rgb(221,231,246);
+}
+.router-link-active{
+  &>div{
+    @apply bg-blue-600; 
   }
-
-  &>a {
-    text-decoration: none;
-    color: black;
-
-    &.router-link-active {
-      font-weight: 700;
-    }
-  }
-
-  &>* {
-    margin-bottom: calc(var(--gutter) / 2);
+  &>span{
+    @apply font-bold;
   }
 }
 </style>
