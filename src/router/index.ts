@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useRecommendationStore } from '@/stores/recommendation'
 import HomeView from '../views/HomeViewV2.vue'
 const SedentaryInfoView = () => import('../views/journey-v2/SedentaryInfoView.vue')
-const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
+const RiskMeterView = () => import('../views/journey-v2/RiskMeterView.vue')
 const FeatureInfoView = () => import('../views/journey-v2/FeatureInfoView.vue')
 const HealthyLifestyleView = () => import('../views/HealthyLifestyleView.vue')
 const PhysicalActivitiesView = () => import('../views/healthy-lifestyle/PhysicalActivitiesView.vue')

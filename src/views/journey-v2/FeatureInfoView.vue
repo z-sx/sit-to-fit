@@ -7,12 +7,12 @@ const features = [{
   route: 'healthy-lifestyle',
   image: lifestyleImg,
   desc: 'Learn about how to have a healthy lifestyle',
-},{
+}, {
   title: 'Recommendation System',
   route: 'recommendation',
   image: recommendationImg,
   desc: 'Discover activities you can do nearby your area or at home!',
-},{
+}, {
   title: 'Alert Reminder',
   route: 'alert-reminder',
   image: reminderImg,
@@ -35,9 +35,8 @@ const features = [{
     <div class="flex flex-col gap-4 mt-4 max-w-screen-xl p-14 mx-auto">
       <template v-for="feature in features" :key="feature.title">
         <div class="flex p-8 bg-gray-100 rounded-3xl gap-11 items-center">
-          <RouterLink 
-          class="flex bg-black basis-96 h-32 flex-shrink-0 rounded-[48px] gap-4 items-center px-4"
-          :to="{name:feature.route}">
+          <RouterLink class="flex bg-black basis-96 h-32 flex-shrink-0 rounded-[48px] gap-4 items-center px-4"
+            :to="{name:feature.route}">
             <img class="w-20 justify-center object-contain" :src="feature.image" :alt="feature.title">
             <span class="text-white font-sans text-3xl">
               {{feature.title}}
@@ -51,19 +50,19 @@ const features = [{
     </div>
   </section>
   <section class="flex flex-row max-w-[58.25rem] w-full h-10 mb-16 justify-between mx-auto">
-      <RouterLink class="mr-auto bg-gray-400 nav-button" :to="{name: 'journey'}">
-        <img src="@/assets/icons/IconCircleLeft.svg" alt="Exit">
-        Retake Journey
-      </RouterLink>
-      <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'home'}">
-        Exit Journey
-        <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
-      </RouterLink>
-    </section>
+    <RouterLink class="mr-auto bg-gray-400 nav-button" :to="{name: 'home'}">
+      <img src="@/assets/icons/IconCircleLeft.svg" alt="Exit">
+      Exit Journey
+    </RouterLink>
+    <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'journey'}">
+      Retake Journey
+      <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
+    </RouterLink>
+  </section>
 </template>
     
 <style lang="postcss" scoped>
-.nav-button{
+.nav-button {
   @apply h-10 text-white flex items-center p-3 gap-3;
 }
 </style>

@@ -1,13 +1,39 @@
 <script setup lang="ts">
+import SedentaryRiskViz from "../../components/SedentaryRiskViz.vue";
 </script>
     
 <template>
-  <h2 class="font-sans text-3xl">
-    We will require some of your statistics to determine your sedentary index in comparison to the Melbourne CBD index.
-  </h2>
-
-
+  <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+    <div class="font-serif text-4xl">
+      Risk Meter Analysis
+    </div>
+  </section>
+  <section class="my-14">
+    <div class="mx-auto flex items-center justify-center gap-8">
+      <div class="h-0.5 w-32 bg-black"></div>
+      <h2 class="italic text-3xl font-sans font-semibold w-max">
+        Check your Sedentary behaviour risk
+      </h2>
+      <div class="h-0.5 w-32 bg-black"></div>
+    </div>
+    <div class="max-w-screen-md mx-auto mt-8 rounded-3xl overflow-hidden">
+      <SedentaryRiskViz></SedentaryRiskViz>
+    </div>
+  </section>
+  <section class="flex flex-row max-w-[58.25rem] w-full h-10 mb-16 justify-between mx-auto">
+    <RouterLink class="mr-auto bg-gray-400 nav-button" :to="{name: 'home'}">
+      <img src="@/assets/icons/IconCircleLeft.svg" alt="Exit">
+      Exit Journey
+    </RouterLink>
+    <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'journey'}">
+      Retake Journey
+      <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
+    </RouterLink>
+  </section>
 </template>
     
 <style lang="postcss" scoped>
+.nav-button {
+  @apply h-10 text-white flex items-center p-3 gap-3;
+}
 </style>
