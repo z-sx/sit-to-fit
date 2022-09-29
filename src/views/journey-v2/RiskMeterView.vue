@@ -25,8 +25,8 @@ import SedentaryRiskViz from "../../components/SedentaryRiskViz.vue";
       <img src="@/assets/icons/IconCircleLeft.svg" alt="Exit">
       Exit Journey
     </RouterLink>
-    <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'journey'}">
-      Retake Journey
+    <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'feature-info'}">
+      Continue
       <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
     </RouterLink>
   </section>
