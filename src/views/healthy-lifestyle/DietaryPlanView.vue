@@ -34,8 +34,8 @@ const diets = [
 </script>
     
 <template>
-  <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
-    <div class="font-sans text-4xl pt-20">
+  <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+    <div class="font-sans text-4xl">
       Dietary Planning
     </div>
   </section>
@@ -47,10 +47,11 @@ const diets = [
       <div class="flex flex-col gap-4">
         <RouterLink class="shadow bg-white rounded-xl p-4 font-sans font-bold hover:bg-green-700 hover:text-white" :to="{name:'physical-activities'}">Physical Activities</RouterLink>
         <RouterLink class="shadow bg-white rounded-xl p-4 font-sans font-bold hover:bg-green-700 hover:text-white" :to="{name:'dietary-plan'}">Dietary Planning</RouterLink>
+        <RouterLink class="shadow bg-white rounded-xl p-4 font-sans font-bold hover:bg-green-700 hover:text-white" :to="{name:'physical-ergonomics'}">Physical Ergonomics</RouterLink>
       </div>
     </div>
     <div class="">
-      <img class="h-[32rem]" src="@/assets/DietaryPlanView/Healthy-Diet.jpg" alt="Healthy Diet">
+      <img class="h-[32rem] w-[52rem] object-cover" src="@/assets/DietaryPlanView/Healthy-Diet.jpg" alt="Healthy Diet">
     </div>
   </section>
   <section class="flex flex-col justify-center gap-16 my-16">
@@ -64,7 +65,7 @@ const diets = [
         </div>
         <div class="content flex gap-2">
           <div class="min-w-[3rem]">
-            <img src="@/assets/icons/IconGreenTick.svg" alt="Point">
+            <img src="@/assets/PhysicalErgonomicsView/IconTickGreen.svg" alt="Point">
           </div>
           <div class="flex flex-col">
             <h2 class="font-sans text-3xl leading-relaxed">
