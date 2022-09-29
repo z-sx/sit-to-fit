@@ -99,7 +99,7 @@ const answer = new Set([0, 1, 2, 3, 4])
           </div>
         </div>
       </div>
-      <h1 class="italic font-sans text-4xl self-center text-blue-900">
+      <!-- <h1 class="italic font-sans text-4xl self-center text-blue-900">
         Now, let's test your knowledge by this MCQ.
       </h1>
       <div>
@@ -128,7 +128,7 @@ const answer = new Set([0, 1, 2, 3, 4])
           </template>
           <button @click="showResult = true" class="self-end home-button" :disabled="showResult">See Result</button>
         </div>
-      </div>
+      </div> -->
     </section>
     <section class="flex flex-row max-w-[58.25rem] w-full h-10 mb-16 justify-between mx-auto">
       <RouterLink class="mr-auto bg-gray-400 nav-button" :to="{name: 'home'}">
