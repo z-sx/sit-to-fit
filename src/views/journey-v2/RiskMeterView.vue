@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import SedentaryRiskViz from "../../components/SedentaryRiskViz.vue";
+import JourneyProgress from '../../components/JourneyProgress.vue'
 </script>
     
 <template>
-  <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+  <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
     <div class="font-serif text-4xl">
       Risk Meter Analysis
     </div>
+    <JourneyProgress class="mt-8"></JourneyProgress>
   </section>
   <section class="my-14">
     <div class="mx-auto flex items-center justify-center gap-8">

@@ -2,6 +2,7 @@
 import lifestyleImg from '@/assets/FeatureInfoView/IconLifestyle.svg'
 import recommendationImg from '@/assets/FeatureInfoView/IconRecommendation.svg'
 import reminderImg from '@/assets/FeatureInfoView/IconReminder.svg'
+import JourneyProgress from '../../components/JourneyProgress.vue'
 const features = [{
   title: 'Healthy Lifestyle',
   route: 'healthy-lifestyle',
@@ -21,10 +22,11 @@ const features = [{
 </script>
     
 <template>
-  <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+  <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
     <div class="font-serif text-4xl">
       Features
     </div>
+    <JourneyProgress class="mt-8"></JourneyProgress>
   </section>
   <section class="mt-14">
     <div class="mx-auto flex items-center justify-center gap-8">
