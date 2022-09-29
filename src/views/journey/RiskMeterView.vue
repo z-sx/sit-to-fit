@@ -17,7 +17,7 @@ import JourneyLayoutV2 from "../../components/JourneyLayoutV2.vue";
     </JourneySection>
     <section class="nav">
       <RouterLink class="left button" to="/">Exit Journey</RouterLink>
-      <RouterLink class="right button" :to="{name:'measure-info'}">Continue</RouterLink>
+      <RouterLink class="right button" :to="{name:'feature-info'}">Continue</RouterLink>
     </section>
   </JourneyLayoutV2>
 </template>

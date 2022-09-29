@@ -3,7 +3,7 @@ import { useRecommendationStore } from '@/stores/recommendation'
 import HomeView from '../views/HomeViewV2.vue'
 const SedentaryInfoView = () => import('../views/journey-v2/SedentaryInfoView.vue')
 const RiskMeterView = () => import('../views/journey/RiskMeterView.vue')
-const MeasureInfoView = () => import('../views/journey/MeasureInfoView.vue')
+const FeatureInfoView = () => import('../views/journey-v2/FeatureInfoView.vue')
 const HealthyLifestyleView = () => import('../views/HealthyLifestyleView.vue')
 const PhysicalActivitiesView = () => import('../views/healthy-lifestyle/PhysicalActivitiesView.vue')
 const DietaryPlanView = () => import('../views/healthy-lifestyle/DietaryPlanView.vue')
@@ -43,9 +43,9 @@ const router = createRouter({
       component: RiskMeterView,
     },
     {
-      path: '/measure-info',
-      name: 'measure-info',
-      component: MeasureInfoView,
+      path: '/feature-info',
+      name: 'feature-info',
+      component: FeatureInfoView,
     },
     {
       path: '/healthy-lifestyle',

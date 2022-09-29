@@ -12,7 +12,7 @@ const steps = [
   },
   {
     text: "Step 3. Preventive Measures",
-    link: "measure-info"
+    link: "feature-info"
   }
 ]
 const route = useRoute()
