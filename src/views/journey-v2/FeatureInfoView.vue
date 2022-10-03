@@ -61,7 +61,7 @@ const features = [{
     </RouterLink>
     <RouterLink class="ml-auto bg-blue-600 hover:bg-blue-700 nav-button" :to="{name: 'journey'}">
       Retake Journey
-      <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
+      <img src="@/assets/icons/IconRestart.svg" alt="Restart">
     </RouterLink>
   </section>
 </template>
