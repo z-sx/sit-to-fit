@@ -34,21 +34,22 @@ const features = [{
       <h2 class="italic text-3xl font-sans font-semibold w-max">Try out our features</h2>
       <div class="h-0.5 w-32 bg-black"></div>
     </div>
-    <div class="flex flex-col gap-4 mt-4 max-w-screen-xl p-14 mx-auto">
-      <template v-for="feature in features" :key="feature.title">
-        <div class="flex p-8 bg-gray-100 rounded-3xl gap-11 items-center">
-          <RouterLink class="flex bg-black basis-96 h-32 flex-shrink-0 rounded-[48px] gap-4 items-center px-4"
-            :to="{name:feature.route}">
-            <img class="w-20 justify-center object-contain" :src="feature.image" :alt="feature.title">
-            <span class="text-white font-sans text-3xl">
-              {{feature.title}}
-            </span>
-          </RouterLink>
-          <span class="font-sans text-3xl">
-            {{feature.desc}}
-          </span>
-        </div>
-      </template>
+    <div class="flex flex-col gap-8 mt-4 max-w-screen-xl p-14 mx-auto">
+      <div class="bg-white w-max rounded-xl relative mx-auto card-shadow">
+        <img src="@/assets/FeatureInfoView/lifestyle.svg">
+        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-full bg-blue-600 hover:bg-blue-700 focus:ring"
+        :to="{name:'healthy-lifestyle'}">Explore</RouterLink>
+      </div>
+      <div class="bg-white w-max rounded-xl relative mx-auto card-shadow">
+        <img src="@/assets/FeatureInfoView/recommend.svg">
+        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-full bg-blue-600 hover:bg-blue-700 focus:ring"
+        :to="{name:'recommendation'}">Engage Now</RouterLink>
+      </div>
+      <div class="bg-white w-max rounded-xl relative mx-auto card-shadow">
+        <img src="@/assets/FeatureInfoView/reminder.svg">
+        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-full bg-blue-600 hover:bg-blue-700 focus:ring"
+        :to="{name:'alert-reminder'}">Set Your Reminder</RouterLink>
+      </div>
     </div>
   </section>
   <section class="flex flex-row max-w-[58.25rem] w-full h-10 mb-16 justify-between mx-auto">
@@ -66,5 +67,8 @@ const features = [{
 <style lang="postcss" scoped>
 .nav-button {
   @apply h-10 text-white flex items-center p-3 gap-3 focus:ring;
+}
+.card-shadow{
+  box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
 }
 </style>
