@@ -30,9 +30,9 @@ const sections = [{
       Healthy Lifestyle Changes you don't want to miss!
     </div>
   </section>
-  <section class="flex flex-col gap-8 max-w-screen-xl mx-auto p-14">
+  <section class="flex flex-col gap-8 max-w-screen-md mx-auto p-14">
     <template v-for="section in sections">
-      <div class="card-shadow p-16 rounded-xl">
+      <div class="card-shadow p-12 rounded-xl bg-white">
         <div class="aspect-[2/1] bg-cover bg-center p-10 flex flex-col justify-end gap-4" 
         :style="{backgroundImage: `url(${section.img})`}">
           <h2 class="font-sans font-bold text-4xl text-white">
