@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import 'swiper/css';
-
+import BreadCrumb from '@/components/BreadCrumb.vue';
 import activityImg from '@/assets/HealthyLifestyleView/activities.jpg'
 import dietImg from '@/assets/HealthyLifestyleView/diets.jpg'
 import ergonomicImg from '@/assets/HealthyLifestyleView/ergonomics.jpg'
@@ -25,6 +23,7 @@ const sections = [{
 
 </script>
 <template>
+  <BreadCrumb :nav="['home', 'healthy-lifestyle']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
       Healthy Lifestyle Changes you don't want to miss!

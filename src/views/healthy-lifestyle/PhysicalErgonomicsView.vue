@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import BreadCrumb from '@/components/BreadCrumb.vue';
 import g1 from '@/assets/PhysicalErgonomicsView/g-1.jpg'
 import g2 from '@/assets/PhysicalErgonomicsView/g-2.jpg'
 import g3 from '@/assets/PhysicalErgonomicsView/g-3.jpg'
@@ -52,6 +53,7 @@ const isBad = computed(()=>contentKey.value === "bad")
 </script>
     
 <template>
+  <BreadCrumb :nav="['home', 'healthy-lifestyle', 'physical-ergonomics']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
       Physical Ergonomics

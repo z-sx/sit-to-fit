@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BreadCrumb from '@/components/BreadCrumb.vue'
 import cyclingImg from '@/assets/PhysicalActivitiesView/cycling.png'
 import walkingImg from '@/assets/PhysicalActivitiesView/walking.png'
 import dogWalkingImg from '@/assets/PhysicalActivitiesView/dog-walking.png'
@@ -60,6 +61,7 @@ const showIndoor = ref(true)
 </script>
     
 <template>
+  <BreadCrumb :nav="['home', 'healthy-lifestyle', 'physical-activities']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
       Physical Activities

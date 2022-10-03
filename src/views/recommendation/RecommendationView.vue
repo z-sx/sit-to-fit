@@ -1,83 +1,80 @@
 <script setup lang="ts">
 import Map from '@/components/Map.vue'
 import { useRecommendationStore } from '@/stores/recommendation';
+import BreadCrumb from '../../components/BreadCrumb.vue';
 const store = useRecommendationStore()
 store.reloadCards()
 
 </script>
     
 <template>
-  <div class="flex flex-col gap-16">
-    <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
-      <div class="font-sans text-4xl">
-        Your Recommendations for Today!
-      </div>
-    </section>
-    <section class="mx-auto w-full max-w-screen-xl p-14 flex flex-col gap-8 mb-8">
-      <div class="flex justify-between">
-        <RouterLink class="home-button" :to="{name:'preferences'}">
-          <img class="h-full" src="@/assets/icons/IconSetting.svg" alt="Preferences">
-          Change Preferences
-        </RouterLink>
-        <button @click="store.reloadCards()" class="home-button">
-          <img class="h-full" src="@/assets/icons/IconRefresh.svg" alt="Reload">
-          Reload Recommendations
-        </button>
-      </div>
-      <TransitionGroup tag="div" name="list" class="grid grid-cols-2 gap-11">
-        <template v-for="item in store.cards" :key="item.id">
-          <div
-            class="flex flex-col justify-between h-96 card-shadow rounded-xl overflow-hidden shadow-lg bg-white">
-            <div class="flex justify-between items-center">
-              <span class="font-sans text-2xl pl-8 font-semibold">
-                {{item.content}} {{item.title}}
-              </span>
-              <button @click="store.closeCard(item)" class="h-16 w-16 p-4 select-none hover:bg-gray-200">
-                <img class="h-full" src="@/assets/icons/IconClose.svg" alt="Close">
-              </button>
-            </div>
-            <div class="flex flex-col grow overflow-hidden">
-              <Map 
-              :center="{lat:item.longitude, lng:item.latitude}"
-              v-if="item.latitude!==null&&item.longitude!==null">
-              </Map>
-              <img v-else class="w-full object-cover object-bottom" src="@/assets/Recommendation/Indoor.png" alt="Indoor Activity">
-            </div>
-            <div class="grid grid-cols-2 grid-rows-1">
-              <button
-              @click="store.dislike(item)"
-              class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none"
-              >
-                <img v-if="store.dislikedCards.find(i=>i.id===item.id)" class="h-full" src="@/assets/icons/IconThumbDownFill.svg" alt="Thumb Down">
-                <img v-else class="h-full" src="@/assets/icons/IconThumbDown.svg" alt="Thumb Down">
-                Dislike
-              </button>
-              <button
-              @click="store.like(item)" 
-              class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none"
-              >
-                <img v-if="store.likedCards.find(i=>i.id===item.id)" class="h-full" src="@/assets/icons/IconThumbUpFill.svg" alt="Thumb Up">
-                <img v-else class="h-full" src="@/assets/icons/IconThumbUp.svg" alt="Thumb Up">
-                Like
-              </button>
-            </div>
+  <BreadCrumb :nav="['home', 'recommendation', 'cards']"></BreadCrumb>
+  <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+    <div class="font-sans text-4xl">
+      Your Recommendations for Today!
+    </div>
+  </section>
+  <section class="mx-auto w-full max-w-screen-xl p-14 flex flex-col gap-8 mt-16 mb-8">
+    <div class="flex justify-between">
+      <RouterLink class="home-button" :to="{name:'preferences'}">
+        <img class="h-full" src="@/assets/icons/IconSetting.svg" alt="Preferences">
+        Change Preferences
+      </RouterLink>
+      <button @click="store.reloadCards()" class="home-button">
+        <img class="h-full" src="@/assets/icons/IconRefresh.svg" alt="Reload">
+        Reload Recommendations
+      </button>
+    </div>
+    <TransitionGroup tag="div" name="list" class="grid grid-cols-2 gap-11">
+      <template v-for="item in store.cards" :key="item.id">
+        <div class="flex flex-col justify-between h-96 card-shadow rounded-xl overflow-hidden shadow-lg bg-white">
+          <div class="flex justify-between items-center">
+            <span class="font-sans text-2xl pl-8 font-semibold">
+              {{item.content}} {{item.title}}
+            </span>
+            <button @click="store.closeCard(item)" class="h-16 w-16 p-4 select-none hover:bg-gray-200">
+              <img class="h-full" src="@/assets/icons/IconClose.svg" alt="Close">
+            </button>
           </div>
-        </template>
-      </TransitionGroup>
-    </section>
-  </div>
+          <div class="flex flex-col grow overflow-hidden">
+            <Map :center="{lat:item.longitude, lng:item.latitude}" v-if="item.latitude!==null&&item.longitude!==null">
+            </Map>
+            <img v-else class="w-full object-cover object-bottom" src="@/assets/Recommendation/Indoor.png"
+              alt="Indoor Activity">
+          </div>
+          <div class="grid grid-cols-2 grid-rows-1">
+            <button @click="store.dislike(item)"
+              class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none">
+              <img v-if="store.dislikedCards.find(i=>i.id===item.id)" class="h-full"
+                src="@/assets/icons/IconThumbDownFill.svg" alt="Thumb Down">
+              <img v-else class="h-full" src="@/assets/icons/IconThumbDown.svg" alt="Thumb Down">
+              Dislike
+            </button>
+            <button @click="store.like(item)"
+              class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none">
+              <img v-if="store.likedCards.find(i=>i.id===item.id)" class="h-full"
+                src="@/assets/icons/IconThumbUpFill.svg" alt="Thumb Up">
+              <img v-else class="h-full" src="@/assets/icons/IconThumbUp.svg" alt="Thumb Up">
+              Like
+            </button>
+          </div>
+        </div>
+      </template>
+    </TransitionGroup>
+  </section>
 </template>
     
 <style lang="postcss" scoped>
-.card-shadow{
+.card-shadow {
   box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
 }
 
-.list-move, 
+.list-move,
 .list-enter-active,
 .list-enter-active {
   transition: all 0.5s ease;
 }
+
 .list-enter-from,
 .list-leave-to {
   position: absolute;

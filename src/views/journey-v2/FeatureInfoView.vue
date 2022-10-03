@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BreadCrumb from '@/components/BreadCrumb.vue'
 import lifestyleImg from '@/assets/FeatureInfoView/IconLifestyle.svg'
 import recommendationImg from '@/assets/FeatureInfoView/IconRecommendation.svg'
 import reminderImg from '@/assets/FeatureInfoView/IconReminder.svg'
@@ -22,6 +23,7 @@ const features = [{
 </script>
     
 <template>
+  <BreadCrumb :nav="['home', 'journey', 'feature-info']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
     <div class="font-serif text-4xl">
       Features

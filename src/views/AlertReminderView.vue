@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import BreadCrumb from '@/components/BreadCrumb.vue';
 import type { ReminderConfig } from '@/components/ReminderItem.vue';
-import { ref, watch, reactive } from 'vue';
+import { reactive } from 'vue';
 import ReminderItem from '@/components/ReminderItem.vue';
 
 const configs = reactive<ReminderConfig[]>([
@@ -27,23 +28,19 @@ const configs = reactive<ReminderConfig[]>([
 </script>
     
 <template>
-  <section class="flex flex-col items-center gap-16">
-    <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
-      <div class="font-sans text-4xl pt-20">
-        Alert Reminder
-      </div>
-    </section>
-    <h1 class="text-4xl font-sans">
-      Alert Reminder Settings
-    </h1>
-
-    <div class="w-[58.25rem] flex flex-col gap-16">
-      <ReminderItem 
-      v-for="config in configs" :key="config.name" 
-      :config="config"
-      class="reminder-item"></ReminderItem>
+  <BreadCrumb :nav="['home', 'alert-reminder']"></BreadCrumb>
+  <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+    <div class="font-sans text-4xl">
+      Alert Reminder
     </div>
   </section>
+  <h1 class="text-4xl font-sans my-16 align text-center">
+    Alert Reminder Settings
+  </h1>
+
+  <div class="w-[58.25rem] flex flex-col gap-16 mb-8 mx-auto">
+    <ReminderItem v-for="config in configs" :key="config.name" :config="config" class="reminder-item"></ReminderItem>
+  </div>
 </template>
     
 <style lang="postcss" scoped>

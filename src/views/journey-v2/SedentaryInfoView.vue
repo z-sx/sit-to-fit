@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BreadCrumb from '@/components/BreadCrumb.vue';
 import JourneyStat from '@/components/JourneyStat.vue';
 import JourneyProgress from '../../components/JourneyProgress.vue'
 import { reactive, ref } from 'vue';
@@ -25,6 +26,7 @@ const answer = new Set([0, 1, 2, 3, 4])
 </script>
     
 <template>
+  <BreadCrumb :nav="['home', 'journey', 'sedentary-info']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
     <div class="font-serif text-4xl">
       Journey

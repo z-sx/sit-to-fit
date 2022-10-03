@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import BreadCrumb from '@/components/BreadCrumb.vue'
 import mediterraneanImg from '@/assets/DietaryPlanView/mediterranean.png'
 import paleoImg from '@/assets/DietaryPlanView/paleo.png'
 import intermittentImg from '@/assets/DietaryPlanView/intermittent.png'
@@ -34,6 +35,7 @@ const diets = [
 </script>
     
 <template>
+  <BreadCrumb :nav="['home', 'healthy-lifestyle', 'dietary-plan']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
       Dietary Planning
