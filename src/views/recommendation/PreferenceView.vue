@@ -45,15 +45,15 @@ function hasPref(item: Preference){
     
 <template>
   <div class="flex flex-col gap-16">
-    <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
-      <div class="font-sans text-4xl pt-20">
+    <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+      <div class="font-sans text-4xl">
         Select your preferences
       </div>
     </section>
     <section class="flex flex-wrap gap-14 justify-center max-w-screen-lg w-full mx-auto">
       <template v-for="item in preferences" :key="item.id">
         <div 
-        class="pref select-none cursor-pointer border-2 border-solid flex flex-col w-[28rem] h-[16rem] gap-4 p-8 bg-gray-200"
+        class="pref select-none cursor-pointer border-2 border-solid rounded-xl flex flex-col w-[28rem] xl:w-[36rem] h-[16rem] gap-4 p-8 bg-white"
         :class="{
           'border-white-50': !hasPref(item),
           'border-black': hasPref(item),
@@ -70,7 +70,7 @@ function hasPref(item: Preference){
               <img class="h-8 fill-cyan-700" v-show="!hasPref(item)" src="@/assets/icons/IconCheckboxBlank.svg" alt="Checkbox Blank">
             </div>
           </div>
-          <p class="text-2xl">
+          <p class="text-2xl pl-16">
             {{item.description}}
           </p>
         </div>
@@ -86,7 +86,10 @@ function hasPref(item: Preference){
 .home-button {
   @apply flex flex-row w-fit items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white border-solid;
 }
-.pref:nth-child(1){
+.pref {
+  box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+}
+/* .pref:nth-child(1){
   @apply bg-gradient-to-r from-cyan-200 to-blue-200  hover:from-cyan-300 hover:to-blue-300;
 }
 .pref:nth-child(2){
@@ -97,5 +100,5 @@ function hasPref(item: Preference){
 }
 .pref:nth-child(4){
   @apply bg-gradient-to-r from-fuchsia-200 to-rose-200 hover:from-fuchsia-300 hover:to-rose-300;
-}
+} */
 </style>

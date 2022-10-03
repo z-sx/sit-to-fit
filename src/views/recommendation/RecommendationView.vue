@@ -8,8 +8,8 @@ store.reloadCards()
     
 <template>
   <div class="flex flex-col gap-16">
-    <section class="mx-auto w-full h-60 bg-gray-200 flex justify-center">
-      <div class="font-sans text-4xl pt-20">
+    <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
+      <div class="font-sans text-4xl">
         Your Recommendations for Today!
       </div>
     </section>
