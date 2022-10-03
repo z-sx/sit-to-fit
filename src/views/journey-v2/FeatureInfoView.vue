@@ -52,11 +52,11 @@ const features = [{
     </div>
   </section>
   <section class="flex flex-row max-w-[58.25rem] w-full h-10 mb-16 justify-between mx-auto">
-    <RouterLink class="mr-auto bg-gray-400 nav-button" :to="{name: 'home'}">
+    <RouterLink class="mr-auto bg-gray-400 hover:bg-gray-500 nav-button" :to="{name: 'home'}">
       <img src="@/assets/icons/IconCircleLeft.svg" alt="Exit">
       Exit Journey
     </RouterLink>
-    <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'journey'}">
+    <RouterLink class="ml-auto bg-blue-600 hover:bg-blue-700 nav-button" :to="{name: 'journey'}">
       Retake Journey
       <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
     </RouterLink>
@@ -65,6 +65,6 @@ const features = [{
     
 <style lang="postcss" scoped>
 .nav-button {
-  @apply h-10 text-white flex items-center p-3 gap-3;
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring;
 }
 </style>

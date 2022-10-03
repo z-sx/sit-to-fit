@@ -131,12 +131,12 @@ const answer = new Set([0, 1, 2, 3, 4])
       </div> -->
     </section>
     <section class="flex flex-row max-w-[58.25rem] w-full h-10 mb-16 justify-between mx-auto">
-      <RouterLink class="mr-auto bg-gray-400 nav-button" :to="{name: 'home'}">
+      <RouterLink class="mr-auto bg-gray-400 hover:bg-gray-500 nav-button" :to="{name: 'home'}">
         <img src="@/assets/icons/IconCircleLeft.svg" alt="Exit">
         Exit Journey
       </RouterLink>
-      <RouterLink class="ml-auto bg-indigo-400 nav-button" :to="{name: 'risk-meter'}">
-        Continue
+      <RouterLink class="ml-auto bg-blue-600 hover:bg-blue-700 nav-button" :to="{name: 'risk-meter'}">
+        Evaluate Your Risk Level
         <img src="@/assets/icons/IconCircleRight.svg" alt="Continue">
       </RouterLink>
     </section>
@@ -146,7 +146,7 @@ const answer = new Set([0, 1, 2, 3, 4])
     
 <style lang="postcss" scoped>
 .nav-button{
-  @apply h-10 text-white flex items-center p-3 gap-3;
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring;
 }
 .home-button {
   @apply flex flex-row items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white border-solid;
