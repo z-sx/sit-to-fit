@@ -27,7 +27,7 @@ store.reloadCards()
       <TransitionGroup tag="div" name="list" class="grid grid-cols-2 gap-11">
         <template v-for="item in store.cards" :key="item.id">
           <div
-            class="flex flex-col justify-between h-96 border border-gray-200 border-solid rounded-3xl overflow-hidden shadow-lg bg-white">
+            class="flex flex-col justify-between h-96 card-shadow rounded-xl overflow-hidden shadow-lg bg-white">
             <div class="flex justify-between items-center">
               <span class="font-sans text-2xl pl-8 font-semibold">
                 {{item.content}} {{item.title}}
@@ -69,6 +69,10 @@ store.reloadCards()
 </template>
     
 <style lang="postcss" scoped>
+.card-shadow{
+  box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+}
+
 .list-move, 
 .list-enter-active,
 .list-enter-active {
