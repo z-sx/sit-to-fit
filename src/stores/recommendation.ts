@@ -1,8 +1,14 @@
 import { defineStore } from 'pinia'
 import { $$, $ref } from 'vue/macros'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 
 axios.defaults.baseURL = 'https://recommendsittofit.herokuapp.com'
+
+// axios.interceptors.response.use(
+//   response => response,
+//   error => {
+    
+//   });
 
 interface Card{
   id: number
@@ -76,23 +82,33 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
   }
 
   async function getSixCards(): Promise<Card[]>{
-    // put id to server to get cards
-    const response = await axios.put("/cards", {
-      web_id: browserId
-    })
-    // const data = {"11":{"id":3012,"title":"Abdominal Training","theme":"Low Intensity","sub_theme":"Muscle building","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0},"252":{"id":1253,"title":"Fire Services Museum Victoria","theme":"Place Of Assembly","sub_theme":"Art Gallery\/Museum","latitude":144.975,"longitude":-37.8086,"content":"Go for a walk to","rating":0},"10":{"id":1011,"title":"Fairies Tree","theme":"Sculpture","sub_theme":"Sculpture","latitude":144.981,"longitude":-37.8134,"content":"Go for a walk to","rating":0},"3":{"id":3004,"title":"House chores","theme":"Low Intensity","sub_theme":"Muscle Building","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0},"260":{"id":1261,"title":"North Melbourne Recreation Centre (Aquatic)","theme":"Leisure\/Recreation","sub_theme":"Major Sports & Recreation Facility","latitude":144.943,"longitude":-37.7999,"content":"Go for a walk to","rating":0},"125":{"id":1126,"title":"Architectural Fragment","theme":"Sculpture","sub_theme":"Sculpture","latitude":144.964,"longitude":-37.8098,"content":"Go for a walk to","rating":0}}
-    const data = response.data as Record<string, Card>
-    return Object.values(data)
+    try{
+      // put id to server to get cards
+      const response = await axios.put("/cards", {
+        web_id: browserId
+      })
+      // const data = {"11":{"id":3012,"title":"Abdominal Training","theme":"Low Intensity","sub_theme":"Muscle building","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0},"252":{"id":1253,"title":"Fire Services Museum Victoria","theme":"Place Of Assembly","sub_theme":"Art Gallery\/Museum","latitude":144.975,"longitude":-37.8086,"content":"Go for a walk to","rating":0},"10":{"id":1011,"title":"Fairies Tree","theme":"Sculpture","sub_theme":"Sculpture","latitude":144.981,"longitude":-37.8134,"content":"Go for a walk to","rating":0},"3":{"id":3004,"title":"House chores","theme":"Low Intensity","sub_theme":"Muscle Building","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0},"260":{"id":1261,"title":"North Melbourne Recreation Centre (Aquatic)","theme":"Leisure\/Recreation","sub_theme":"Major Sports & Recreation Facility","latitude":144.943,"longitude":-37.7999,"content":"Go for a walk to","rating":0},"125":{"id":1126,"title":"Architectural Fragment","theme":"Sculpture","sub_theme":"Sculpture","latitude":144.964,"longitude":-37.8098,"content":"Go for a walk to","rating":0}}
+      const data = response.data as Record<string, Card>
+      return Object.values(data)
+    }catch{
+      alert("Failed to retrieve recommendation data from server")
+    }
+    return []
   }
 
   async function getOneCard(): Promise<Card>{
     // put id to server to get cards
-    const response = await axios.put("/crosscard", {
-      web_id: browserId
-    })
-    // const data = {"21":{"id":3022,"title":"Indoor walking","theme":"Low Intensity","sub_theme":"Endurance training","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0}}
-    const data = response.data as Record<string, Card>
-    return Object.values(data)[0]
+    try{
+      const response = await axios.put("/crosscard", {
+        web_id: browserId
+      })
+      // const data = {"21":{"id":3022,"title":"Indoor walking","theme":"Low Intensity","sub_theme":"Endurance training","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0}}
+      const data = response.data as Record<string, Card>
+      return Object.values(data)[0]
+    }catch(e){
+      alert("Failed to retrieve recommendation data from server")
+      throw e
+    }
   }
   async function updatePref(){
     // put id to server
