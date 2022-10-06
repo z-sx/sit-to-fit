@@ -12,6 +12,7 @@ const AlertReminderView = () => import('../views/AlertReminderView.vue')
 const BecomeNewUserView = () => import('../views/BecomeNewUserView.vue')
 const PreferenceView = () => import('../views/recommendation/PreferenceView.vue')
 const RecommendationView = () => import('../views/recommendation/RecommendationView.vue')
+const NotFoundView = () => import('../views/NotFoundView.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -107,6 +108,10 @@ const router = createRouter({
       name: 'become-new-user',
       component: BecomeNewUserView,
     },
+    {
+      path: '/:pathMatch(.*)*',
+      component: NotFoundView
+    }
   ]
 })
 
