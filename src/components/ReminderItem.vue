@@ -64,7 +64,7 @@ onUnmounted(() => {
         </option>
       </select>
     </div>
-    <progress :max="config.period * 60 * 1000" :value="progress"></progress>
+    <progress v-show="config.toggle" :max="config.period * 60 * 1000" :value="progress"></progress>
   </div>
 </template>
     
