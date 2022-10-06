@@ -3,20 +3,24 @@ import { ref } from 'vue';
 
 const links = ref([
   {
+    name: 'Home',
+    to: 'home'
+  },
+  {
     name: 'Journey',
-    to: '/journey',
+    to: 'sedentary-info',
   },
   {
     name: 'Healthy Lifestyle',
-    to: '/healthy-lifestyle',
+    to: 'healthy-lifestyle',
   },
   {
     name: 'Recommendations',
-    to: '/recommendations',
+    to: 'cards',
   },
   {
     name: 'Alert Reminder',
-    to: '/alert-reminder',
+    to: 'alert-reminder',
   },
 ])
 </script>
@@ -28,7 +32,7 @@ const links = ref([
     </RouterLink>
     <nav class="navigation grow flex flex-row justify-between items-center h-16 gap-1">
       <template v-for="link in links">
-        <RouterLink class="button" :to="link.to">
+        <RouterLink class="button" :to="{name:link.to}">
           {{link.name}}
         </RouterLink>
       </template>
@@ -39,6 +43,9 @@ const links = ref([
 <style lang="postcss" scoped>
 
 .button{
-  @apply p-4 gap-2 leading-8 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline;
+  @apply px-6 py-4 gap-2 leading-8 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline hover:bg-black/20 transition active:ring;
+  &.router-link-active{
+    @apply bg-black/10;
+  }
 }
 </style>
