@@ -10,7 +10,7 @@ axios.defaults.baseURL = 'https://recommendsittofit.herokuapp.com'
     
 //   });
 
-interface Card{
+export interface Card{
   id: number
   title: string
   theme: string
@@ -81,7 +81,7 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
     })
   }
 
-  async function getSixCards(): Promise<Card[]>{
+  async function getCards(): Promise<Card[]>{
     try{
       // put id to server to get cards
       const response = await axios.put("/cards", {
@@ -163,7 +163,7 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
   }
 
   async function reloadCards(){
-    cards = await getSixCards()
+    cards = await getCards()
   }
 
   async function closeCard(card: Card){
