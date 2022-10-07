@@ -8,8 +8,8 @@
       <div class="h-[45rem] xl:h-[50rem] xl:max-w-screen-xl xl:mx-auto relative z-10 flex flex-col px-14 pt-36 justify-between">
         <div class="w-[50%]">
           <div class="text-4xl font-bold font-serif">Sedentary Lifestyle</div>
-          <div class="text-3xl font-normal font-serif">The fitness and health of today's workforce in Melbourne are
-            declining at an alarming rate. </div>
+          <div class="text-3xl font-normal font-serif">To the people of Melbourne CBD,</div>
+          <div class="text-3xl font-normal font-serif">We are here to help you change your lifestyle.</div>
         </div>
         <div class="w-fit self-end py-8 gap-3 flex flex-col">
           <RouterLink class="rounded-2xl self-center flex flex-col pl-8 pr-16 pt-2 pb-5 text-white bg-blue-600 border-2 border-transparent opacity-95 hover:opacity-100 hover:border-white transition" :to="{name: 'journey'}">
