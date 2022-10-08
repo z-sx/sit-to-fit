@@ -28,9 +28,9 @@ loadPopularCards()
       Your Recommendations for Today!
     </div>
   </section>
-  <section class="mx-auto max-w-screen-xl mt-4 px-14 flex">
-    <span class="text-left basis-48">Location: Melbourne CBD</span>
-    <div class="flex grow justify-center pr-48">
+  <section class="mx-auto max-w-screen-xl mt-4 px-14 flex items-center">
+    <span class="text-left basis-96 text-2xl">Location: Melbourne CBD</span>
+    <div class="flex grow justify-center pr-96">
       <button 
       class="font-sans text-3xl px-4 py-2" 
       :class="{'font-bold': tab === 'foryou'}"
