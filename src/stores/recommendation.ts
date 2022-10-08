@@ -110,6 +110,21 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
       throw e
     }
   }
+
+  async function getPopularCards(): Promise<Card[]>{
+    try{
+      const response = await axios.put("/popular", {
+        web_id: browserId
+      })
+      // const data = {"21":{"id":3022,"title":"Indoor walking","theme":"Low Intensity","sub_theme":"Endurance training","latitude":null,"longitude":null,"content":"Home Workout - ","rating":0}}
+      const data = response.data as Record<string, Card>
+      return Object.values(data)
+    }catch(e){
+      alert("Failed to retrieve recommendation data from server")
+      throw e
+    }
+  }
+
   async function updatePref(){
     // put id to server
     await axios.put("/preference", {
@@ -195,6 +210,7 @@ export const useRecommendationStore = defineStore("recommendation", ()=>{
     like,
     dislike,
     reloadCards,
+    getPopularCards,
     closeCard,
     addPref,
     deletePref,
