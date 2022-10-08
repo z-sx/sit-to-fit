@@ -9,7 +9,6 @@ const PhysicalActivitiesView = () => import('../views/healthy-lifestyle/Physical
 const DietaryPlanView = () => import('../views/healthy-lifestyle/DietaryPlanView.vue')
 const PhysicalErgonomicsView = () => import('../views/healthy-lifestyle/PhysicalErgonomicsView.vue')
 const AlertReminderView = () => import('../views/AlertReminderView.vue')
-const BecomeNewUserView = () => import('../views/BecomeNewUserView.vue')
 const PreferenceView = () => import('../views/recommendation/PreferenceView.vue')
 const RecommendationView = () => import('../views/recommendation/RecommendationView.vue')
 const NotFoundView = () => import('../views/NotFoundView.vue')
@@ -24,7 +23,10 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta:{
+        title: 'Home',
+      },
     },
     {
       path: '/journey',
@@ -37,36 +39,57 @@ const router = createRouter({
       path: '/sedentary-info',
       name: 'sedentary-info',
       component: SedentaryInfoView,
+      meta:{
+        title: 'About Sedentary Lifestyle',
+      },
     },
     {
       path: '/risk-meter',
       name: 'risk-meter',
       component: RiskMeterView,
+      meta:{
+        title: 'Risk Meter Analysis',
+      },
     },
     {
       path: '/feature-info',
       name: 'feature-info',
       component: FeatureInfoView,
+      meta:{
+        title: 'Our Features',
+      },
     },
     {
       path: '/healthy-lifestyle',
       name: 'healthy-lifestyle',
       component: HealthyLifestyleView,
+      meta:{
+        title: 'Healthy Lifestyles',
+      },
     },
     {
       path: '/physical-activities',
       name: 'physical-activities',
       component: PhysicalActivitiesView,
+      meta:{
+        title: 'Physical Activities',
+      },
     },
     {
       path: '/dietary-plans',
       name: 'dietary-plan',
       component: DietaryPlanView,
+      meta:{
+        title: 'Dietary Plans',
+      },
     },
     {
       path: '/physical-ergonomics',
       name: 'physical-ergonomics',
       component: PhysicalErgonomicsView,
+      meta:{
+        title: 'Physical Ergonomics',
+      },
     },
     {
       path: '/recommendations',
@@ -84,6 +107,9 @@ const router = createRouter({
       path: '/recommendation/preferences',
       name: 'preferences',
       component: PreferenceView,
+      meta:{
+        title: 'Recommendation Preferences',
+      },
     },
     {
       path: '/recommendation/cards',
@@ -96,23 +122,30 @@ const router = createRouter({
         } else {
           return next()
         }
-      }
+      },
+      meta:{
+        title: 'Recommendations',
+      },
     },
     {
       path: '/alert-reminder',
       name: 'alert-reminder',
       component: AlertReminderView,
-    },
-    {
-      path: '/become-new-user',
-      name: 'become-new-user',
-      component: BecomeNewUserView,
+      meta:{
+        title: 'Alert Reminder',
+      },
     },
     {
       path: '/:pathMatch(.*)*',
-      component: NotFoundView
+      component: NotFoundView,
+      meta:{
+        title: '404 Not Found',
+      },
     }
   ]
 })
-
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title as string} - Sit to Fit`
+  next();
+});
 export default router
