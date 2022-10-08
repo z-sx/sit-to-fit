@@ -1,44 +1,55 @@
 <script setup lang="ts">
-import {defineProps, onUnmounted, ref, toRefs, watch } from 'vue'
+import { defineProps, onUnmounted, reactive, ref, toRef, toRefs, watch } from 'vue'
 import Toggle from '@vueform/toggle'
 import '@vueform/toggle/themes/default.css'
-
-export interface ReminderConfig {
-  name: string
-  content: string
-  options: number[]
-  period: number
-  toggle: boolean
-  title: string
-  body: (mins: number) => string
-}
+import { useReminderStore } from '@/stores/alert-reminder';
+import { storeToRefs } from 'pinia';
+import { $, } from 'vue/macros';
 
 const props = defineProps<{
-  config: ReminderConfig
+  index: number
 }>()
-const {config} = toRefs(props)
+const index = $(toRefs(props).index)
+
+const config = $(storeToRefs(useReminderStore()).reminderConfig)
+const noDisturbConfig = $(storeToRefs(useReminderStore()).noDisturbConfig)
 
 const intervalId = ref(0)
 const updateIntervalId = ref(0)
 const startTime = ref(0)
 const progress = ref(0)
+const ms = ref(0)
 
-watch([()=>config.value.period, ()=>config.value.toggle], ([period, toggle]) => {
+
+watch([() => config[index].period, () => config[index].toggle], ([period, toggle]) => {
+  resetNotification(period, toggle)
+})
+resetNotification(config[index].period, config[index].toggle)
+
+function resetNotification(period: number, toggle: boolean){
   clearInterval(intervalId.value)
   clearInterval(updateIntervalId.value)
   progress.value = 0
   if (toggle) {
-    const ms = period * 60 * 1000
+    ms.value = period * 60 * 1000
     startTime.value = Date.now()
     intervalId.value = window.setInterval(() => {
-      new Notification(config.value.title, {body: config.value.body(period)})
-    }, ms)
+      const now = new Date();
+      const hourMin = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}`
+      console.log(hourMin, noDisturbConfig)
+      if (noDisturbConfig.toggle &&
+        (noDisturbConfig.from <= hourMin && noDisturbConfig.to >= hourMin) ||
+        (noDisturbConfig.from > noDisturbConfig.to && noDisturbConfig.from >= hourMin) ||
+        (noDisturbConfig.from > noDisturbConfig.to && noDisturbConfig.to <= hourMin)
+      ) return
+      new Notification(config[index].title, { body: `Remind you to ${config[index].activity} at every ${period} minutes ` })
+    }, ms.value)
     updateIntervalId.value = window.setInterval(() => {
-      progress.value = (Date.now() - startTime.value)%(config.value.period * 60 * 1000)
+      progress.value = (Date.now() - startTime.value) % ms.value
     }, 300)
     Notification.requestPermission()
   }
-})
+}
 
 onUnmounted(() => {
   clearInterval(intervalId.value)
@@ -50,26 +61,26 @@ onUnmounted(() => {
   <div class="flex flex-col gap-4 p-8 bg-white">
     <div class="flex">
       <h3 class="font-sans text-2xl">
-        {{config.title}}
+        {{config[index].title}}
       </h3>
-      <Toggle class="ml-auto" v-model="config.toggle"></Toggle>
+      <Toggle class="ml-auto" v-model="config[index].toggle"></Toggle>
     </div>
     <div>
       <span>
-        {{config.content}}
+        {{config[index].content}}
       </span>
-      <select v-model="config.period">
-        <option v-for="option in config.options" :key="option" :value="option">
+      <select v-model="config[index].period">
+        <option v-for="option in config[index].options" :key="option" :value="option">
           {{option}} Minutes
         </option>
       </select>
     </div>
-    <progress v-show="config.toggle" :max="config.period * 60 * 1000" :value="progress"></progress>
+    <progress v-show="config[index].toggle" :max="ms" :value="progress"></progress>
   </div>
 </template>
     
 <style lang="postcss" scoped>
-progress{
+progress {
   border-width: revert;
   border-color: revert;
   border-style: revert;

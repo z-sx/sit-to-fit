@@ -1,30 +1,16 @@
 <script setup lang="ts">
 import BreadCrumb from '@/components/BreadCrumb.vue';
-import type { ReminderConfig } from '@/components/ReminderItem.vue';
-import { reactive } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 import ReminderItem from '@/components/ReminderItem.vue';
+import Toggle from '@vueform/toggle'
+import '@vueform/toggle/themes/default.css'
+import { useReminderStore } from '@/stores/alert-reminder';
 
-const configs = reactive<ReminderConfig[]>([
-  {
-    name: "Water Reminder",
-    content: "Remind you to drink water at every:",
-    options: [20, 40, 60],
-    period: 20,
-    toggle: false,
-    title: "Time to drink water",
-    body: mins => `Remind you to drink water at every ${mins} minutes`
-  },
-  {
-    name: "Take a break",
-    content: "Remind you to take break at every:",
-    options: [20, 50, 80],
-    period: 20,
-    toggle: false,
-    title: "Time to take break",
-    body: mins => `Remind you to take break at every ${mins} minutes`
-  }
-])
+const store = useReminderStore()
 
+const isNoDisturbToggleDisable = computed(()=>{
+  return store.noDisturbConfig.from ==='' || store.noDisturbConfig.to === ''
+})
 </script>
     
 <template>
@@ -34,12 +20,27 @@ const configs = reactive<ReminderConfig[]>([
       Alert Reminder
     </div>
   </section>
-  <h1 class="text-4xl font-sans my-16 align text-center">
+  <h1 class="text-4xl font-sans my-12 align text-center">
     Alert Reminder Settings
   </h1>
-
-  <div class="w-[58.25rem] flex flex-col gap-16 mb-8 mx-auto">
-    <ReminderItem v-for="config in configs" :key="config.name" :config="config" class="reminder-item"></ReminderItem>
+  <div class="w-[58.25rem] flex flex-col gap-8 mb-8 mx-auto">
+    <div class="font-sans text-xl flex justify-between">
+      <span>Do not disturb</span>
+      <span>
+        From
+        <input type="time" class="bg-transparent" 
+        v-model="store.noDisturbConfig.from">
+      </span>
+      <span>
+        To
+        <input type="time" class="bg-transparent"
+        v-model="store.noDisturbConfig.to">
+      </span>
+      <Toggle v-model="store.noDisturbConfig.toggle" 
+      :disabled="isNoDisturbToggleDisable"
+      ></Toggle>
+    </div>
+    <ReminderItem v-for="item, index in store.reminderConfig" :key="item.name" :index="index" class="reminder-item"></ReminderItem>
   </div>
 </template>
     
