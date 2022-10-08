@@ -49,7 +49,7 @@ loadPopularCards()
         <img class="h-full" src="@/assets/icons/IconSetting.svg" alt="Preferences">
         Change Preferences
       </RouterLink>
-      <span class="font-sans text-2xl flex transition-opacity"
+      <span class="font-sans text-2xl flex transition-opacity select-none"
       :class="{'opacity-0': loaded===true&&popularLoaded===true}"
       >
         <svg role="status" class="inline mr-2 w-8 h-8 text-gray-200 animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
