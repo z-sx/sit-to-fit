@@ -60,7 +60,7 @@ const routeName = computed(()=>{
 .button{
   @apply px-6 py-4 gap-2 leading-8 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline hover:bg-black/20 transition active:ring;
   &.active{
-    @apply bg-black/10;
+    @apply bg-black/10 font-extrabold;
   }
 }
 </style>

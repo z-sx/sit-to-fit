@@ -77,13 +77,13 @@ const isBad = computed(()=>contentKey.value === "bad")
   <section class="flex flex-col justify-center gap-16 my-16">
     <div class="flex gap-4 mx-auto">
       <button 
-      class="font-sans text-2xl" 
-      :class="{'font-bold':isBad}"
+      class="font-sans text-2xl p-4 rounded-xl hover:bg-black/20 transition" 
+      :class="{'text-active':isBad}"
       @click="contentKey = 'bad'"
       >Bad Posture</button>
       <button 
-      class="font-sans text-2xl" 
-      :class="{'font-bold':!isBad}"
+      class="font-sans text-2xl p-4 rounded-xl hover:bg-black/20 transition" 
+      :class="{'text-active':!isBad}"
       @click="contentKey = 'good'"
       >Good Posture</button>
     </div>
@@ -109,6 +109,10 @@ const isBad = computed(()=>contentKey.value === "bad")
 </template>
     
 <style lang="postcss" scoped>
+.text-active{
+  @apply font-bold bg-gray-200
+}
+
 .item:nth-of-type(2n+1) {
   &>.image {
     order: 2

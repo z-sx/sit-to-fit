@@ -88,13 +88,13 @@ const showIndoor = ref(true)
     </h1>
     <div class="flex gap-4 mx-auto">
       <button 
-      class="font-sans text-2xl" 
-      :class="{'font-bold':showIndoor}"
+      class="font-sans text-2xl p-4 rounded-xl hover:bg-black/20 transition"
+      :class="{'text-active':showIndoor}"
       @click="activities=indoorActivities;showIndoor=!showIndoor"
       >Indoor</button>
       <button 
-      class="font-sans text-2xl" 
-      :class="{'font-bold':!showIndoor}"
+      class="font-sans text-2xl p-4 rounded-xl hover:bg-black/20 transition"
+      :class="{'text-active':!showIndoor}"
       @click="activities=outdoorActivities;showIndoor=!showIndoor"
       >Outdoor</button>
     </div>
@@ -120,6 +120,10 @@ const showIndoor = ref(true)
 </template>
     
 <style lang="postcss" scoped>
+.text-active{
+  @apply font-bold bg-gray-200
+}
+
 .item:nth-of-type(2n+1) {
   &>.image {
     order: 2

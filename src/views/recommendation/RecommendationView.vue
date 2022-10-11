@@ -30,15 +30,15 @@ loadPopularCards()
   </section>
   <section class="mx-auto max-w-screen-xl mt-4 px-14 flex items-center">
     <span class="text-left basis-96 text-2xl">Location: Melbourne CBD</span>
-    <div class="flex grow justify-center pr-96">
+    <div class="flex grow justify-center pr-96 gap-4">
       <button 
-      class="font-sans text-3xl px-4 py-2" 
-      :class="{'font-bold': tab === 'foryou'}"
+      class="font-sans text-2xl p-4 rounded-xl hover:bg-black/20 transition" 
+      :class="{'text-active': tab === 'foryou'}"
       @click="tab='foryou'"
       >For You</button>
       <button 
-      class="font-sans text-3xl px-4 py-2"
-      :class="{'font-bold': tab === 'popularity'}"
+      class="font-sans text-2xl p-4 rounded-xl hover:bg-black/20 transition"
+      :class="{'text-active': tab === 'popularity'}"
       @click="tab='popularity'"
       >Popularity</button>
     </div>
@@ -172,6 +172,10 @@ loadPopularCards()
 </template>
     
 <style lang="postcss" scoped>
+.text-active{
+  @apply font-bold bg-gray-200
+}
+
 .card-shadow {
   box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
 }
