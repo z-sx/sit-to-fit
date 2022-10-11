@@ -20,10 +20,7 @@ const isNoDisturbToggleDisable = computed(()=>{
       Alert Reminder
     </div>
   </section>
-  <h1 class="text-4xl font-sans my-12 align text-center">
-    Alert Reminder Settings
-  </h1>
-  <div class="w-[58.25rem] flex flex-col gap-8 mb-8 mx-auto">
+  <div class="w-[58.25rem] flex flex-col gap-8 my-8 mx-auto">
     <div class="font-sans text-xl flex justify-between">
       <span>Do not disturb</span>
       <span>
