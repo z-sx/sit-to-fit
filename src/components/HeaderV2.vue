@@ -1,28 +1,41 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import router from '@/router';
+import { computed, ref } from 'vue';
 
 const links = ref([
   {
     name: 'Home',
-    to: 'home'
+    to: 'home',
+    active: ['home']
   },
   {
     name: 'Journey',
     to: 'sedentary-info',
+    active: ['sedentary-info', 'risk-meter', 'feature-info'],
   },
   {
     name: 'Healthy Lifestyle',
     to: 'healthy-lifestyle',
+    active: ['healthy-lifestyle', 'physical-activities', 'dietary-plan', 'physical-ergnomics']
   },
   {
     name: 'Recommendations',
     to: 'cards',
+    active: ['cards', 'preferences']
   },
   {
     name: 'Alert Reminder',
     to: 'alert-reminder',
+    active: ['alert-reminder']
   },
 ])
+const routeName = computed(()=>{
+  if(typeof router.currentRoute.value.name === 'string'){
+    return router.currentRoute.value.name
+  }else{
+    return ''
+  }
+})
 </script>
   
 <template>
@@ -32,7 +45,9 @@ const links = ref([
     </RouterLink>
     <nav class="navigation grow flex flex-row justify-between items-center h-16 gap-1">
       <template v-for="link in links">
-        <RouterLink class="button" :to="{name:link.to}">
+        <RouterLink class="button" 
+        :class="{'active': link.active.includes(routeName)}"
+        :to="{name:link.to}">
           {{link.name}}
         </RouterLink>
       </template>
@@ -44,7 +59,7 @@ const links = ref([
 
 .button{
   @apply px-6 py-4 gap-2 leading-8 flex flex-row justify-center rounded-xl items-center font-sans text-base font-bold no-underline hover:bg-black/20 transition active:ring;
-  &.router-link-active{
+  &.active{
     @apply bg-black/10;
   }
 }
