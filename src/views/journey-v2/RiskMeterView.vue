@@ -38,6 +38,6 @@ import JourneyProgress from '../../components/JourneyProgress.vue'
     
 <style lang="postcss" scoped>
 .nav-button {
-  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring;
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring rounded-lg;
 }
 </style>

@@ -148,7 +148,7 @@ const answer = new Set([0, 1, 2, 3, 4])
     
 <style lang="postcss" scoped>
 .nav-button{
-  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring;
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring rounded-lg;
 }
 .home-button {
   @apply flex flex-row items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white border-solid;

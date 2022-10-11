@@ -68,7 +68,7 @@ const features = [{
     
 <style lang="postcss" scoped>
 .nav-button {
-  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring;
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring rounded-lg;
 }
 .card-shadow{
   box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
