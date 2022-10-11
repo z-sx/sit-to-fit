@@ -85,7 +85,7 @@ function hasPref(item: Preference) {
     
 <style lang="postcss" scoped>
 .home-button {
-  @apply flex flex-row w-fit items-center h-12 px-4 gap-2 bg-cyan-200 border-2 border-white border-solid;
+  @apply flex flex-row w-fit items-center h-12 px-4 gap-2 bg-blue-600 text-white rounded-lg border-2 border-white border-solid;
 }
 
 .pref {

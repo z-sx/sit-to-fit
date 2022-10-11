@@ -41,7 +41,7 @@ const sections = [{
             {{section.desc}}
           </span>
           <RouterLink 
-          class="flex flex-row items-center py-1 pl-4 pr-2 h-14 gap-2 bg-blue-600 opacity-80 w-max border-2 border-transparent hover:border-white hover:opacity-100 transition"
+          class="flex flex-row items-center py-1 pl-4 pr-2 h-14 gap-2 bg-blue-600 opacity-80 w-max rounded-xl border-2 border-transparent hover:border-white hover:opacity-100 transition"
           :to="{name: section.route}">
             <span class="font-sans text-white">
               Discover More
