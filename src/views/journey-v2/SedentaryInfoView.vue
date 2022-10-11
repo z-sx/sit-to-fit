@@ -28,7 +28,7 @@ const answer = new Set([0, 1, 2, 3, 4])
 <template>
   <BreadCrumb :nav="['home', 'journey', 'sedentary-info']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
-    <div class="font-serif text-4xl">
+    <div class="font-sans text-4xl">
       Journey
     </div>
     <JourneyProgress class="mt-8"></JourneyProgress>

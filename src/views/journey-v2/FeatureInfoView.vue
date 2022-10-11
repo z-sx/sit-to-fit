@@ -25,7 +25,7 @@ const features = [{
 <template>
   <BreadCrumb :nav="['home', 'journey', 'feature-info']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
-    <div class="font-serif text-4xl">
+    <div class="font-sans text-4xl">
       Features
     </div>
     <JourneyProgress class="mt-8"></JourneyProgress>

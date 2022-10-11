@@ -38,7 +38,7 @@ const next = computed(() => {
       class="flex items-center gap-2"
       v-for="step in steps" :to="{name: step.link ?? ''}">
         <div class="w-5 h-4 bg-cyan-100 opacity-80 rounded-full"></div>
-        <span class="font-serif text-base">{{step.text}}</span>
+        <span class="font-sans text-base">{{step.text}}</span>
       </RouterLink>
       <RouterLink class="next" :to="{name: steps[next]?.link ?? ''}">
         <img class="w-6" src="@/assets/images/IconRight.svg" alt="Next page">

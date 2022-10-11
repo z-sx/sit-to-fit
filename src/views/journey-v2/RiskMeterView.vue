@@ -7,7 +7,7 @@ import JourneyProgress from '../../components/JourneyProgress.vue'
 <template>
   <BreadCrumb :nav="['home', 'journey', 'risk-meter']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex flex-col justify-end items-center mb-4">
-    <div class="font-serif text-4xl">
+    <div class="font-sans text-4xl">
       Risk Meter Analysis
     </div>
     <JourneyProgress class="mt-8"></JourneyProgress>
