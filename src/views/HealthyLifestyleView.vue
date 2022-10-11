@@ -26,7 +26,7 @@ const sections = [{
   <BreadCrumb :nav="['home', 'healthy-lifestyle']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
-      Healthy Lifestyle Changes you don't want to miss!
+      Healthy Lifestyle Changes you don't want to miss
     </div>
   </section>
   <section class="flex flex-col gap-8 max-w-screen-md mx-auto p-14">

@@ -25,7 +25,7 @@ loadPopularCards()
   <BreadCrumb :nav="['home', 'recommendation', 'cards']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
-      Your Recommendations for Today!
+      Your Recommendations for Today
     </div>
   </section>
   <section class="mx-auto max-w-screen-xl mt-4 px-14 flex items-center">
