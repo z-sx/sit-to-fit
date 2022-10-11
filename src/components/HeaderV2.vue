@@ -16,7 +16,7 @@ const links = ref([
   {
     name: 'Healthy Lifestyle',
     to: 'healthy-lifestyle',
-    active: ['healthy-lifestyle', 'physical-activities', 'dietary-plan', 'physical-ergnomics']
+    active: ['healthy-lifestyle', 'physical-activities', 'dietary-plan', 'physical-ergonomics']
   },
   {
     name: 'Recommendations',
