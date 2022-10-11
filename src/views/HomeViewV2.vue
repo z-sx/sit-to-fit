@@ -7,7 +7,7 @@
     <section class="relative z-0">
       <div class="h-[45rem] xl:h-[50rem] xl:max-w-screen-xl xl:mx-auto relative z-10 flex flex-col px-14 pt-36 justify-between">
         <div class="w-[50%]">
-          <div class="text-4xl font-bold font-serif">Sedentary Lifestyle</div>
+          <div class="text-4xl font-bold font-serif">Sedentary Lifestyle?</div>
           <div class="text-3xl font-normal font-serif">To the people of Melbourne CBD,</div>
           <div class="text-3xl font-normal font-serif">We are here to help you change your lifestyle.</div>
         </div>
