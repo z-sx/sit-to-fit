@@ -26,7 +26,7 @@ const { nav } = defineProps<{
   <section class="pl-14 pr-4 bg-gray-200 w-max">
     <template v-for="item, index in nav" :key="index">
       <span v-if="index>0"> / </span>
-      <RouterLink :to="{name:item}">{{text[item]}}</RouterLink>
+      <RouterLink class="hover:underline" :to="{name:item}">{{text[item]}}</RouterLink>
     </template>
   </section>
 </template>
