@@ -17,7 +17,7 @@ const isNoDisturbToggleDisable = computed(()=>{
   <BreadCrumb :nav="['home', 'alert-reminder']"></BreadCrumb>
   <section class="mx-auto w-full h-44 bg-gray-200 flex justify-center items-center">
     <div class="font-sans text-4xl">
-      Alert Reminder
+      Alert Reminder Settings
     </div>
   </section>
   <div class="w-[58.25rem] flex flex-col gap-8 my-8 mx-auto">
