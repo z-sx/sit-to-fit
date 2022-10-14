@@ -69,12 +69,9 @@ loadPopularCards()
       v-for="item in store.cards" :key="item.id">
         <div class="relative flex flex-col justify-between h-96 card-shadow rounded-xl overflow-hidden shadow-lg bg-white">
           <div class="flex justify-between items-center">
-            <span class="font-sans text-2xl pl-8 font-semibold">
+            <span class="font-sans text-2xl pl-8 font-semibold h-16 flex items-center">
               {{item.content}} {{item.title}}
             </span>
-            <button @click="store.closeCard(item)" class="h-16 w-16 p-4 select-none hover:bg-gray-200">
-              <img class="h-full" src="@/assets/icons/IconClose.svg" alt="Close">
-            </button>
           </div>
           <div class="flex flex-col grow overflow-hidden">
             <Map :center="{lat:item.longitude, lng:item.latitude}" v-if="item.latitude!==null&&item.longitude!==null">
@@ -83,7 +80,7 @@ loadPopularCards()
               alt="Indoor Activity">
           </div>
           <div class="grid grid-cols-2 grid-rows-1">
-            <button @click="store.dislike(item)"
+            <button @click="store.dislike(item); store.closeCard(item)"
               class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none">
               <img v-if="store.dislikedCards.find(i=>i.id===item.id)" class="h-full"
                 src="@/assets/icons/IconThumbDownFill.svg" alt="Thumb Down">
@@ -115,7 +112,7 @@ loadPopularCards()
               alt="Indoor Activity">
           </div>
           <div class="grid grid-cols-2 grid-rows-1">
-            <button @click="store.dislike(item)"
+            <button @click="store.dislike(item); store.closeCard(item)"
               class="flex justify-center h-16 p-4 font-sans font-semibold items-center gap-2 hover:bg-gray-200 select-none">
               <img v-if="store.dislikedCards.find(i=>i.id===item.id)" class="h-full"
                 src="@/assets/icons/IconThumbDownFill.svg" alt="Thumb Down">
@@ -136,13 +133,10 @@ loadPopularCards()
       v-for="_ in 4">
         <div class="placeholder animate-pulse flex flex-col justify-between h-96 card-shadow rounded-xl overflow-hidden shadow-lg bg-white">
           <div class="opacity-20 flex justify-between items-center">
-            <div class="grow pl-8">
-              <div class="pl-8 h-2 mb-4 bg-black rounded-full"></div>
-              <div class="pl-8 h-2 bg-black rounded-full"></div>
+            <div class="grow px-8 py-4 h-16">
+              <div class="h-2 mb-4 bg-black rounded-full"></div>
+              <div class="h-2 bg-black rounded-full"></div>
             </div>
-            <button class="h-16 w-16 p-4 select-none hover:bg-gray-200">
-              <img class="h-full" src="@/assets/icons/IconClose.svg" alt="Close">
-            </button>
           </div>
           <div class="flex flex-col grow overflow-hidden justify-center items-center bg-gray-300">
             <svg class="w-14 h-14 text-gray-200" xmlns="http://www.w3.org/2000/svg"
