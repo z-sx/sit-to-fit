@@ -58,7 +58,7 @@ const diets = [
   </section>
   <section class="flex flex-col justify-center gap-16 my-16">
     <h1 class="text-4xl font-sans mx-auto">
-      Types of diet strategies to mitigate sedentary lifestyle!
+      Types of diet strategies to mitigate sedentary lifestyle
     </h1>
     <template v-for="diet in diets" :key="index">
       <div class="item flex flex-row mx-auto max-w-screen-xl px-14 gap-8">

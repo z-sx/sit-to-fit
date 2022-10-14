@@ -84,7 +84,7 @@ const showIndoor = ref(true)
   </section>
   <section class="flex flex-col justify-center gap-16 my-16">
     <h1 class="text-4xl font-sans mx-auto">
-      Choose you activity for a healthy lifestyle!
+      Choose you activity for a healthy lifestyle
     </h1>
     <div class="flex gap-4 mx-auto">
       <button 

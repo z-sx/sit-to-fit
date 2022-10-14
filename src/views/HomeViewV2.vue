@@ -6,7 +6,7 @@
   <div class="flex flex-col gap-16 -mt-20">
     <section class="relative z-0">
       <div class="h-[45rem] xl:h-[50rem] xl:max-w-screen-xl xl:mx-auto relative z-10 flex flex-col px-14 pt-36 justify-between">
-        <div class="w-[50%]">
+        <div class="w-[45%]">
           <div class="text-4xl font-bold font-sans">Sedentary Lifestyle?</div>
           <div class="text-3xl font-normal font-sans">To the people of Melbourne CBD,</div>
           <div class="text-3xl font-normal font-sans">We are here to help you change your lifestyle.</div>
@@ -21,7 +21,7 @@
             </span>
           </RouterLink>
           <span class="font-sans text-2xl pl-10">
-            Break your sedentary lifestyle!
+            Break your sedentary lifestyle
           </span>
         </div>
       </div>
