@@ -32,6 +32,9 @@ const diets = [
     description: 'The ketogenic diet strategy consists of a low-carbohydrate, high-fat and moderate amount of protein intake per day. As a result of consuming more fat, your body will burn fat as its main source of energy which is called ketosis. The recommended diet for daily carbohydrates is only 20g-50g per day or less. People who have type 2 diabetes can take part in this diet plan to improve their blood sugar levels in the short term.  \nEffective in Fat Loss regime.',
   },
 ]
+function scrollToTop(){
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
     
 <template>
@@ -79,9 +82,23 @@ const diets = [
       </div>
     </template>
   </section>
+
+  <section class="flex flex-col justify-center gap-16 my-16 max-w-screen-xl">
+    <div class="flex gap-4 mx-auto w-full px-14 justify-between">
+      <div class="opacity-0">back to top</div>
+      <button class="bg-gray-400 hover:bg-gray-500 nav-button" @click="scrollToTop()">
+        Back To Top
+      </button>
+    </div>
+  </section>
 </template>
     
 <style lang="postcss" scoped>
+.nav-button{
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring rounded-lg;
+}
+
+
 .item:nth-of-type(2n+1) {
   &>.image {
     order: 2

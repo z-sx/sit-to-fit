@@ -50,6 +50,10 @@ const postures = {
 }
 const contentKey = ref<"good"|"bad">("bad")
 const isBad = computed(()=>contentKey.value === "bad")
+
+function scrollToTop(){
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
     
 <template>
@@ -106,9 +110,25 @@ const isBad = computed(()=>contentKey.value === "bad")
       </div>
     </template>
   </section>
+
+  <section class="flex flex-col justify-center gap-16 my-16 max-w-screen-xl">
+    <div class="flex gap-4 mx-auto w-full px-14 justify-between">
+      <div class="opacity-0">back to top</div>
+      <RouterLink class="bg-blue-600 hover:bg-blue-700 nav-button" :to="{name: 'alert-reminder'}">
+        Set Your Reminder
+      </RouterLink>
+      <button class="bg-gray-400 hover:bg-gray-500 nav-button" @click="scrollToTop()">
+        Back To Top
+      </button>
+    </div>
+  </section>
 </template>
     
 <style lang="postcss" scoped>
+.nav-button{
+  @apply h-10 text-white flex items-center p-3 gap-3 focus:ring rounded-lg;
+}
+
 .text-active{
   @apply font-bold bg-gray-200
 }
