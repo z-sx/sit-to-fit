@@ -39,17 +39,17 @@ const features = [{
     <div class="flex flex-col gap-8 mt-4 max-w-screen-xl p-14 mx-auto">
       <div class="bg-white w-max rounded-xl relative mx-auto card-shadow">
         <img src="@/assets/FeatureInfoView/lifestyle.svg">
-        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-full bg-blue-600 hover:bg-blue-700 focus:ring"
+        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-xl bg-blue-600 hover:bg-blue-700 focus:ring"
         :to="{name:'healthy-lifestyle'}">Explore</RouterLink>
       </div>
       <div class="bg-white w-max rounded-xl relative mx-auto card-shadow">
         <img src="@/assets/FeatureInfoView/recommend.svg">
-        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-full bg-blue-600 hover:bg-blue-700 focus:ring"
+        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-xl bg-blue-600 hover:bg-blue-700 focus:ring"
         :to="{name:'recommendation'}">Engage Now</RouterLink>
       </div>
       <div class="bg-white w-max rounded-xl relative mx-auto card-shadow">
         <img src="@/assets/FeatureInfoView/reminder.svg">
-        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-full bg-blue-600 hover:bg-blue-700 focus:ring"
+        <RouterLink class="absolute flex justify-center items-center h-12 w-40 text-white bottom-3 right-32 rounded-xl bg-blue-600 hover:bg-blue-700 focus:ring"
         :to="{name:'alert-reminder'}">Set Your Reminder</RouterLink>
       </div>
     </div>
