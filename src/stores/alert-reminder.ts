@@ -26,7 +26,7 @@ const defaultReminderConfig = [
   {
     name: "Water Reminder",
     content: "Remind you to drink water at every:",
-    options: [20, 40, 60],
+    options: [0.1, 20, 40, 60],
     period: 20,
     toggle: false,
     title: "Time to drink water",
@@ -35,7 +35,7 @@ const defaultReminderConfig = [
   {
     name: "Take a break",
     content: "Remind you to take break at every:",
-    options: [20, 50, 80],
+    options: [0.1, 20, 50, 80],
     period: 20,
     toggle: false,
     title: "Time to take break",
